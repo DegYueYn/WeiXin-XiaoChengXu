@@ -323,25 +323,35 @@ var _default =
 
   },
   onLoad: function onLoad() {
-    console.log('谁先？load');
     this.getSystemdata();
     this.getList(0);
   },
   onShow: function onShow() {
-    // load比show先
   },
   methods: {
+    // 获取系统信息
     getSystemdata: function getSystemdata() {var _this = this;
-      // 状态栏高度
       uni.getSystemInfo({
         success: function success(res) {
           console.log(res);
           _this.width = res.windowWidth;
-          // this.height = res.windowHeight
           _this.statusHeight = res.statusBarHeight;
         } });
 
     },
+    //去商品详情页
+    toGoodsDetail: function toGoodsDetail(item) {
+      console.log(item);
+      if (item == 'ad') {
+        uni.$showMsg('广告位招租中......', 'none', 2000);
+      } else {
+        uni.navigateTo({
+          url: '/views/goods/goodsDetail?goodsId=' + item.goodsId });
+
+      }
+
+    },
+    //获取商品列表
     getList: function getList(item) {var _this2 = this;
       uni.request({
         url: "/api/getList",
@@ -349,7 +359,8 @@ var _default =
           "id": item },
 
         success: function success(res) {
-          _this2.goodsList = res.data == undefined ? 0 : res.data.goodsList;
+          if (res.data == undefined) return;
+          _this2.goodsList = res.data.goodsList;
           _this2.goodsList.filter(function (v) {
             if (v.flex == 'left') {
               _this2.goodsLeftList.push(v);
@@ -362,7 +373,7 @@ var _default =
 
 
     },
-
+    //搜索框
     onClick: function onClick(item) {
       console.log(item);
       if (item == 'suffix') {
@@ -371,8 +382,7 @@ var _default =
           sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
           sourceType: ['album', 'camera'], //从相册选择
           success: function success(res) {
-            console.log(JSON.stringify(res.tempFilePaths));
-
+            uni.$showMsg('按图搜索功能待开发中......', 'none', 2000);
           },
           fail: function fail() {
             uni.$showMsg('您已取消授权', 'none', 2000);
@@ -384,9 +394,17 @@ var _default =
         uni.$showMsg('去搜索页面', 'none', 2000);
       }
     },
+    //初始化商品列表
+    init: function init() {
+      this.goodsList = [];
+      this.goodsLeftList = [];
+      this.goodsRightList = [];
+    },
+    //商品分类tabbar
     click: function click(item, index) {
       this.activeIndex = index;
       this.getList(index);
+      this.init();
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

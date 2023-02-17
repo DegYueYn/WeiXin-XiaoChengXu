@@ -18384,7 +18384,7 @@ Mock.mock('/api/getList', function (optins) {
       code: 200,
       goodsList: [{
         "flex": 'left',
-        "goodsId": 01,
+        "goodsId": 1,
         "goodsName": "Clever&Ketch小众包包女2023新款潮秋冬复古大容量托特包单肩包",
         "goodsImg": "https://gw.alicdn.com/imgextra/O1CN01YnIDKa1gwOeFm6kvm_!!2207281504206.jpg_Q75.jpg_.webp",
         "saleCount": "1000+",
@@ -18397,7 +18397,7 @@ Mock.mock('/api/getList', function (optins) {
         "storeName": 'NY优品' },
 
       {
-        "goodsId": 02,
+        "goodsId": 2,
         "flex": 'left',
         "goodsName": "洛斐小翘键盘帽101键69键PBT球帽彩色纯色收纳盒拔键器正品",
         "goodsImg": "https://gd4.alicdn.com/imgextra/i2/3936304325/O1CN013PwxbF1hotg2pwIEm_!!3936304325.jpg_400x400.jpg",
@@ -18410,22 +18410,22 @@ Mock.mock('/api/getList', function (optins) {
         "discount": 8,
         "stockCount": 100 },
 
-      // {
-      // 	"goodsId": 03,
-      // 	"flex":'left',
-      // 	"goodsName": "竹节和田玉手链纯银女款2023年新款轻奢小众手饰情人节礼物送女友",
-      // 	"goodsImg": "https://gw.alicdn.com/imgextra/i1/3070955695/O1CN01M2jRDm1rwMNyQn7hw_!!3070955695.jpg_Q75.jpg_.webp",
-      // 	"saleCount": "600+",
-      // 	"salePrice": 158,
-      // 	"tag": '加购超1000+',
-      // 	"storeName":'NY优品',
-      // 	"rank": '情人节送礼排行榜第三名',
-      // 	"marketPrice": 225,
-      // 	"discount": 7,
-      // 	"stockCount": 99,
-      // },
       {
-        "goodsId": 04,
+        "goodsId": 03,
+        "flex": 'left',
+        "goodsName": "竹节和田玉手链纯银女款2023年新款轻奢小众手饰情人节礼物送女友",
+        "goodsImg": "https://gw.alicdn.com/imgextra/i1/3070955695/O1CN01M2jRDm1rwMNyQn7hw_!!3070955695.jpg_Q75.jpg_.webp",
+        "saleCount": "600+",
+        "salePrice": 158,
+        "tag": '加购超1000+',
+        "storeName": 'NY优品',
+        "rank": '情人节送礼排行榜第三名',
+        "marketPrice": 225,
+        "discount": 7,
+        "stockCount": 99 },
+
+      {
+        "goodsId": 4,
         "flex": 'right',
         "goodsName": "早春季2023新款茶系穿搭一整套微胖盐系轻熟高级感韩剧小香风套装",
         "goodsImg": "https://img.alicdn.com/imgextra/i2/2202600873766/O1CN01trCUIT1dgsK202OT0_!!2202600873766.jpg",
@@ -18439,7 +18439,7 @@ Mock.mock('/api/getList', function (optins) {
         "stockCount": 100 },
 
       {
-        "goodsId": 05,
+        "goodsId": 5,
         "flex": 'right',
         "goodsName": "【学院风穿搭】牛仔马甲男女ins潮牌工装外套痞帅炸街夹克背心",
         "goodsImg": "https://gw.alicdn.com/imgextra/i3/2935603592/O1CN01uXcSYZ1cPBHtINFr6_!!2935603592.jpg_Q75.jpg_.webp",
@@ -18453,7 +18453,7 @@ Mock.mock('/api/getList', function (optins) {
         "stockCount": 100 },
 
       {
-        "goodsId": 06,
+        "goodsId": 6,
         "flex": 'right',
         "goodsName": "生日礼物男生实用高档送男友男朋友老公男士小众高级的惊喜情人节",
         "goodsImg": "https://img.alicdn.com/imgextra/i4/195729828/O1CN01NFZEd32MTHGtY7uPl_!!195729828.jpg",
@@ -18464,23 +18464,23 @@ Mock.mock('/api/getList', function (optins) {
         "rank": '生日礼物榜前二十',
         "marketPrice": 259,
         "discount": 7,
-        "stockCount": 100 },
+        "stockCount": 100 }
 
-      {
-        "goodsId": 07,
-        "flex": 'left',
-        "goodsName": "全新佳能EOS700D 750D 800D 100D入门级单反相机学生旅游高清数码",
-        "goodsImg": "https://img.alicdn.com/imgextra/i2/3070955695/O1CN0138YYUm1rwMNlaWaPv_!!3070955695.jpg",
-        "saleCount": "100+",
-        "salePrice": 4999,
-        "tag": '花呗分期',
-        "storeName": 'NY优品',
-        "rank": '满5000减300',
-        "marketPrice": '5999',
-        "discount": 6,
-        "stockCount": 100 }] };
-
-
+      // {
+      // 	"goodsId": 7,
+      // 	"flex":'left',
+      // 	"goodsName": "全新佳能EOS700D 750D 800D 100D入门级单反相机学生旅游高清数码",
+      // 	"goodsImg": "https://img.alicdn.com/imgextra/i2/3070955695/O1CN0138YYUm1rwMNlaWaPv_!!3070955695.jpg",
+      // 	"saleCount": "100+",
+      // 	"salePrice": 4999,
+      // 	"tag": '花呗分期',
+      // 	"storeName":'NY优品',
+      // 	"rank": '满5000减300',
+      // 	"marketPrice": '5999',
+      // 	"discount":6,
+      // 	"stockCount": 100,
+      // },
+      ] };
 
 
 
@@ -18490,12 +18490,12 @@ Mock.mock('/api/getList', function (optins) {
 });
 Mock.mock('/api/goodsDetail', function (optins) {
 
-  if (optins.body.goodsId == 01) {
+  if (optins.body.goodsId == 1) {
     return {
       code: 200,
-      goodsDetail: [
+      goodsDetail:
       {
-        "goodsId": 01,
+        "goodsId": 1,
         "goodsName": "Clever&Ketch小众包包女2023新款潮秋冬复古大容量托特包单肩包",
         "goodsImg": "https://gw.alicdn.com/imgextra/O1CN01YnIDKa1gwOeFm6kvm_!!2207281504206.jpg_Q75.jpg_.webp",
         "saleCount": "1000+",
@@ -18527,16 +18527,16 @@ Mock.mock('/api/goodsDetail', function (optins) {
 
         {
           "title": '棕色',
-          "img": "https://gw.alicdn.com/bao/uploaded/i1/220728150420…gwOexZYSVT_!!2207281504206.jpg_60x60q50.jpg_.webp" }] }] };
+          "img": "https://gw.alicdn.com/bao/uploaded/i1/220728150420…gwOexZYSVT_!!2207281504206.jpg_60x60q50.jpg_.webp" }] } };
 
 
 
 
-  } else if (optins.body.goodsId == 02) {
+  } else if (optins.body.goodsId == 2) {
     return {
       code: 200,
-      goodsDetail: [{
-        "goodsId": 02,
+      goodsDetail: {
+        "goodsId": 2,
         "goodsName": "洛斐小翘键盘帽101键69键PBT球帽彩色纯色收纳盒拔键器正品",
         "goodsImg": "https://gd4.alicdn.com/imgextra/i2/3936304325/O1CN013PwxbF1hotg2pwIEm_!!3936304325.jpg_400x400.jpg",
         "saleCount": "5",
@@ -18564,17 +18564,17 @@ Mock.mock('/api/goodsDetail', function (optins) {
 
         {
           "title": '',
-          "img": "https://gd3.alicdn.com/imgextra/i3/3936304325/O1CN01cij8WI1hotg2qbFDZ_!!3936304325.jpg_30x30.jpg" }] }] };
+          "img": "https://gd3.alicdn.com/imgextra/i3/3936304325/O1CN01cij8WI1hotg2qbFDZ_!!3936304325.jpg_30x30.jpg" }] } };
 
 
 
 
 
-  } else if (optins.body.goodsId == 03) {
+  } else if (optins.body.goodsId == 3) {
     return {
       code: 200,
-      goodsDetail: [{
-        "goodsId": 03,
+      goodsDetail: {
+        "goodsId": 3,
         "goodsName": "竹节和田玉手链纯银女款2023年新款轻奢小众手饰情人节礼物送女友",
         "goodsImg": "https://gw.alicdn.com/imgextra/O1CNA11xyyl51rwMPGz4XXL_!!3070955695-0-psf.jpg_Q75.jpg_.webp",
         "saleCount": "600+",
@@ -18601,25 +18601,25 @@ Mock.mock('/api/goodsDetail', function (optins) {
 
         {
           "title": '套装【手链+项链】+简奢玫瑰礼盒',
-          "img": "https://gw.alicdn.com/bao/uploaded/i4/3070955695/O…Dw1rwMPBa0E6E_!!3070955695.jpg_60x60q50.jpg_.webp" }] }] };
+          "img": "https://gw.alicdn.com/bao/uploaded/i4/3070955695/O…Dw1rwMPBa0E6E_!!3070955695.jpg_60x60q50.jpg_.webp" }] } };
 
 
 
 
 
 
-  } else if (optins.body.goodsId == 04) {
+  } else if (optins.body.goodsId == 4) {
     return {
       code: 200,
-      goodsDetail: [{
-        "goodsId": 04,
+      goodsDetail: {
+        "goodsId": 4,
         "goodsName": "早春季2023新款茶系穿搭一整套微胖盐系轻熟高级感韩剧小香风套装",
         "goodsImg": "https://gw.alicdn.com/imgextra/i3/2202600873766/O1…oxmR_!!2202600873766-0-lubanu-s.jpg_Q75.jpg_.webp",
         "saleCount": "100+",
         "salePrice": 69.9,
-        "tag": '加购上千',
+        "tag": '',
         "storeName": 'NY优品',
-        "rank": '',
+        "rank": '加购上千',
         "marketPrice": 77.7,
         "discount": 9,
         "stockCount": 100,
@@ -18639,7 +18639,7 @@ Mock.mock('/api/goodsDetail', function (optins) {
 
         {
           "title": '套装【手链+项链】+简奢玫瑰礼盒',
-          "img": "https://gw.alicdn.com/bao/uploaded/i2/220260087376…dgsK3tojzT_!!2202600873766.jpg_60x60q50.jpg_.webp" }] }] };
+          "img": "https://gw.alicdn.com/bao/uploaded/i2/220260087376…dgsK3tojzT_!!2202600873766.jpg_60x60q50.jpg_.webp" }] } };
 
 
 
@@ -18647,11 +18647,11 @@ Mock.mock('/api/goodsDetail', function (optins) {
 
 
 
-  } else if (optins.body.goodsId == 05) {
+  } else if (optins.body.goodsId == 5) {
     return {
       code: 200,
-      goodsDetail: [{
-        "goodsId": 05,
+      goodsDetail: {
+        "goodsId": 5,
         "goodsName": "【学院风穿搭】牛仔马甲男女ins潮牌工装外套痞帅炸街夹克背心",
         "goodsImg": "https://gw.alicdn.com/imgextra/i3/2935603592/O1CN01uXcSYZ1cPBHtINFr6_!!2935603592.jpg_Q75.jpg_.webp",
         "saleCount": "66",
@@ -18678,22 +18678,22 @@ Mock.mock('/api/goodsDetail', function (optins) {
 
         {
           "title": '蓝色',
-          "img": "https://gw.alicdn.com/bao/uploaded/i2/2935603592/O…Ls1cPBHunwY6S_!!2935603592.jpg_60x60q50.jpg_.webp" }] }] };
+          "img": "https://gw.alicdn.com/bao/uploaded/i2/2935603592/O…Ls1cPBHunwY6S_!!2935603592.jpg_60x60q50.jpg_.webp" }] } };
 
 
 
 
 
-  } else if (optins.body.goodsId == 06) {
+  } else if (optins.body.goodsId == 6) {
     return {
       code: 200,
-      goodsDetail: [{
-        "goodsId": 06,
+      goodsDetail: {
+        "goodsId": 6,
         "goodsName": "生日礼物男生实用高档送男友男朋友老公男士小众高级的惊喜情人节",
         "goodsImg": "https://gw.alicdn.com/imgextra/i3/195729828/O1CN01…MTHGocxPX3_!!195729828.jpg_110x10000Q75.jpg_.webp",
         "saleCount": "5",
         "salePrice": 199,
-        "tag": '券后￥199',
+        "tag": '力度优惠',
         "storeName": 'NY优品',
         "rank": '生日礼物榜前二十',
         "marketPrice": 259,
@@ -18715,17 +18715,17 @@ Mock.mock('/api/goodsDetail', function (optins) {
 
         {
           "title": '❤ 黑金爵士【情人节豪华礼盒】',
-          "img": "https://gw.alicdn.com/bao/uploaded/i2/195729828/O1…uzq2MTHGuBXs5g_!!195729828.jpg_60x60q50.jpg_.webp" }] }] };
+          "img": "https://gw.alicdn.com/bao/uploaded/i2/195729828/O1…uzq2MTHGuBXs5g_!!195729828.jpg_60x60q50.jpg_.webp" }] } };
 
 
 
 
 
-  } else if (optins.body.goodsId == 07) {
+  } else if (optins.body.goodsId == 7) {
     return {
       code: 200,
-      goodsDetail: [{
-        "goodsId": 07,
+      goodsDetail: {
+        "goodsId": 7,
         "goodsName": "全新佳能EOS700D 750D 800D 100D入门级单反相机学生旅游高清数码",
         "goodsImg": "https://gw.alicdn.com/imgextra/i3/195729828/O1CN01…MTHGocxPX3_!!195729828.jpg_110x10000Q75.jpg_.webp",
         "saleCount": "100+",
@@ -18756,7 +18756,7 @@ Mock.mock('/api/goodsDetail', function (optins) {
 
         {
           "color": '港版黑色100D+501.8STM 人像镜头',
-          "img": "https://gw.alicdn.com/imgextra/i3/195729828/O1CN01…MTHGocxPX3_!!195729828.jpg_110x10000Q75.jpg_.webp" }] }] };
+          "img": "https://gw.alicdn.com/imgextra/i3/195729828/O1CN01…MTHGocxPX3_!!195729828.jpg_110x10000Q75.jpg_.webp" }] } };
 
 
 
@@ -28661,6 +28661,397 @@ function createAnimation(option, _this) {
   return new MPAnimation(option, _this);
 }
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 225 */,
+/* 226 */,
+/* 227 */,
+/* 228 */,
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */,
+/* 245 */,
+/* 246 */,
+/* 247 */,
+/* 248 */
+/*!**********************************************************************************!*\
+  !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-swiper/props.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 列表数组，元素可为字符串，如为对象可通过keyName指定目标属性名
+    list: {
+      type: Array,
+      default: uni.$u.props.swiper.list },
+
+    // 是否显示面板指示器
+    indicator: {
+      type: Boolean,
+      default: uni.$u.props.swiper.indicator },
+
+    // 指示器非激活颜色
+    indicatorActiveColor: {
+      type: String,
+      default: uni.$u.props.swiper.indicatorActiveColor },
+
+    // 指示器的激活颜色
+    indicatorInactiveColor: {
+      type: String,
+      default: uni.$u.props.swiper.indicatorInactiveColor },
+
+    // 指示器样式，可通过bottom，left，right进行定位
+    indicatorStyle: {
+      type: [String, Object],
+      default: uni.$u.props.swiper.indicatorStyle },
+
+    // 指示器模式，line-线型，dot-点型
+    indicatorMode: {
+      type: String,
+      default: uni.$u.props.swiper.indicatorMode },
+
+    // 是否自动切换
+    autoplay: {
+      type: Boolean,
+      default: uni.$u.props.swiper.autoplay },
+
+    // 当前所在滑块的 index
+    current: {
+      type: [String, Number],
+      default: uni.$u.props.swiper.current },
+
+    // 当前所在滑块的 item-id ，不能与 current 被同时指定
+    currentItemId: {
+      type: String,
+      default: uni.$u.props.swiper.currentItemId },
+
+    // 滑块自动切换时间间隔
+    interval: {
+      type: [String, Number],
+      default: uni.$u.props.swiper.interval },
+
+    // 滑块切换过程所需时间
+    duration: {
+      type: [String, Number],
+      default: uni.$u.props.swiper.duration },
+
+    // 播放到末尾后是否重新回到开头
+    circular: {
+      type: Boolean,
+      default: uni.$u.props.swiper.circular },
+
+    // 前边距，可用于露出前一项的一小部分，nvue和支付宝不支持
+    previousMargin: {
+      type: [String, Number],
+      default: uni.$u.props.swiper.previousMargin },
+
+    // 后边距，可用于露出后一项的一小部分，nvue和支付宝不支持
+    nextMargin: {
+      type: [String, Number],
+      default: uni.$u.props.swiper.nextMargin },
+
+    // 当开启时，会根据滑动速度，连续滑动多屏，支付宝不支持
+    acceleration: {
+      type: Boolean,
+      default: uni.$u.props.swiper.acceleration },
+
+    // 同时显示的滑块数量，nvue、支付宝小程序不支持
+    displayMultipleItems: {
+      type: Number,
+      default: uni.$u.props.swiper.displayMultipleItems },
+
+    // 指定swiper切换缓动动画类型，有效值：default、linear、easeInCubic、easeOutCubic、easeInOutCubic
+    // 只对微信小程序有效
+    easingFunction: {
+      type: String,
+      default: uni.$u.props.swiper.easingFunction },
+
+    // list数组中指定对象的目标属性名
+    keyName: {
+      type: String,
+      default: uni.$u.props.swiper.keyName },
+
+    // 图片的裁剪模式
+    imgMode: {
+      type: String,
+      default: uni.$u.props.swiper.imgMode },
+
+    // 组件高度
+    height: {
+      type: [String, Number],
+      default: uni.$u.props.swiper.height },
+
+    // 背景颜色
+    bgColor: {
+      type: String,
+      default: uni.$u.props.swiper.bgColor },
+
+    // 组件圆角，数值或带单位的字符串
+    radius: {
+      type: [String, Number],
+      default: uni.$u.props.swiper.radius },
+
+    // 是否加载中
+    loading: {
+      type: Boolean,
+      default: uni.$u.props.swiper.loading },
+
+    // 是否显示标题，要求数组对象中有title属性
+    showTitle: {
+      type: Boolean,
+      default: uni.$u.props.swiper.showTitle } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */
+/*!****************************************************************************************!*\
+  !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-loading-icon/props.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 是否显示组件
+    show: {
+      type: Boolean,
+      default: uni.$u.props.loadingIcon.show },
+
+    // 颜色
+    color: {
+      type: String,
+      default: uni.$u.props.loadingIcon.color },
+
+    // 提示文字颜色
+    textColor: {
+      type: String,
+      default: uni.$u.props.loadingIcon.textColor },
+
+    // 文字和图标是否垂直排列
+    vertical: {
+      type: Boolean,
+      default: uni.$u.props.loadingIcon.vertical },
+
+    // 模式选择，circle-圆形，spinner-花朵形，semicircle-半圆形
+    mode: {
+      type: String,
+      default: uni.$u.props.loadingIcon.mode },
+
+    // 图标大小，单位默认px
+    size: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.size },
+
+    // 文字大小
+    textSize: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.textSize },
+
+    // 文字内容
+    text: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.text },
+
+    // 动画模式
+    timingFunction: {
+      type: String,
+      default: uni.$u.props.loadingIcon.timingFunction },
+
+    // 动画执行周期时间
+    duration: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.duration },
+
+    // mode=circle时的暗边颜色
+    inactiveColor: {
+      type: String,
+      default: uni.$u.props.loadingIcon.inactiveColor } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */
+/*!********************************************************************************************!*\
+  !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-swiper-indicator/props.js ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 轮播的长度
+    length: {
+      type: [String, Number],
+      default: uni.$u.props.swiperIndicator.length },
+
+    // 当前处于活动状态的轮播的索引
+    current: {
+      type: [String, Number],
+      default: uni.$u.props.swiperIndicator.current },
+
+    // 指示器非激活颜色
+    indicatorActiveColor: {
+      type: String,
+      default: uni.$u.props.swiperIndicator.indicatorActiveColor },
+
+    // 指示器的激活颜色
+    indicatorInactiveColor: {
+      type: String,
+      default: uni.$u.props.swiperIndicator.indicatorInactiveColor },
+
+    // 指示器模式，line-线型，dot-点型
+    indicatorMode: {
+      type: String,
+      default: uni.$u.props.swiperIndicator.indicatorMode } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 265 */,
+/* 266 */,
+/* 267 */,
+/* 268 */,
+/* 269 */,
+/* 270 */,
+/* 271 */,
+/* 272 */,
+/* 273 */,
+/* 274 */,
+/* 275 */,
+/* 276 */,
+/* 277 */,
+/* 278 */
+/*!**************************************************************************************!*\
+  !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-count-down/props.js ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 倒计时时长，单位ms
+    time: {
+      type: [String, Number],
+      default: uni.$u.props.countDown.time },
+
+    // 时间格式，DD-日，HH-时，mm-分，ss-秒，SSS-毫秒
+    format: {
+      type: String,
+      default: uni.$u.props.countDown.format },
+
+    // 是否自动开始倒计时
+    autoStart: {
+      type: Boolean,
+      default: uni.$u.props.countDown.autoStart },
+
+    // 是否展示毫秒倒计时
+    millisecond: {
+      type: Boolean,
+      default: uni.$u.props.countDown.millisecond } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 279 */
+/*!**************************************************************************************!*\
+  !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-count-down/utils.js ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.parseTimeData = parseTimeData;exports.parseFormat = parseFormat;exports.isSameSecond = isSameSecond; // 补0，如1 -> 01
+function padZero(num) {var targetLength = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
+  var str = "".concat(num);
+  while (str.length < targetLength) {
+    str = "0".concat(str);
+  }
+  return str;
+}
+var SECOND = 1000;
+var MINUTE = 60 * SECOND;
+var HOUR = 60 * MINUTE;
+var DAY = 24 * HOUR;
+function parseTimeData(time) {
+  var days = Math.floor(time / DAY);
+  var hours = Math.floor(time % DAY / HOUR);
+  var minutes = Math.floor(time % HOUR / MINUTE);
+  var seconds = Math.floor(time % MINUTE / SECOND);
+  var milliseconds = Math.floor(time % SECOND);
+  return {
+    days: days,
+    hours: hours,
+    minutes: minutes,
+    seconds: seconds,
+    milliseconds: milliseconds };
+
+}
+function parseFormat(format, timeData) {var
+
+  days =
+
+
+
+
+  timeData.days,hours = timeData.hours,minutes = timeData.minutes,seconds = timeData.seconds,milliseconds = timeData.milliseconds;
+  // 如果格式化字符串中不存在DD(天)，则将天的时间转为小时中去
+  if (format.indexOf('DD') === -1) {
+    hours += days * 24;
+  } else {
+    // 对天补0
+    format = format.replace('DD', padZero(days));
+  }
+  // 其他同理于DD的格式化处理方式
+  if (format.indexOf('HH') === -1) {
+    minutes += hours * 60;
+  } else {
+    format = format.replace('HH', padZero(hours));
+  }
+  if (format.indexOf('mm') === -1) {
+    seconds += minutes * 60;
+  } else {
+    format = format.replace('mm', padZero(minutes));
+  }
+  if (format.indexOf('ss') === -1) {
+    milliseconds += seconds * 1000;
+  } else {
+    format = format.replace('ss', padZero(seconds));
+  }
+  return format.replace('SSS', padZero(milliseconds, 3));
+}
+function isSameSecond(time1, time2) {
+  return Math.floor(time1 / 1000) === Math.floor(time2 / 1000);
+}
 
 /***/ })
 ]]);

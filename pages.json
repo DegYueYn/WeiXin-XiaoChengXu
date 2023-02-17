@@ -68,6 +68,18 @@
 				}
 				
 			]
+		},
+		{
+			"root": "views/goods",
+			"pages": [
+				{
+					"path": "goodsDetail",
+					"style": {
+						"navigationBarTitleText": "商品详情"
+					}
+				}
+			]
+			
 		}
 	],
 	//分包

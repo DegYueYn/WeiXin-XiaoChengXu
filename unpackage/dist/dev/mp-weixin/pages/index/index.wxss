@@ -1,6 +1,5 @@
 .content.data-v-57280228 {
   width: 100%;
-  height: 100%;
   background-color: #eeeeee;
 }
 .content .content-header.data-v-57280228 {
@@ -289,14 +288,15 @@
 }
 .content .noGoods.data-v-57280228 {
   width: 100%;
-  margin-top: 70rpx;
-  height: 400rpx;
+  background-color: white;
+  height: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
 .content .noGoods image.data-v-57280228 {
+  margin-top: 70rpx;
   border-radius: 20rpx;
   width: 200rpx;
   height: 200rpx;

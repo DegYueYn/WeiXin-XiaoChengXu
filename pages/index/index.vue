@@ -19,7 +19,7 @@
 		   <view class="goodsBox-inner">
 			   <view class="goodsBox-inner-left" >
 				   <view class="goodsBox-inner-left-box" v-for="(item,index) in goodsLeftList " :key="index">
-					   <view class="goodsBox">
+					   <view class="goodsBox" @click="toGoodsDetail(item)">
 						   <view class="goodsBox-img">
 							   <image :src="item.goodsImg" mode="widthFix"></image>
 						   </view>
@@ -41,17 +41,17 @@
 						   </view>
 					   </view>
 				   </view>
-                   <view class="bottom-box">
+                   <view class="bottom-box" @click="toGoodsDetail('ad')">
 					   <image src="/static/bottom.png" mode="scaleToFill" ></image>
 				   </view>
 			   </view>
 			  <view class=" goodsBox-inner-right" >
-				  <view class="top-box">
+				  <view class="top-box" @click="toGoodsDetail('ad')">
 					  <image src="/static/top.png"></image>
 				  </view>
 				  <view class="goodsBox-inner-right-box" v-for="(item,index) in goodsRightList " :key="index">
 				  					 
-									  <view class="goodsBox">
+									  <view class="goodsBox" @click="toGoodsDetail(item)">
 				  						   <view class="goodsBox-img">
 				  							   <image :src="item.goodsImg" mode="widthFix"></image>
 				  						   </view>
@@ -165,34 +165,45 @@
 				]
 			}
 		},
-		onLoad() {
-			console.log('谁先？load');	
+		onLoad() {	
 			this.getSystemdata()
 			this.getList(0)
 		},
 		onShow() {
-			// load比show先
 		},
 		methods: {
+			// 获取系统信息
 			getSystemdata() {
-				// 状态栏高度
 				uni.getSystemInfo({
 					success: res => {
 						console.log(res);
 						this.width = res.windowWidth
-						// this.height = res.windowHeight
 						this.statusHeight = res.statusBarHeight
 					}
 				});
 			},
+			//去商品详情页
+			toGoodsDetail(item){
+				console.log(item);
+				if(item=='ad'){
+					uni.$showMsg('广告位招租中......','none',2000)
+				}else {
+				uni.navigateTo({
+					url:'/views/goods/goodsDetail?goodsId='+item.goodsId
+				})
+				}
+				
+			},
+			//获取商品列表
 			getList(item){				
 				uni.request({
 					url:"/api/getList",
 					data:{
 						"id":item
 					},
-					success:res=>{					
-						this.goodsList=res.data==undefined?0:res.data.goodsList
+					success:res=>{
+						if(res.data==undefined) return
+						this.goodsList=res.data.goodsList
 						this.goodsList.filter(v=>{
 							if(v.flex=='left'){
 								this.goodsLeftList.push(v)
@@ -205,7 +216,7 @@
 				})
 				
 			},
-			
+			//搜索框
 			onClick(item) {
 				console.log(item);
 				if (item == 'suffix') {
@@ -214,8 +225,7 @@
 						sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
 						sourceType: ['album', 'camera'], //从相册选择
 						success: function(res) {
-							console.log(JSON.stringify(res.tempFilePaths));
-
+							uni.$showMsg('按图搜索功能待开发中......', 'none', 2000)
 						},
 						fail: function() {
 							uni.$showMsg('您已取消授权', 'none', 2000)
@@ -227,11 +237,19 @@
 					uni.$showMsg('去搜索页面', 'none', 2000)
 				}
 			},
+			//初始化商品列表
+			init(){
+				this.goodsList=[]
+				this.goodsLeftList=[]
+				this.goodsRightList=[]
+			},
+			//商品分类tabbar
 			click(item, index) {
-				this.activeIndex = index;
+				this.activeIndex = index
                 this.getList(index)
+				this.init()
 
-			}
+			},
 
 		}
 	}

@@ -13,6 +13,12 @@
         "money/money",
         "money/charge"
       ]
+    },
+    {
+      "root": "views/goods",
+      "pages": [
+        "goodsDetail"
+      ]
     }
   ],
   "window": {

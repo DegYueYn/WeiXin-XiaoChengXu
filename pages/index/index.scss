@@ -1,9 +1,7 @@
-*{
-	background-color: #eeeeee;
-}
+
 .content{
 	width: 100%;
-	height: 100%;
+	// height: 100%;
 	background-color: #eeeeee;
 	.content-header{
 		position: sticky;
@@ -318,13 +316,15 @@
 	}
 	.noGoods{
 		width: 100%;
-		margin-top: 70rpx;
-		height: 400rpx;
+		
+		background-color: white;
+		height:100%;
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
 		align-items: center;
 		image{
+			margin-top: 70rpx;
 			border-radius: 20rpx;
 			width: 200rpx;
 			height:200rpx

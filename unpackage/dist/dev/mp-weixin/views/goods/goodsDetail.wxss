@@ -1,0 +1,55 @@
+.time.data-v-4f9e430f {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.time__custom.data-v-4f9e430f {
+  margin-top: 4px;
+  width: 22px;
+  height: 22px;
+  background-color: black;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.time__custom__item.data-v-4f9e430f {
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+}
+.time__doc.data-v-4f9e430f {
+  color: #3c9cff;
+  padding: 0px 4px;
+}
+.time__item.data-v-4f9e430f {
+  color: #606266;
+  font-size: 15px;
+  margin-right: 4px;
+}
+.goodsDetail .goodsDetail-money.data-v-4f9e430f {
+  background-color: #72c36d;
+  height: 150rpx;
+  position: relative;
+}
+.goodsDetail .goodsDetail-money .goodsDetail-money-tag.data-v-4f9e430f {
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+}
+.goodsDetail .goodsDetail-money .goodsDetail-money-money.data-v-4f9e430f {
+  position: absolute;
+  top: 80rpx;
+  left: 20rpx;
+}
+.goodsDetail .goodsDetail-money .goodsDetail-money-Omoney.data-v-4f9e430f {
+  position: absolute;
+  top: 80rpx;
+  left: 130rpx;
+}
+.goodsDetail .goodsDetail-money .goodsDetail-money-other.data-v-4f9e430f {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+}
+

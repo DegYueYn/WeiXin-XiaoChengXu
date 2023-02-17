@@ -1,0 +1,36 @@
+.goodsDetail{
+	.goodsDetail-swiper{
+	}
+	.goodsDetail-money{
+		background-color: rgb(114, 195, 109);
+		height: 150rpx;
+		position: relative;
+		.goodsDetail-money-tag{
+			position: absolute;
+			top:20rpx;
+			left:20rpx;
+		}
+		.goodsDetail-money-money{
+			position: absolute;
+			top:80rpx;
+			left:20rpx;
+		}
+		.goodsDetail-money-Omoney{
+			position: absolute;
+			top:80rpx;
+			left:130rpx;
+		}
+		.goodsDetail-money-other{
+			position: absolute;
+			top:20rpx;
+		    right:20rpx;
+			.goodsDetail-money-other-text{
+				
+			}
+			.goodsDetail-money-other-time{
+				
+			}
+		}
+	}
+
+}

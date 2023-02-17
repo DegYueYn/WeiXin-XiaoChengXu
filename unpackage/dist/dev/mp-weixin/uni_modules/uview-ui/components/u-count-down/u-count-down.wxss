@@ -1,0 +1,15 @@
+view.data-v-463368ae, scroll-view.data-v-463368ae, swiper-item.data-v-463368ae {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: auto;
+  align-items: stretch;
+  align-content: flex-start;
+}
+.u-count-down__text.data-v-463368ae {
+  color: #606266;
+  font-size: 15px;
+  line-height: 22px;
+}
+
