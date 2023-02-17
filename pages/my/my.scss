@@ -1,0 +1,115 @@
+
+.my{
+	height: 100vh;
+	width: 100vw;
+	background-color: rgb(244, 245, 247);
+.my-user-info{
+ background: url('https://inews.gtimg.com/newsapp_bt/0/12001803206/1000.jpg')no-repeat center;
+ object-fit:scale-down;
+ display: flex;
+ justify-content:center;
+ flex-direction: column;
+ align-content: center;
+}
+.my-user-info-icon{
+	display: flex;
+	justify-content: center;
+	image{
+		border-radius: 50%;
+		width: 150rpx;
+		height: 150rpx;
+	}
+}
+.my-user-info-nickname{
+	margin-top: 30rpx;
+	text-align: center;
+	font-weight: 600;
+	font-size: 36rpx;
+}
+.function-money{
+	width: 95%;
+	margin: -90rpx auto;
+	height: 160rpx;
+	display: flex;
+	border-radius: 12rpx;
+	background-color: rgb(255, 255, 255);
+	.function-money-left{
+		width: 50%;
+		font-size: 30rpx;	
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		border-radius: 12rpx 0 0 12rpx;
+		border-right: 1rpx solid black;
+		image{
+			margin-left: 20rpx;
+			// display: block;
+			// margin: 0 auto;
+			// margin-top: 10rpx;
+			// margin-bottom: 10rpx;
+			width: 60rpx;
+			height: 60rpx;
+			
+		}
+		.left{
+			// margin-top: 20rpx;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			.money{
+				margin-top: 20rpx;
+				
+			}
+		}
+
+		
+	}
+	.function-money-right{
+		border-radius: 0 12rpx 12rpx 0;
+		border: none;
+		image{
+			margin-left: -20rpx;
+		}
+		.left{
+			margin-left: -20rpx;
+		}
+	}
+}	
+}
+.No-login{
+	height: 100vh;
+	width: 100vw;
+	background-color:#faefbe;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.img{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		image{
+		margin-bottom: 40rpx;
+		width: 200rpx;
+		height: 200rpx;
+		border-radius: 20rpx;
+		}
+		.btn{
+			// background-color:#faefbe;
+			background-color:#ffaa00; 
+			border-radius: 60rpx;
+			color: white;
+			width: 300rpx;
+			border: none;
+			line-height: 80rpx;
+			font-size: 40rpx;
+			letter-spacing: 5rpx;
+		}
+}
+		
+	}
+	
+
+	
+

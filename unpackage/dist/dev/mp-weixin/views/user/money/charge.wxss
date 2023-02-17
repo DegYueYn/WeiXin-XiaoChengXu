@@ -1,0 +1,57 @@
+.charge-Box.data-v-5635fb28 {
+  height: 100vh;
+  width: 100%;
+  background-color: #f5f5f5;
+  padding-top: 30rpx;
+}
+.charge-Box .charge-box.data-v-5635fb28 {
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  height: 300rpx;
+  width: 90%;
+  padding: 30rpx;
+  margin: 0 auto;
+  background-color: white;
+}
+.charge-Box .charge-box .charge-old.data-v-5635fb28 {
+  text-align: center;
+  font-weight: 600;
+}
+.charge-Box .charge-box .charge.data-v-5635fb28 {
+  margin-top: 30rpx;
+  line-height: 60rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.charge-Box .charge-box .charge-new.data-v-5635fb28 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30rpx;
+  line-height: 60rpx;
+}
+.charge-Box .charge-box .charge-new .charge-new-money.data-v-5635fb28 {
+  margin: 0 auto;
+}
+.charge-Box .btn-box.data-v-5635fb28 {
+  position: fixed;
+  bottom: 0rpx;
+  left: 0;
+  height: 150rpx;
+  width: 100vw;
+  background-color: white;
+}
+.charge-Box .btn-box .btn.data-v-5635fb28 {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  height: 80rpx;
+  color: white;
+  border-radius: 40rpx;
+  background-color: red;
+}
+

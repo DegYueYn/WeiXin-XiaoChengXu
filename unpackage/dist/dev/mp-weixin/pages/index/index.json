@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "爱回收",
+  "backgroundColorTop": "#ffffff",
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "uni-easyinput": "/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput"
+  }
+}

@@ -1,0 +1,339 @@
+*{
+	background-color: #eeeeee;
+}
+.content{
+	width: 100%;
+	height: 100%;
+	background-color: #eeeeee;
+	.content-header{
+		position: sticky;
+		top: 0px;
+		left:0;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		padding-left: 20rpx;
+		.flex-box-title{
+			color: white;
+			.title1{
+			font-size: 36rpx;
+			letter-spacing: 4rpx;	
+			}
+			.title2{
+				margin-top: 5rpx;
+			margin-left: 5rpx;
+			font-size: 20rpx;
+			letter-spacing: 2rpx;	
+			}
+
+		}
+		.search{			
+			margin-top: 20rpx; 
+			/deep/ .uni-easyinput__content{
+				margin-left: 5rpx;
+				width: 95%;
+				height: 70rpx;
+				border-radius: 40rpx;
+			}
+			
+		}
+		.flex{
+			
+			
+			box-sizing: border-box;
+			height: 100rpx;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-direction: row;
+			overflow:auto;
+			.flex-box{
+				padding-right: 20rpx;
+			  margin-top: 80rpx;
+			  margin: 0 auto;
+			  .flex-box-tar{
+				  text-align: center;
+				width: 90rpx;
+				color: white;
+				font-size: 30rpx;
+			}
+			.active{
+				font-size: 38rpx;
+				padding-bottom: 10rpx;
+				border-bottom: 4rpx solid #fffae8;
+				
+			}
+				
+			}
+		}	
+	}
+    .goodsBox{
+		// height: 100%;
+		width: 100vw;
+		margin-top: 10rpx;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		box-sizing: border-box;
+		.goodsBox-inner{
+			width: 96%;
+			height: 100%;
+			display: flex;
+			justify-content: space-between;
+			.goodsBox-inner-left {
+				height: 100%;
+				width: 49%;
+				margin-bottom: 20rpx;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				// background-color: #55aaff;
+				
+				.goodsBox-inner-left-box{
+					background-color: white;
+					margin-bottom: 10rpx;
+					width: 100%;
+					border-radius: 10rpx;
+					.goodsBox{
+						margin-top: 0;
+						display: block;
+						width: 100%;
+											
+						.goodsBox-img{
+							width: 100%;
+							
+							image{
+								border-radius: 10rpx 10rpx 0 0;
+								width: 100%;
+								height: 400rpx;
+							}
+						}
+						.goodsBox-title{
+							font-size: 24rpx;
+							margin-left: 20rpx;
+							font-weight: 600;
+							white-space: nowrap;
+							overflow: hidden;
+							text-overflow: ellipsis;
+						}
+						.goodsBox-discount-saleCount{
+							margin-top: 10rpx;
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+							.goodsBox-discount{
+								width: 80rpx;
+								text-align: center;
+								margin-left: 20rpx;
+								font-size: 20rpx;
+								color: coral;
+								
+								font-weight: 600;
+								background-color: white;
+								border: 3rpx solid coral;
+								letter-spacing: 3rpx;
+								border-radius: 10rpx;								
+							}
+							.goodsBox-saleCount{
+								margin-right: 20rpx;
+								font-size: 20rpx;
+								color: gray;								
+								font-weight: 600;								
+								
+								
+							}
+						}
+						
+						.goodsBox-price{
+							margin-top: 5rpx;
+							margin-left: 20rpx;
+							color: coral;
+							font-size: 39rpx;
+							font-weight: 600;
+							.price-icon{
+								font-size: 24rpx;
+							}
+
+							.Oprice{
+								color: grey;
+								margin-left: 15rpx;
+								font-size: 24rpx;
+								text-decoration: line-through;
+							}
+						}
+						.goodsBox-rank{
+							margin-bottom: 20rpx;
+							margin-left: 20rpx;
+							margin-top: 10rpx;
+							font-size: 20rpx;
+							height: 30rpx;
+							background-color: #ffffff;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							color: #e99b00;
+							width: 300rpx;
+							border-radius: 5rpx;
+							font-weight: 600;
+							image{
+								width: 30rpx;
+								height: 30rpx;
+							}
+						}
+						
+					}
+				}	
+			     .bottom-box{
+					 width: 100%;
+					 margin-left: 10rpx;
+					 background-color: white;
+					  border-radius: 10rpx;
+					 image{
+						 width:100%;
+						 height: 300rpx;
+						 border-radius: 10rpx;
+					 }
+				 }
+			}
+			.goodsBox-inner-right{
+				height: 100%;
+				width: 49%;
+				margin-bottom: 20rpx;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				.top-box{
+					width: 100%;
+					margin-right: 10rpx;
+					background-color: white;
+					 border-radius: 10rpx;
+					 margin-bottom: 10rpx;
+					image{									
+						 width:100%;
+						 height: 280rpx;
+						 border-radius: 10rpx;				
+					}
+				}
+				.goodsBox-inner-right-box{
+					background-color: white;
+					margin-bottom: 10rpx;
+					width: 100%;
+					border-radius: 10rpx;
+					.goodsBox{
+						margin-top: 0;
+						display: block;
+						width: 100%;
+						.goodsBox-img{
+							width: 100%;
+							image{
+								border-radius: 10rpx 10rpx 0 0;
+								width: 100%;
+								height: 400rpx;
+								
+							}
+						}
+						.goodsBox-title{
+							font-size: 24rpx;
+							margin-left: 20rpx;
+							font-weight: 600;
+							white-space: nowrap;
+							overflow: hidden;
+							text-overflow: ellipsis;
+						}
+						.goodsBox-discount-saleCount{
+							margin-top: 10rpx;
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+							.goodsBox-discount{
+								width: 80rpx;
+								text-align: center;
+								margin-left: 20rpx;
+								font-size: 20rpx;
+								color: coral;
+								
+								font-weight: 600;
+								background-color: white;
+								border: 3rpx solid coral;
+								letter-spacing: 3rpx;
+								border-radius: 10rpx;
+							}
+							.goodsBox-saleCount{
+								margin-right: 20rpx;
+								font-size: 20rpx;
+								color: gray;								
+								font-weight: 600;	
+								
+							}
+						}
+						.goodsBox-price{
+							margin-top: 5rpx;
+							margin-left: 20rpx;
+							color: coral;
+							font-size: 39rpx;
+							font-weight: 600;
+							.price-icon{
+								font-size: 24rpx;
+								
+							}
+							.Oprice{
+								color: grey;
+								margin-left: 15rpx;
+								font-size: 24rpx;
+								text-decoration: line-through;
+								
+							}
+						}
+						.goodsBox-rank{
+							margin-bottom: 20rpx;
+							margin-left: 20rpx;
+							margin-top: 10rpx;
+							font-size: 20rpx;
+							height: 30rpx;
+							background-color: #ffffff;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							color: #e99b00;
+							width: 300rpx;
+							border-radius: 5rpx;
+							font-weight: 600;
+							image{
+								width: 30rpx;
+								height: 30rpx;
+								
+							}
+						}
+					}
+				}
+				
+				
+				
+				
+			}
+		}
+		
+	}
+	.noGoods{
+		width: 100%;
+		margin-top: 70rpx;
+		height: 400rpx;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		image{
+			border-radius: 20rpx;
+			width: 200rpx;
+			height:200rpx
+		}
+		p{
+			margin-top: 50rpx;
+			font-size: 30rpx;
+			color: #55aaff;
+		}
+	}
+	
+}

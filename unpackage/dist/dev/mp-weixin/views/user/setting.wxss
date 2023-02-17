@@ -1,0 +1,36 @@
+.Setting.data-v-f4f8acca {
+  background-color: #f4f5f7;
+  height: 100vh;
+  width: 100vw;
+  margin-top: 20rpx;
+}
+.Setting .flex-box .Flex.data-v-f4f8acca {
+  background-color: white;
+  height: 80rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid gainsboro;
+}
+.Setting .flex-box .Flex .Key.data-v-f4f8acca {
+  margin-left: 20rpx;
+}
+.Setting .flex-box .Flex .Value.data-v-f4f8acca {
+  margin-right: 40rpx;
+}
+.Setting .btn.data-v-f4f8acca {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50rpx;
+}
+.Setting .btn button.data-v-f4f8acca {
+  border-radius: 40rpx;
+  background-color: red;
+  color: white;
+  font-size: 28rpx;
+  width: 70%;
+  line-height: 80rpx;
+}
+
