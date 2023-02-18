@@ -1,4 +1,7 @@
 .goodsDetail{
+	background-color: #eeeeee;
+	position: relative;
+	height: 100vh;
 	.goodsDetail-swiper{
 	}
 	.goodsDetail-money{
@@ -9,28 +12,168 @@
 			position: absolute;
 			top:20rpx;
 			left:20rpx;
+			font-size: 28rpx;
+			font-weight: 500;
+			color: white;
+			letter-spacing: 2rpx;
 		}
 		.goodsDetail-money-money{
+			text{
+				font-size: 20rpx;
+			}
 			position: absolute;
-			top:80rpx;
+			top:80rpx;			
+			line-height: 30rpx;
 			left:20rpx;
+			font-weight: 600;
+			color: white;
 		}
 		.goodsDetail-money-Omoney{
 			position: absolute;
-			top:80rpx;
-			left:130rpx;
+			top:82rpx;
+			color: white;
+			left:160rpx;
+			font-size: 24rpx;
+			line-height: 30rpx;
+			text-decoration: line-through;
+			text{
+				margin-left: 5rpx;
+			}
 		}
 		.goodsDetail-money-other{
 			position: absolute;
 			top:20rpx;
 		    right:20rpx;
+			border-left: 1rpx dashed gainsboro;
 			.goodsDetail-money-other-text{
+				width: 90rpx;
+				margin: 0 auto;
+				font-weight: 600;
+				font-size: 26rpx;
+				color: white;
 				
 			}
 			.goodsDetail-money-other-time{
+				margin-left: 20rpx;				
+			}
+		}
+	}
+    .goodsDetail-title{
+		width: 96%;
+		border-radius: 10rpx;		
+		margin: 10rpx auto;
+		height: 180rpx;
+		font-size: 28rpx;
+		display: flex;
+		background-color: white;
+		.goodsDetail-title-title{
+			width: 80%;			
+			margin-left: 20rpx;
+			.title{
+				margin-top: 10rpx;
+				letter-spacing: 1rpx;
+				    overflow: hidden;
+					text-overflow: ellipsis;
+					display: -webkit-box;  //使用自适应布局
+					-webkit-line-clamp: 2;  //设置超出行数，要设置超出几行显示省略号就把这里改成几
+					-webkit-box-orient: vertical;
+			}
+			.title-tag{
+				margin-top: 30rpx;
+				height: 50rpx;
+				display: flex;
+				justify-content:space-between;
+				align-items: center;
+				.title-tag-box{
+					display: flex;
+					justify-content:space-around;
+					align-items: center;
+					background-color: #ffe5cb;
+					border-radius: 10rpx;					
+				view{
+					padding: 10rpx;
+					line-height: 30rpx;
+					font-size: 22rpx;
+					border-radius: 5rpx;
+					letter-spacing: 2rpx;
+					color:coral;
+					font-weight: 600;
+					
+					
+				}	
+				}
+				
+			}
+		}
+	    .goodsDetail-title-share{
+			width: 20%;
+			.goodsDetail-title-share-icon{
+				display: flex;
+				margin-top: 10rpx;
+				justify-content: space-around;
+				align-items: center;
+				
+				image{
+					width: 40rpx;
+					height: 40rpx;
+				}
+			}
+			.goodsDetail-title-share-text{
+				margin-top: 5rpx;
+				display: flex;
+				justify-content: space-around;
+				text{
+					font-size: 20rpx;
+				}
+			}
+			
+		}
+	 
+	}
+	uni-popup{
+		.share-box{
+			text-align: center;
+			height: 320rpx;
+			padding-top: 20rpx;
+			border-radius: 10rpx;
+			.share-box-icon{
+				margin-top: 50rpx;
+				display: flex;
+				justify-content: space-around;
+				.btn{
+					background-color: white;
+					width: 60rpx;
+					height: 60rpx;
+					border: none;
+					outline: none;
+					box-sizing:content-box;
+					// line-height: 100rpx;
+					.img{
+						width: 60rpx;
+						height: 60rpx;
+					}
+				}
+				.btn:after {
+					border: none;
+				}
+				
+				
+			}
+			.share-box-text{
+				height: 80rpx;
+				display: flex;
+				font-size: 26rpx;
+				justify-content: space-around;
+				align-items: center;
+				padding-bottom: 10rpx;
+				border-bottom: 1rpx solid lightgray;
+			}
+			.exit{
+				margin-top: 20rpx;
+				color: #55aaff;
 				
 			}
 		}
 	}
-
+	
 }
