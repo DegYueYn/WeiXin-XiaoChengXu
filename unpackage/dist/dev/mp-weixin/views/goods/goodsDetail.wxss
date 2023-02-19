@@ -195,6 +195,26 @@
 .goodsDetail .goodsDetail-title .goodsDetail-title-share .goodsDetail-title-share-text text.data-v-4f9e430f {
   font-size: 20rpx;
 }
+.goodsDetail .goodsDetail-bottom.data-v-4f9e430f {
+  margin: 0 auto;
+  background-color: white;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+}
+.goodsDetail .goodsDetail-bottom .text.data-v-4f9e430f {
+  padding-left: 20rpx;
+  line-height: 20rpx;
+  border-left: 6rpx solid red;
+  margin-left: 20rpx;
+  padding-top: 20rpx;
+  padding-bottom: 30rpx;
+}
+.goodsDetail .goodsDetail-bottom .goodsDetail-bottom-box.data-v-4f9e430f {
+  width: 100%;
+}
+.goodsDetail .goodsDetail-bottom .goodsDetail-bottom-box image.data-v-4f9e430f {
+  width: 100%;
+}
 .goodsDetail uni-popup .share-box.data-v-4f9e430f {
   text-align: center;
   height: 320rpx;

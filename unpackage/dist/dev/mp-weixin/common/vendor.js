@@ -1464,7 +1464,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_NAME":"小程序","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"小程序","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -8556,7 +8556,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_NAME":"小程序","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"小程序","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -8577,14 +8577,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_NAME":"小程序","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"小程序","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_NAME":"小程序","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"小程序","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -8670,7 +8670,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_NAME":"小程序","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"小程序","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -18497,7 +18497,7 @@ Mock.mock('/api/goodsDetail', function (optins) {
       {
         "goodsId": 1,
         "goodsName": "Clever&Ketch小众包包女2023新款潮秋冬复古大容量托特包单肩包",
-        "goodsImg": "https://gw.alicdn.com/imgextra/O1CN01YnIDKa1gwOeFm6kvm_!!2207281504206.jpg_Q75.jpg_.webp",
+        "goodsImg": "https://gw.alicdn.com/imgextra/O1CN01YnIDKa1gwOeFm6kvm_!!2207281504206.jpg_Q75.jpg",
         "saleCount": "1000+",
         "salePrice": 299,
         "tag": '上新价',
@@ -18577,7 +18577,7 @@ Mock.mock('/api/goodsDetail', function (optins) {
       goodsDetail: {
         "goodsId": 3,
         "goodsName": "竹节和田玉手链纯银女款2023年新款轻奢小众手饰情人节礼物送女友",
-        "goodsImg": "https://gw.alicdn.com/imgextra/O1CNA11xyyl51rwMPGz4XXL_!!3070955695-0-psf.jpg_Q75.jpg_.webp",
+        "goodsImg": "https://gw.alicdn.com/imgextra/O1CNA11xyyl51rwMPGz4XXL_!!3070955695-0-psf.jpg_Q75.jpg",
         "saleCount": "600+",
         "salePrice": 158,
         "expirationTime": 1677951311,
@@ -18616,7 +18616,7 @@ Mock.mock('/api/goodsDetail', function (optins) {
       goodsDetail: {
         "goodsId": 4,
         "goodsName": "早春季2023新款茶系穿搭一整套微胖盐系轻熟高级感韩剧小香风套装",
-        "goodsImg": "https://gw.alicdn.com/imgextra/i3/2202600873766/O1…oxmR_!!2202600873766-0-lubanu-s.jpg_Q75.jpg_.webp",
+        "goodsImg": "https://img.alicdn.com/imgextra/i2/2202600873766/O1CN01trCUIT1dgsK202OT0_!!2202600873766.jpg",
         "saleCount": "100+",
         "salePrice": 69.9,
         "expirationTime": 1677037711,
@@ -18656,7 +18656,7 @@ Mock.mock('/api/goodsDetail', function (optins) {
       goodsDetail: {
         "goodsId": 5,
         "goodsName": "【学院风穿搭】牛仔马甲男女ins潮牌工装外套痞帅炸街夹克背心",
-        "goodsImg": "https://gw.alicdn.com/imgextra/i3/2935603592/O1CN01uXcSYZ1cPBHtINFr6_!!2935603592.jpg_Q75.jpg_.webp",
+        "goodsImg": "https://gw.alicdn.com/imgextra/i3/2935603592/O1CN01uXcSYZ1cPBHtINFr6_!!2935603592.jpg_Q75.jpg",
         "saleCount": "66",
         "salePrice": 79,
         "expirationTime": 1677937711,
@@ -18694,7 +18694,7 @@ Mock.mock('/api/goodsDetail', function (optins) {
       goodsDetail: {
         "goodsId": 6,
         "goodsName": "生日礼物男生实用高档送男友男朋友老公男士小众高级的惊喜情人节",
-        "goodsImg": "https://gw.alicdn.com/imgextra/i3/195729828/O1CN01…MTHGocxPX3_!!195729828.jpg_110x10000Q75.jpg_.webp",
+        "goodsImg": "https://img.alicdn.com/imgextra/i4/195729828/O1CN01NFZEd32MTHGtY7uPl_!!195729828.jpg",
         "saleCount": "5",
         "salePrice": 199,
         "expirationTime": 1678937711,
@@ -18732,7 +18732,7 @@ Mock.mock('/api/goodsDetail', function (optins) {
       goodsDetail: {
         "goodsId": 7,
         "goodsName": "全新佳能EOS700D 750D 800D 100D入门级单反相机学生旅游高清数码",
-        "goodsImg": "https://gw.alicdn.com/imgextra/i3/195729828/O1CN01…MTHGocxPX3_!!195729828.jpg_110x10000Q75.jpg_.webp",
+        "goodsImg": "https://gw.alicdn.com/imgextra/i3/195729828/O1CN01…MTHGocxPX3_!!195729828.jpg_110x10000Q75.jpg",
         "saleCount": "100+",
         "salePrice": 4999,
         "expirationTime": 1678937711,
@@ -27655,6 +27655,7 @@ var saveImg = function saveImg(url, callback) {
               url: url,
               success: function success(data) {
                 if (data.statusCode == 200) {
+
                   uni.saveImageToPhotosAlbum({
                     filePath: data.tempFilePath,
                     success: function success() {
@@ -27665,6 +27666,7 @@ var saveImg = function saveImg(url, callback) {
 
                     },
                     fail: function fail(e) {
+                      // console.log("e",e);
                       uni.hideLoading();
                       tip({
                         title: '下载失败，错误原因：' + e.errMsg,

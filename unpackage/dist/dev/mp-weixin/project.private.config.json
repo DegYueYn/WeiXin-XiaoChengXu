@@ -3,7 +3,8 @@
   "projectname": "小程序",
   "setting": {
     "compileHotReLoad": true,
-    "preloadBackgroundData": false
+    "preloadBackgroundData": false,
+    "urlCheck": false
   },
   "libVersion": "2.30.0",
   "condition": {

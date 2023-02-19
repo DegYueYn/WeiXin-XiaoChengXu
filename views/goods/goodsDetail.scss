@@ -130,6 +130,28 @@
 		}
 	 
 	}
+	.goodsDetail-bottom{
+		margin: 0 auto;
+		background-color: white;
+		// margin-left: 20rpx;
+		margin-top: 20rpx;
+		border-radius: 10rpx;
+		.text{
+			padding-left: 20rpx;
+			line-height: 20rpx;
+			border-left: 6rpx solid red;
+			margin-left: 20rpx;
+			padding-top: 20rpx;
+			padding-bottom: 30rpx;
+		}
+		.goodsDetail-bottom-box{
+			width: 100%;
+			// margin-top: 20rpx;
+			image{
+				width: 100%;
+			}
+		}
+	}
 	uni-popup{
 		.share-box{
 			text-align: center;

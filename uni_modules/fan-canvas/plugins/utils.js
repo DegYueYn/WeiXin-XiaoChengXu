@@ -16,8 +16,9 @@ export const saveImg = function(url,callback) {
 							url: url,
 							success: data => {
 								if (data.statusCode == 200) {
+								
 									uni.saveImageToPhotosAlbum({
-										filePath: data.tempFilePath,
+										filePath:data.tempFilePath ,
 										success: () => {
                                             uni.hideLoading();
 											callback && callback();
@@ -26,6 +27,7 @@ export const saveImg = function(url,callback) {
 											});
 										},
                                         fail(e) {
+											// console.log("e",e);
                                             uni.hideLoading();
                                             tip({
                                                 title: '下载失败，错误原因：' + e.errMsg,
