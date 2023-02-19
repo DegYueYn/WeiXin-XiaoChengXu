@@ -72,7 +72,7 @@
 			</view>
 		</view>
 		<view class="goodsDetail-btn">
-			<
+			
 			
 		</view>
 		

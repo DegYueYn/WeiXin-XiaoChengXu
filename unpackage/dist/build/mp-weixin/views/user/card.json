@@ -1,8 +1,0 @@
-{
-  "onReachBottomDistance": 50,
-  "enablePullDownRefresh": true,
-  "navigationBarTitleText": "我的卡券",
-  "usingComponents": {
-    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup"
-  }
-}
