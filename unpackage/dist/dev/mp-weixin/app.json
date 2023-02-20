@@ -19,6 +19,12 @@
       "pages": [
         "goodsDetail"
       ]
+    },
+    {
+      "root": "views/address",
+      "pages": [
+        "addAdress"
+      ]
     }
   ],
   "window": {

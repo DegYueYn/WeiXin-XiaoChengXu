@@ -10,7 +10,7 @@
 			<view class="goodsDetail-money-tag">{{goodsInfo.tag}}</view>
 			<view class="goodsDetail-money-money">
 				<text>￥</text>
-				{{(goodsInfo.salePrice).toFixed(2)}}
+				{{Number(goodsInfo.salePrice).toFixed(2)}}
 			</view>
 			<view class="goodsDetail-money-Omoney">
 				<text>￥</text>
@@ -72,11 +72,73 @@
 			</view>
 		</view>
 		<view class="goodsDetail-btn">
-			
+			<view class="goodsDetail-btn-left" v-for="(item,index) in btnList" :key="index">
+				<view class="img">
+					<image :src="item.icon" mode="scaleToFill" @click="goWhere(item)"></image>
+				</view>
+				<view class="name">{{item.name}}</view>
+			</view>
+			<view class="kefu">
+				<button type="default" plain open-type="contact" style=" border: none;">
+					<image class="kefu" src="/static/goodsDetail/service.png"></image>
+					
+				</button>
+				<view>客服</view>
+				
+			</view>
+			<view class="goodsDetail-btn-right">
+				<view class="add" @click="openselectItem('add')" >加入购物车</view>
+				<view class="buy" @click="openselectItem('buy')" >立即购买</view>
+			</view>
 			
 		</view>
-		
-		
+		<!-- 加入购物车 -->
+		<uni-popup class="pop" type="bottom"  ref="selectItem"  safeArea backgroundColor="#eee" catchtouchmove="true" >
+			<view class="MoneyItem">
+				<image :src="goodsInfo.goodsImg"></image>
+				<view class="money" ><text>￥</text>{{Number(goodsInfo.marketPrice*number).toFixed(2)}}</view>
+				<view class="money money2" ><text>折后￥</text>{{Number(goodsInfo.salePrice*number).toFixed(2)}}</view>
+			    <view class="colseIcon" >
+					<u-icon name="close-circle" size="20px" @click="closeselectItem"></u-icon>
+				</view>
+			</view>
+			<view class="addAd" @click="toAddress">
+				+增加收货地址
+			</view>
+			<view class="classifyText">分类</view>
+			<view class="classify" >				
+				<view class="classifyFlexbox" v-for="(item,index) in list" :key="index" >
+					<view class="img"@click="chooseItem(item,index)" :class="Itemindex==index?'active':''" ><image :src="item" ></image></view>
+				    <!-- <view>{{`${index+1}`}}</view> -->
+				</view>
+			</view>
+			<text class="classifyText">尺码</text>
+			<view class="size">
+				<view class="sizeFlexbox" v-for="(item,index) in sizeList" :key="index">
+					<button type="default" plain  @click="chooseSize(item,index)" :class="Sizeindex==index?'activeClass':''">{{item.title}}</button>
+				</view>
+				
+			</view>
+			<view class="num">
+				<view class="num-text">数量</view>				
+				<view class="num-button">
+					<view class="desc" @click="descNumber">-</view>
+					<view class="input"><input type="number" v-model="number" /> </view>
+					<view class="add" @click="addNumber">+</view>
+				</view>
+				
+			</view>
+			<view class="remark">
+				<view>备注:</view>
+				<input type="text" v-model="note" placeholder="给卖家留言" />
+			</view>
+			
+			<view class="buyBox">
+				<view class="buyNow">立即支付￥{{Number(goodsInfo.salePrice*number)}}</view>
+			</view>
+			
+			
+		</uni-popup>
 		<uni-popup ref="share" type="share" safeArea backgroundColor="#fff">
 			<view class="share-box">
 				<text>分享</text>
@@ -84,7 +146,7 @@
 					<button class="btn" open-type="share">
 						<image class="img" src="/static/goodsDetail/wechat.png" mode="aspectFit"></image>
 					</button>
-					<button class="btn" @click="createGoodsPoster">
+					<button class="btn" @click.self="createGoodsPoster" @touchmove.prevent @mousewheel.prevent>
 						<image class="img" src="/static/goodsDetail/download.png" mode="aspectFit"></image>
 					</button>
 				</view>
@@ -96,7 +158,7 @@
 			</view>
 
 		</uni-popup>
-		<view class="canvasBox" v-if="canvasImg">
+		<view class="canvasBox" v-if="canvasImg" catchtouchmove="true">
 			<view class="canvasItem">
 				<image mode="widthFix" style="width:500rpx;height:500rpx" :src="canvasImg"></image>
 			</view>
@@ -126,6 +188,16 @@
 
 		data() {
 			return {
+				number:1,
+				sizeList:[
+					{title:'S【建议100斤以内】'},
+					{title:'M【建议100-115斤】'},
+					{title:'L【建议115-130斤】'},
+					{title:'XL【建议130-140斤】'},
+					{title:'XXL【建议140-160斤】'},				
+				],
+				Itemindex:0,
+				Sizeindex:0,
 				goodsImg: '',
 				canvasImg: '', //生成的海报图片
 				qrcodeImg: '', //二维码本地图片
@@ -136,6 +208,13 @@
 				list: [],
 				timeData: {},
 				time: '',
+				btnList:[{
+					icon:'/static/goodsDetail/store.png',
+					name:'店铺'
+				},{
+					icon:'/static/goodsDetail/car.png',
+					name:'购物车'
+				}],
 				tagList: [{
 						'tag': '购买得积分'
 					},
@@ -157,13 +236,111 @@
 
 		},
 		methods: {
+			descNumber(){
+				if(this.number<=1)
+				{uni.$showMsg('不能再少了','none',2000)}
+				else{
+					this.number--
+				}
+			},
+			addNumber(){
+				this.number++
+				
+			},
+			toAddress(){
+				uni.navigateTo({
+					url:"/views/address/addAdress"
+				})
+			},
+			
+			//购买或购物车按钮
+			openselectItem(item){
+				if(item=='buy'){
+					this.$refs.selectItem.open()
+					
+				}
+			},
+			// 选择尺寸
+			chooseSize(e,i){
+				this.Sizeindex=i
+				console.log('尺寸',e.title);
+				
+			},
+			// 选择分类
+			chooseItem(e,i){
+				console.log('分类',e);
+				this.goodsInfo.goodsImg=e
+				this.Itemindex=i
+				
+			},
+			// 关闭购买弹窗
+			closeselectItem(){
+				this.$refs.selectItem.close()
+			},
+			
+			//底部购买栏按钮
+			goWhere(item){
+				console.log(item);
+				if(item.name=='店铺'){
+					uni.$showMsg('查看店铺功能开发中...','none',2000)
+				}else if(item.name=='客服'){
+					
+				} else if(item.name=='购物车'){
+					uni.$showMsg('去购物车页面','none',2000)
+				}
+			},
+
+			
+				//点击微信分享出现的dialog
+			showDialog() {
+				this.$refs.share.open()
+			},
+			hideDialog() {
+				this.$refs.share.close()
+			},
+             //获取详情
+			getDetail(item) {
+				uni.request({
+					url: '/api/goodsDetail',
+					data: {
+						"goodsId": Number(item)
+					},
+					success: res => {
+						console.log(res.data.goodsDetail);
+						if (res.data.code == 200) {
+							this.goodsInfo = res.data.goodsDetail
+							this.goodsImg = this.goodsInfo.goodsImg
+							// console.log('goodsImg', this.goodsImg);
+							this.time = this.goodsInfo.expirationTime * 1000 - Number(new Date()
+								.getTime())
+							for (let img in res.data.goodsDetail.goodsDetail) {
+								this.list.push(res.data.goodsDetail.goodsDetail[img].img)
+
+							}
+							console.log(this.list);
+
+						}
+					}
+				})
+			},
+			changeIcon() {
+				this.change = !this.change
+				uni.$showMsg(`${this.change?'收藏成功':'已取消收藏'}`, 'none', 2000)
+			},
+			//倒计时
+			onChange(e) {
+				this.timeData = e
+				// console.log(e);
+			},
 			async createGoodsPoster() {
+			
+				
 				this.hideDialog()
 				if (this.canvasImg) {
 					return
 				}
 				var that = this;
-
+			
 				uni.showLoading({
 					title: '海报生成中'
 				});
@@ -186,7 +363,7 @@
 					// 绘制商品图片
 					_canvas.drawImgCover(ctx, logo, 0, 0, cvsW, goodsH);
 					ctx.restore();
-
+			
 					// 价格符号
 					// ctx.setFillStyle('#ff0036')
 					// ctx.font = "24px" + family
@@ -194,7 +371,7 @@
 					// 价格
 					// ctx.font = "30px" + family
 					// ctx.fillText(`会员价:${this.goodsInfo.salePrice}`, 50, 450)
-
+			
 					// 绘制圆角按钮
 					// 参数：cxt、背景颜色、x坐标、y坐标、宽度、高度、圆角、文字、文字颜色、文字位置
 					ctx.font = '22px' + family
@@ -237,7 +414,7 @@
 							success(res) {
 								uni.hideLoading();
 								that.canvasImg = res.tempFilePath;
-
+			
 							}
 						}, that)
 					}, 500)
@@ -254,7 +431,7 @@
 				let imgUrl = "";
 				if (this.canvasImg) {
 					imgUrl = await this.canvasImg;
-
+			
 					saveImg(imgUrl)
 				}
 			},
@@ -278,44 +455,6 @@
 						}
 					}, that)
 				})
-			},
-			showDialog() {
-				this.$refs.share.open()
-			},
-			hideDialog() {
-				this.$refs.share.close()
-			},
-
-			getDetail(item) {
-				uni.request({
-					url: '/api/goodsDetail',
-					data: {
-						"goodsId": Number(item)
-					},
-					success: res => {
-						console.log(res.data.goodsDetail);
-						if (res.data.code == 200) {
-							this.goodsInfo = res.data.goodsDetail
-							this.goodsImg = this.goodsInfo.goodsImg
-							// console.log('goodsImg', this.goodsImg);
-							this.time = this.goodsInfo.expirationTime * 1000 - Number(new Date()
-								.getTime())
-							for (let img in res.data.goodsDetail.goodsDetail) {
-								this.list.push(res.data.goodsDetail.goodsDetail[img].img)
-
-							}
-
-						}
-					}
-				})
-			},
-			changeIcon() {
-				this.change = !this.change
-				uni.$showMsg(`${this.change?'收藏成功':'已取消收藏'}`, 'none', 2000)
-			},
-			onChange(e) {
-				this.timeData = e
-				// console.log(e);
 			},
 
 		}

@@ -19,15 +19,8 @@
         },
         {
           "name": "",
-          "pathName": "views/user/money/money",
+          "pathName": "views/address/addAdress",
           "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "views/goods/goodsDetail",
-          "query": "goodsId=1",
           "launchMode": "default",
           "scene": null
         }

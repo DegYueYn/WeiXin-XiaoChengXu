@@ -80,6 +80,18 @@
 				}
 			]
 			
+		},
+		{
+			"root": "views/address",
+			"pages": [
+				{
+					"path": "addAdress",
+					"style": {
+						"navigationBarTitleText": "地址管理"
+					}
+				}
+			]
+			
 		}
 	],
 	//分包
