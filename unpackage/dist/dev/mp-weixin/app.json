@@ -23,7 +23,8 @@
     {
       "root": "views/address",
       "pages": [
-        "addAdress"
+        "address",
+        "add"
       ]
     }
   ],

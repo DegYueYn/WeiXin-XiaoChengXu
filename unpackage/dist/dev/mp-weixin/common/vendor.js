@@ -27298,7 +27298,55 @@ Mock.mock('/api/goodsDetail', function (optins) {
 /* 165 */,
 /* 166 */,
 /* 167 */,
-/* 168 */,
+/* 168 */
+/*!***********************************************!*\
+  !*** C:/Users/DYY/Desktop/小程序/utils/index.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.sliceWord = exports.isMobile = exports.happenTimeFun = void 0;
+/**
+                                                                                                                                                   * 日期格式化
+                                                                                                                                                   * @param {*} num
+                                                                                                                                                   */
+var happenTimeFun = function happenTimeFun(num) {//时间戳数据处理
+  var date = new Date(num * 1000);
+  //时间戳为10位需*1000，时间戳为13位的话不需乘1000
+  var y = date.getFullYear();
+  var MM = date.getMonth() + 1;
+  MM = MM < 10 ? '0' + MM : MM; //月补0
+  var d = date.getDate();
+  d = d < 10 ? '0' + d : d; //天补0
+  var h = date.getHours();
+  h = h < 10 ? '0' + h : h; //小时补0
+  var m = date.getMinutes();
+  m = m < 10 ? '0' + m : m; //分钟补0
+  var s = date.getSeconds();
+  s = s < 10 ? '0' + s : s; //秒补0
+  return y + '-' + MM + '-' + d;
+  // return y + '-' + MM + '-' + d + ' ' + h + ':' + m+ ':' + s;
+};
+
+
+/**
+    * 手机号码
+    * @param {*} s
+    */exports.happenTimeFun = happenTimeFun;
+var isMobile = function isMobile(s) {
+  return /^1[0-9]{10}$/.test(s);
+};
+
+/**
+    * 截取字符串前三个
+    * @param {*} s
+    */exports.isMobile = isMobile;
+var sliceWord = function sliceWord(s) {
+  return s.slice(0, 2);
+};exports.sliceWord = sliceWord;
+
+/***/ }),
 /* 169 */,
 /* 170 */,
 /* 171 */,
@@ -27363,7 +27411,15 @@ Mock.mock('/api/goodsDetail', function (optins) {
 /* 230 */,
 /* 231 */,
 /* 232 */,
-/* 233 */
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */
 /*!**********************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-swiper/props.js ***!
   \**********************************************************************************/
@@ -27496,14 +27552,14 @@ Mock.mock('/api/goodsDetail', function (optins) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */
+/* 242 */,
+/* 243 */,
+/* 244 */,
+/* 245 */,
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */
 /*!**************************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-count-down/props.js ***!
   \**************************************************************************************/
@@ -27535,7 +27591,7 @@ Mock.mock('/api/goodsDetail', function (optins) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 242 */
+/* 250 */
 /*!**************************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-count-down/utils.js ***!
   \**************************************************************************************/
@@ -27607,14 +27663,14 @@ function isSameSecond(time1, time2) {
 }
 
 /***/ }),
-/* 243 */,
-/* 244 */,
-/* 245 */,
-/* 246 */,
-/* 247 */,
-/* 248 */,
-/* 249 */,
-/* 250 */
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */
 /*!********************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-icon/icons.js ***!
   \********************************************************************************/
@@ -27837,7 +27893,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   'uicon-en': "\uE692" };exports.default = _default;
 
 /***/ }),
-/* 251 */
+/* 259 */
 /*!********************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-icon/props.js ***!
   \********************************************************************************/
@@ -27934,14 +27990,93 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */
+/*!**********************************************************************************!*\
+  !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-switch/props.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 是否为加载中状态
+    loading: {
+      type: Boolean,
+      default: uni.$u.props.switch.loading },
+
+    // 是否为禁用装填
+    disabled: {
+      type: Boolean,
+      default: uni.$u.props.switch.disabled },
+
+    // 开关尺寸，单位px
+    size: {
+      type: [String, Number],
+      default: uni.$u.props.switch.size },
+
+    // 打开时的背景颜色
+    activeColor: {
+      type: String,
+      default: uni.$u.props.switch.activeColor },
+
+    // 关闭时的背景颜色
+    inactiveColor: {
+      type: String,
+      default: uni.$u.props.switch.inactiveColor },
+
+    // 通过v-model双向绑定的值
+    value: {
+      type: [Boolean, String, Number],
+      default: uni.$u.props.switch.value },
+
+    // switch打开时的值
+    activeValue: {
+      type: [String, Number, Boolean],
+      default: uni.$u.props.switch.activeValue },
+
+    // switch关闭时的值
+    inactiveValue: {
+      type: [String, Number, Boolean],
+      default: uni.$u.props.switch.inactiveValue },
+
+    // 是否开启异步变更，开启后需要手动控制输入值
+    asyncChange: {
+      type: Boolean,
+      default: uni.$u.props.switch.asyncChange },
+
+    // 圆点与外边框的距离
+    space: {
+      type: [String, Number],
+      default: uni.$u.props.switch.space } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 268 */,
+/* 269 */,
+/* 270 */,
+/* 271 */,
+/* 272 */,
+/* 273 */,
+/* 274 */,
+/* 275 */,
+/* 276 */,
+/* 277 */,
+/* 278 */,
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */,
+/* 283 */,
+/* 284 */,
+/* 285 */
 /*!************************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \************************************************************************************/
@@ -29117,14 +29252,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     "unicode_decimal": 58929 }] };exports.default = _default;
 
 /***/ }),
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */,
-/* 266 */,
-/* 267 */
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */,
+/* 291 */,
+/* 292 */,
+/* 293 */
 /*!********************************************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/uni-transition/components/uni-transition/createAnimation.js ***!
   \********************************************************************************************************/
@@ -29263,12 +29398,12 @@ function createAnimation(option, _this) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 268 */,
-/* 269 */,
-/* 270 */,
-/* 271 */,
-/* 272 */,
-/* 273 */
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */,
+/* 298 */,
+/* 299 */
 /*!****************************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-loading-icon/props.js ***!
   \****************************************************************************************/
@@ -29335,14 +29470,14 @@ function createAnimation(option, _this) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 274 */,
-/* 275 */,
-/* 276 */,
-/* 277 */,
-/* 278 */,
-/* 279 */,
-/* 280 */,
-/* 281 */
+/* 300 */,
+/* 301 */,
+/* 302 */,
+/* 303 */,
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */
 /*!********************************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-swiper-indicator/props.js ***!
   \********************************************************************************************/

@@ -1,3 +1,8 @@
+ 
+ /**
+  * 日期格式化
+  * @param {*} num
+  */
  export const happenTimeFun=(num)=> { //时间戳数据处理
  	let date = new Date(num*1000);
  	//时间戳为10位需*1000，时间戳为13位的话不需乘1000
@@ -15,3 +20,20 @@
  	return y + '-' + MM + '-' + d;
  	// return y + '-' + MM + '-' + d + ' ' + h + ':' + m+ ':' + s;
  };
+ 
+ 
+ /**
+  * 手机号码
+  * @param {*} s
+  */
+ export const isMobile = (s) => {
+ 	return /^1[0-9]{10}$/.test(s)
+ }
+ 
+ /**
+  * 截取字符串前三个
+  * @param {*} s
+  */
+ export const sliceWord = (s) => {
+ 	return s.slice(0,2)
+ }

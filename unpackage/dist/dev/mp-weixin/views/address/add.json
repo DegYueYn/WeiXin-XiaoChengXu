@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "添加/修改收货地址",
+  "usingComponents": {
+    "u-switch": "/uni_modules/uview-ui/components/u-switch/u-switch",
+    "link-address": "/views/address/xuan-linkAddress/xuan-linkAddress"
+  }
+}

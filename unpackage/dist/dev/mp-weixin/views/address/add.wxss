@@ -1,0 +1,71 @@
+.addAddress.data-v-74710872 {
+  background-color: white;
+}
+.addAddress .consignee.data-v-74710872 {
+  display: flex;
+  align-items: center;
+  margin: 20rpx;
+  height: 100rpx;
+}
+.addAddress .consignee .consigneer.data-v-74710872 {
+  width: 160rpx;
+  font-weight: 600;
+}
+.addAddress .consignee .input.data-v-74710872 {
+  background-color: #eeeeee;
+  padding: 10rpx;
+  margin-left: 20rpx;
+  width: calc(100% - 200rpx);
+  border-radius: 10rpx;
+  color: black;
+  font-size: 26rpx;
+}
+.addAddress .consignee .input input.data-v-74710872 {
+  width: 90%;
+  height: 30rpx;
+  padding: 5rpx;
+}
+.addAddress .consignee .input image.data-v-74710872 {
+  width: 30rpx;
+  height: 30rpx;
+}
+.addAddress .consignee .input textarea.data-v-74710872 {
+  height: 100rpx;
+  width: 480rpx;
+}
+.addAddress .consignee .phoneNumber.data-v-74710872 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.addAddress .del.data-v-74710872 {
+  margin: 20rpx;
+  width: 80%;
+  text-align: center;
+  line-height: 92rpx;
+  background-color: #bdb7bc;
+  margin: 0 auto;
+  border-radius: 50rpx;
+  margin-top: 50rpx;
+}
+.addAddress .consigne.data-v-74710872 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20rpx;
+  margin-top: 50rpx;
+  font-weight: 600;
+}
+.addAddress .btn.data-v-74710872 {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 80rpx;
+}
+.addAddress .btn button.data-v-74710872 {
+  color: white;
+  letter-spacing: 2rpx;
+  border-radius: 100rpx;
+  background-color: #FBDA61;
+  background-image: linear-gradient(65deg, #FBDA61 0%, #FF5ACD 100%);
+}
+

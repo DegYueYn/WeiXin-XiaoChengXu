@@ -1,4 +1,4 @@
-require('./common/vendor.js');(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["views/user/card"],{
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["views/user/card"],{
 
 /***/ 162:
 /*!***********************************************************************!*\
@@ -98,7 +98,7 @@ var components
 try {
   components = {
     uniPopup: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 221))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 229))
     }
   }
 } catch (e) {
@@ -273,5 +273,5 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ })
 
-},[[162,"common/runtime","common/vendor","views/user/common/vendor"]]]);
+},[[162,"common/runtime","common/vendor"]]]);
 //# sourceMappingURL=../../../.sourcemap/mp-weixin/views/user/card.js.map

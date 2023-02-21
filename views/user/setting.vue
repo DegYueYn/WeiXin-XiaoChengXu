@@ -1,9 +1,9 @@
 <template>
 	<view class="Setting" >
 		<view class="flex-box" v-for="(item,index) in List" :key="index">
-			 <view class="Flex">
+			 <view class="Flex"  @click="goAddress(item)">
 			 	<view class="Key">{{item.Key}}</view>
-			 	<view class="Value" @click="goAddress(item)">{{item.Value}}</view>
+			 	<view class="Value">{{item.Value}}</view>
 			 </view>
 		</view>
 		<view class="btn">
@@ -40,7 +40,9 @@
 			goAddress(item){
 				if(item.index==0)
 				{
-					// 跳地址管理页
+					uni.navigateTo({
+						url:'/views/address/address'
+					})
 				}else{
 					uni.$showMsg(`${item.index=='1'?'微信':'手机'}已绑定`, 'none', 2000)
 					

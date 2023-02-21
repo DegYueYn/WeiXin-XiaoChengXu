@@ -19,7 +19,14 @@
         },
         {
           "name": "",
-          "pathName": "views/address/addAdress",
+          "pathName": "views/address/add",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "views/address/address",
           "query": "",
           "launchMode": "default",
           "scene": null

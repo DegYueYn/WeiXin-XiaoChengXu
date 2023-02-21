@@ -1,4 +1,4 @@
-require('./common/vendor.js');(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["views/user/setting"],{
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["views/user/setting"],{
 
 /***/ 171:
 /*!**************************************************************************!*\
@@ -174,7 +174,9 @@ var _default =
     goAddress: function goAddress(item) {
       if (item.index == 0)
       {
-        // 跳地址管理页
+        uni.navigateTo({
+          url: '/views/address/address' });
+
       } else {
         uni.$showMsg("".concat(item.index == '1' ? '微信' : '手机', "\u5DF2\u7ED1\u5B9A"), 'none', 2000);
 

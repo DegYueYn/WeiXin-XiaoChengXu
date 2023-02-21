@@ -249,7 +249,7 @@
 			},
 			toAddress(){
 				uni.navigateTo({
-					url:"/views/address/addAdress"
+					url:"/views/address/address"
 				})
 			},
 			
