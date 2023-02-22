@@ -15,9 +15,9 @@
 		</view>
 		<view class="consignee">
 			<view class="consigneer">所在地区 </view>
-			<view class="input phoneNumber" @click="show_popup">
-				<input type="text" disabled v-model="address" placeholder="省、市、区、街道"  />
-				<image src="/static/address/address.png" mode="scaleToFill" ></image>
+			<view class="input phoneNumber" >
+				<input type="text"  v-model="address" placeholder="省、市、区、街道"  />
+				<image src="/static/address/address.png" mode="scaleToFill" @click="show_popup"></image>
 			</view>
 		</view>
 		<view class="consignee">
@@ -36,13 +36,15 @@
 			<view @click="delAddress(index)">删除该地址</view>
 		</view>
 		<view class="btn">
-			<button plain type="default" style="border: none;" @click="saveAddress">保存地址</button>
+			<button plain type="default" style="border: none;" @click="saveAddress">{{index?'修改地址':'保存地址'}}</button>
 		</view>
+		
 		<linkAddress
 		        ref="linkAddress"
 		        :height="height"
-		        @confirmCallback="confirmCallback()"
 				catchtouchmove="true"
+		        @confirmCallback="confirmCallback()"
+				
 		    >
 		</linkAddress>
 
@@ -101,8 +103,9 @@
 					uni.$showMsg('请正确填写手机号码','none',2000)
 					return
 				}
-				if(this.index){
-					let addressList =uni.getStorageSync("address")
+				if(this.index){//编辑进来的
+				// console.log('编辑进来');
+					const addressList =uni.getStorageSync("address")
 					// console.log(addressList[this.index],'addressList');
 					const addressInfo={
 						"name":this.name,
@@ -111,7 +114,15 @@
 						"addArea":this.addArea,
 						"isDefaultAddress":this.value,
 					}
-					addressList.splice( this.index,1,addressInfo)
+					if(this.value){
+						addressList.splice(this.index,1)
+						addressList.unshift(addressInfo)
+						for(let i=1;i<addressList.length;i++){
+							addressList[i].isDefaultAddress=false
+						}					
+					}else {
+					addressList.splice( this.index,1,addressInfo)	
+					}			
 					uni.removeStorageSync('address')
 					uni.setStorageSync('address',addressList)
 					uni.$showMsg('修改成功','none',1000)
@@ -120,9 +131,10 @@
 							url:'/views/address/address'
 						})
 					},1500)				
-				}else{
-					// console.log(2);
-					if(!this.value && !uni.getStorageSync("address")){
+				}else{//新增
+					console.log('新增进来');
+					if(!this.value && uni.getStorageSync("address").length==0){
+						// console.log('新增进来，value为false触发');
 						uni.showModal({
 							title:'是否将此地址设为默认地址？',
 							icon:'none',
@@ -146,8 +158,28 @@
 								},1500)															
 							}
 						})
-					}
-					if(uni.getStorageSync("address").length>0){
+					}else if(this.value && uni.getStorageSync("address").length==0){
+						// console.log('新增进来，value为true触发');
+						const addressInfo=[
+							{
+								"name":this.name,
+								"phoneNumber":this.phone,
+								"address":this.address,
+								"addArea":this.addArea,
+								"isDefaultAddress":this.value,
+							}
+						]
+						uni.setStorageSync('address',addressInfo)
+						uni.$showMsg('保存成功','none',1000)
+						setTimeout(()=>{
+							uni.navigateTo({
+								url:'/views/address/address'
+							})
+						},1500)	
+						
+					}  else if(uni.getStorageSync("address").length>0){
+						// console.log('新增进来，地址数组大于0触发');
+						const addressList =uni.getStorageSync("address")
 						const addressInfo={
 							"name":this.name,
 							"phoneNumber":this.phone,
@@ -155,18 +187,31 @@
 							"addArea":this.addArea,
 							"isDefaultAddress":this.value,
 						}
-						let addressList =uni.getStorageSync("address")
-						// console.log(addressList,'addressList1');
-						addressList.push(addressInfo)
-						uni.setStorageSync('address',addressList)
-						uni.$showMsg('保存成功','none',1000)
-						setTimeout(()=>{
-							uni.navigateTo({
-								url:'/views/address/address'
-							})
-						},1500)
-					
+						if(this.value){
+							addressList.unshift(addressInfo)
+							for(let i=1;i<addressList.length;i++){
+								addressList[i].isDefaultAddress=false
+							}
+							uni.setStorageSync('address',addressList)
+							uni.$showMsg('保存成功','none',1000)
+							setTimeout(()=>{
+								uni.navigateTo({
+									url:'/views/address/address'
+								})
+							},1500)
+						}else{
+							addressList.push(addressInfo)
+							uni.setStorageSync('address',addressList)
+							uni.$showMsg('保存成功','none',1000)
+							setTimeout(()=>{
+								uni.navigateTo({
+									url:'/views/address/address'
+								})
+							},1500)
+						}			
+						
 					}
+					
 					
 				}
 				

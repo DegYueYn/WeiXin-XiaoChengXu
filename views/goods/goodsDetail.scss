@@ -235,17 +235,112 @@
 
 		// }
 			
-		
-		
+
+		.u-popup{
+			width: 100%;
+			.paypwdtext{
+				font-size: 32rpx;
+				width: 90%;
+				margin:0 auto;
+				text-align: center;
+				margin-top: -20rpx;
+				
+			}
+			.storeName{
+				font-weight: 600;
+				font-size: 34rpx;
+				width: 90%;
+				margin:0 auto;
+				text-align: center;
+				margin-top: 40rpx;
+			}
+			.paymoney{
+				font-size: 60rpx;
+				width: 90%;
+				margin:0 auto;
+				font-weight: 600;
+				text-align: center;
+				margin-top: 20rpx;
+				margin-bottom: 20rpx;
+			}
+			.paypwd{
+				display: flex;
+				justify-content: center;
+				padding: 50rpx;
+				u-code-input{
+				width: 90%;
+				margin:0 auto;	
+				margin-bottom: 100rpx;
+				
+				}
+				
+			}
+			
+			.payway{
+				font-size: 28rpx;
+				color: #696969;
+				margin-top: 20rpx;
+				display: flex;
+				justify-content: space-between;
+				margin-left: 20rpx;
+				margin-right: 20rpx;
+				.paytext{
+					
+				}
+				.paytype{
+					image{
+						width: 30rpx;
+						height: 30rpx;
+					}
+				}
+				
+			}
+			
+			
+		}
 	
 	uni-popup{
-		overflow: auto;
+		// height: 100%;
+		// overflow-y:scroll;
+		
 		.addAd{
 			margin: 20rpx;
 			background-color: white;
 			border-radius: 10rpx;
 			line-height: 100rpx;
-			padding-left: 20rpx;										
+			padding-left: 20rpx;
+			padding-top: 10rpx;
+		.noaddress{
+			
+		}
+		.hasaddress{
+			.image_address{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				image{
+					width: 50rpx;
+					height: 40rpx;
+				}
+				.address{
+					margin-left: 10rpx;
+					width: 80%;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					display: -webkit-box;  //使用自适应布局
+					-webkit-line-clamp: 2;  //设置超出行数，要设置超出几行显示省略号就把这里改成几
+					-webkit-box-orient: vertical;
+					
+					
+				}
+				.icon{
+					width: 20%;
+					font-size: 20rpx;
+				}
+			}
+			
+			
+		}
 		}
 		.MoneyItem{
 			margin: 20rpx;

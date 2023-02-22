@@ -35,5 +35,5 @@
   * @param {*} s
   */
  export const sliceWord = (s) => {
- 	return s.slice(0,2)
+ 	return s.slice(0,3)
  }

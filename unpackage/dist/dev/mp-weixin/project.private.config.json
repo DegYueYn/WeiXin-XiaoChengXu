@@ -30,6 +30,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "views/goods/goodsDetail",
+          "query": "goodsId=4",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "views/goods/paySuccess",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

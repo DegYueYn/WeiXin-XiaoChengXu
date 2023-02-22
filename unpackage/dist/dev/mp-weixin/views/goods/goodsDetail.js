@@ -98,16 +98,25 @@ var components
 try {
   components = {
     uSwiper: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-swiper/u-swiper */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-swiper/u-swiper")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-swiper/u-swiper.vue */ 236))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-swiper/u-swiper */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-swiper/u-swiper")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-swiper/u-swiper.vue */ 244))
     },
     uCountDown: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-count-down/u-count-down */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-count-down/u-count-down")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-count-down/u-count-down.vue */ 244))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-count-down/u-count-down */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-count-down/u-count-down")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-count-down/u-count-down.vue */ 252))
     },
     uniPopup: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 229))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 237))
     },
     uIcon: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 253))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 261))
+    },
+    uPopup: function() {
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-popup/u-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-popup/u-popup")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-popup/u-popup.vue */ 270))
+    },
+    uLine: function() {
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-line/u-line */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-line/u-line")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-line/u-line.vue */ 278))
+    },
+    uCodeInput: function() {
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-code-input/u-code-input */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-code-input/u-code-input")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-code-input/u-code-input.vue */ 286))
     }
   }
 } catch (e) {
@@ -134,7 +143,8 @@ var render = function() {
   var g0 = Number(_vm.goodsInfo.salePrice).toFixed(2)
   var g1 = Number(_vm.goodsInfo.marketPrice * _vm.number).toFixed(2)
   var g2 = Number(_vm.goodsInfo.salePrice * _vm.number).toFixed(2)
-  var m0 = Number(_vm.goodsInfo.salePrice * _vm.number)
+  var g3 = Number(_vm.goodsInfo.salePrice * _vm.number).toFixed(2)
+  var g4 = Number(_vm.goodsInfo.salePrice * _vm.number).toFixed(2)
   _vm.$mp.data = Object.assign(
     {},
     {
@@ -142,7 +152,8 @@ var render = function() {
         g0: g0,
         g1: g1,
         g2: g2,
-        m0: m0
+        g3: g3,
+        g4: g4
       }
     }
   )
@@ -359,6 +370,46 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var _canvasUtils = _interopRequireDefault(__webpack_require__(/*! @/uni_modules/fan-canvas/canvasUtils */ 201));
 var _utils = __webpack_require__(/*! @/uni_modules/fan-canvas/plugins/utils */ 202);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
 
@@ -369,7 +420,12 @@ var _default =
 
   data: function data() {
     return {
+      pwd: '',
+      size: 'S【建议100斤以内】',
+      Keyheight: '',
       number: 1,
+      show: false,
+
       sizeList: [
       { title: 'S【建议100斤以内】' },
       { title: 'M【建议100-115斤】' },
@@ -377,6 +433,7 @@ var _default =
       { title: 'XL【建议130-140斤】' },
       { title: 'XXL【建议140-160斤】' }],
 
+      addressInfo: [],
       Itemindex: 0,
       Sizeindex: 0,
       goodsImg: '',
@@ -389,6 +446,7 @@ var _default =
       list: [],
       timeData: {},
       time: '',
+      note: '',
       btnList: [{
         icon: '/static/goodsDetail/store.png',
         name: '店铺' },
@@ -411,18 +469,55 @@ var _default =
   onReady: function onReady() {
     this.createQrcode();
   },
+  onShow: function onShow() {
+    // console.log('fff',this.addressInfo);
+  },
   onLoad: function onLoad(op) {
+
     this.getDetail(op.goodsId);
+    var addressList = uni.getStorageSync('address');
+    console.log('addressList', addressList);
+    if (addressList.length > 0) {
+      if (addressList[0].isDefaultAddress) {
+        this.addressInfo = addressList[0];
+      }
+    }
+
+    // console.log('this.addressInfo',this.addressInfo);
 
 
   },
   methods: {
+
     descNumber: function descNumber() {
       if (this.number <= 1)
       {uni.$showMsg('不能再少了', 'none', 2000);} else
       {
         this.number--;
       }
+    },
+    PAY: function PAY() {
+      uni.$showMsg('暂不支持其他方式支付！', 'none', 2000);
+    },
+
+    // 密码输入完成的回调
+    finish: function finish(e) {var _this = this;
+      setTimeout(function () {
+        _this.show = false;
+        var order = uni.getStorageSync('orderList');
+        order[order.length - 1].type = 'success';
+        console.log('order', order);
+        // uni.removeStorageSync('orderList')
+        uni.setStorageSync('orderList', order);
+        uni.hideLoading();
+        uni.navigateTo({
+          url: '/views/goods/paySuccess' });
+
+      }, 1000);
+      uni.showLoading({
+        title: '支付中...' });
+
+
     },
     addNumber: function addNumber() {
       this.number++;
@@ -431,6 +526,53 @@ var _default =
     toAddress: function toAddress() {
       uni.navigateTo({
         url: "/views/address/address" });
+
+    },
+    // 立即购买按钮
+    pay: function pay() {var _this2 = this;
+      if (!this.addressInfo.name || !this.addressInfo.phoneNumber || !this.addressInfo.address) {
+        uni.$showMsg('请完善收货地址信息！', 'none', 2000);
+        return;
+      } else {
+        var order = {
+          "goodsName": this.goodsInfo.goodsName,
+          "goodsPrice": this.goodsInfo.salePrice * this.number,
+          "goodsStore": this.goodsInfo.storeName,
+          "address": this.addressInfo.address + this.addressInfo.addArea,
+          "name": this.addressInfo.name,
+          "size": this.size,
+          "time": new Date().getTime(),
+          "remark": this.note,
+          "phone": this.addressInfo.phoneNumber };
+
+        if (!uni.getStorageSync('orderList')) {
+          var list = [];
+          list.push(order);
+          uni.setStorageSync('orderList', list);
+          console.log('ff', uni.getStorageSync('orderList'));
+        } else {
+          var _list = uni.getStorageSync('orderList');
+          _list.push(order);
+          uni.setStorageSync('orderList', _list);
+          console.log('ee', uni.getStorageSync('orderList'));
+        }
+        console.log(order);
+        setTimeout(function () {
+          _this2.show = true;
+
+          uni.hideLoading();
+        }, 1000);
+        uni.showLoading({
+          title: '支付中...' });
+
+      }
+
+
+
+
+    },
+    close: function close() {
+      this.show = false;
 
     },
 
@@ -444,12 +586,12 @@ var _default =
     // 选择尺寸
     chooseSize: function chooseSize(e, i) {
       this.Sizeindex = i;
-      console.log('尺寸', e.title);
+      this.size = e.title;
 
     },
     // 选择分类
     chooseItem: function chooseItem(e, i) {
-      console.log('分类', e);
+      // console.log('分类',e);
       this.goodsInfo.goodsImg = e;
       this.Itemindex = i;
 
@@ -461,7 +603,7 @@ var _default =
 
     //底部购买栏按钮
     goWhere: function goWhere(item) {
-      console.log(item);
+      // console.log(item);
       if (item.name == '店铺') {
         uni.$showMsg('查看店铺功能开发中...', 'none', 2000);
       } else if (item.name == '客服') {
@@ -480,25 +622,25 @@ var _default =
       this.$refs.share.close();
     },
     //获取详情
-    getDetail: function getDetail(item) {var _this = this;
+    getDetail: function getDetail(item) {var _this3 = this;
       uni.request({
         url: '/api/goodsDetail',
         data: {
           "goodsId": Number(item) },
 
         success: function success(res) {
-          console.log(res.data.goodsDetail);
+          // console.log(res.data.goodsDetail);
           if (res.data.code == 200) {
-            _this.goodsInfo = res.data.goodsDetail;
-            _this.goodsImg = _this.goodsInfo.goodsImg;
+            _this3.goodsInfo = res.data.goodsDetail;
+            _this3.goodsImg = _this3.goodsInfo.goodsImg;
             // console.log('goodsImg', this.goodsImg);
-            _this.time = _this.goodsInfo.expirationTime * 1000 - Number(new Date().
+            _this3.time = _this3.goodsInfo.expirationTime * 1000 - Number(new Date().
             getTime());
             for (var img in res.data.goodsDetail.goodsDetail) {
-              _this.list.push(res.data.goodsDetail.goodsDetail[img].img);
+              _this3.list.push(res.data.goodsDetail.goodsDetail[img].img);
 
             }
-            console.log(_this.list);
+            // console.log(this.list);
 
           }
         } });
@@ -513,14 +655,14 @@ var _default =
       this.timeData = e;
       // console.log(e);
     },
-    createGoodsPoster: function createGoodsPoster() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var that, cvsW, cvsH, goodsH, logo_w, margin, family, ctx, logo, options;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+    createGoodsPoster: function createGoodsPoster() {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var that, cvsW, cvsH, goodsH, logo_w, margin, family, ctx, logo, options;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
 
 
-                _this2.hideDialog();if (!
-                _this2.canvasImg) {_context.next = 3;break;}return _context.abrupt("return");case 3:
+                _this4.hideDialog();if (!
+                _this4.canvasImg) {_context.next = 3;break;}return _context.abrupt("return");case 3:
 
 
-                that = _this2;
+                that = _this4;
 
                 uni.showLoading({
                   title: '海报生成中' });
@@ -556,7 +698,7 @@ var _default =
                   // 绘制圆角按钮
                   // 参数：cxt、背景颜色、x坐标、y坐标、宽度、高度、圆角、文字、文字颜色、文字位置
                   ctx.font = '22px' + family;
-                  _canvasUtils.default.drawButton(ctx, 'red', 65, 418, 170, 52, 16, "\u4F1A\u5458\u4EF7:".concat(_this2.goodsInfo.salePrice), '#ffffff',
+                  _canvasUtils.default.drawButton(ctx, 'red', 65, 418, 170, 52, 16, "\u4F1A\u5458\u4EF7:".concat(_this4.goodsInfo.salePrice), '#ffffff',
                   'center');
                   // 简介-多行文字
                   ctx.setFillStyle('#666666');
@@ -608,10 +750,10 @@ var _default =
                 }case 17:case "end":return _context.stop();}}}, _callee);}))();
     },
     // 保存图片
-    onSaveImg: function onSaveImg() {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var imgUrl;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
+    onSaveImg: function onSaveImg() {var _this5 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var imgUrl;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
                 imgUrl = "";if (!
-                _this3.canvasImg) {_context2.next = 6;break;}_context2.next = 4;return (
-                  _this3.canvasImg);case 4:imgUrl = _context2.sent;
+                _this5.canvasImg) {_context2.next = 6;break;}_context2.next = 4;return (
+                  _this5.canvasImg);case 4:imgUrl = _context2.sent;
 
                 (0, _utils.saveImg)(imgUrl);case 6:case "end":return _context2.stop();}}}, _callee2);}))();
 

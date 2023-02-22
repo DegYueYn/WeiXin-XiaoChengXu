@@ -77,6 +77,13 @@
 					"style": {
 						"navigationBarTitleText": "商品详情"
 					}
+				},{
+					"path": "paySuccess",
+					"style": {
+						"navigationBarTitleText": "支付",
+						"navigationStyle": "custom" //导航栏样式
+					}
+					
 				}
 			]
 			

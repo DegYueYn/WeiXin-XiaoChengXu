@@ -1,5 +1,5 @@
 <template>
-	<view class="goodsDetail">
+	<view class="goodsDetail" >
 		<!-- 商品轮播区 -->
 		<view class="goodsDetail-swiper">
 			<u-swiper :list="list" indicatorActiveColor="red" indicatorInactiveColor="#ffffff" indicator="true"
@@ -103,19 +103,25 @@
 				</view>
 			</view>
 			<view class="addAd" @click="toAddress">
-				+增加收货地址
+				<view class="noaddress" v-if="addressInfo.length==0">+增加收货地址</view>
+				<View class="hasaddress" v-else >
+					<view class="image_address">
+						<image src="/static/address/address.png" mode="scaleToFill"></image>
+						<view class="address">{{addressInfo.name+'&nbsp &nbsp' + addressInfo.address + addressInfo.addArea}}</view>
+						<view class="icon">切换地址 〉</view>
+					</view>
+				</View>
 			</view>
 			<view class="classifyText">分类</view>
 			<view class="classify" >				
 				<view class="classifyFlexbox" v-for="(item,index) in list" :key="index" >
 					<view class="img"@click="chooseItem(item,index)" :class="Itemindex==index?'active':''" ><image :src="item" ></image></view>
-				    <!-- <view>{{`${index+1}`}}</view> -->
 				</view>
 			</view>
 			<text class="classifyText">尺码</text>
 			<view class="size">
 				<view class="sizeFlexbox" v-for="(item,index) in sizeList" :key="index">
-					<button type="default" plain  @click="chooseSize(item,index)" :class="Sizeindex==index?'activeClass':''">{{item.title}}</button>
+					<button type="default" plain v-model="size"  @click="chooseSize(item,index)" :class="Sizeindex==index?'activeClass':''">{{item.title}}</button>
 				</view>
 				
 			</view>
@@ -134,11 +140,45 @@
 			</view>
 			
 			<view class="buyBox">
-				<view class="buyNow">立即支付￥{{Number(goodsInfo.salePrice*number)}}</view>
+				<view class="buyNow" @click="pay">立即支付￥{{Number(goodsInfo.salePrice*number).toFixed(2)}}</view>
 			</view>
 			
 			
+			
+			
 		</uni-popup>
+		<u-popup style="height:800rpx" :show="show" mode="center" :closeOnClickOverlay="false"  :safeAreaInsetTop="true" :round="10"  >
+		        <view class="paypwdtext">
+					<view class="icon">
+						<u-icon name="close" color="#7b7379" size="30" @click="close"></u-icon>
+					</view>
+					请输入支付密码
+					
+				</view>
+				
+				<view class="storeName">{{goodsInfo.storeName}}</view>
+				<view class="paymoney"><text>￥</text>{{Number(goodsInfo.salePrice*number).toFixed(2)}}</view>
+				<u-line></u-line>
+				<view class="payway">
+					<view class="paytext">支付方式</view>
+					<view class="paytype" @click="PAY">
+						<image src="/static/goodsDetail/demaland.png" mode="scaleToFill" ></image>
+						零钱通 ›
+						
+					</view>
+				</view>
+				<view class="paypwd">
+					
+					<u-code-input  :focus="false"   v-model="pwd" mode="box" :space="16"  @finish="finish" :size="80"  :maxlength="6"  dot>
+						
+						
+					</u-code-input>
+					
+				
+				</view>
+				<view style="height: 100rpx;"></view>
+				
+		</u-popup>
 		<uni-popup ref="share" type="share" safeArea backgroundColor="#fff">
 			<view class="share-box">
 				<text>分享</text>
@@ -188,7 +228,12 @@
 
 		data() {
 			return {
+				pwd:'',
+				size:'S【建议100斤以内】',
+				Keyheight:'',
 				number:1,
+				show:false,
+				
 				sizeList:[
 					{title:'S【建议100斤以内】'},
 					{title:'M【建议100-115斤】'},
@@ -196,6 +241,7 @@
 					{title:'XL【建议130-140斤】'},
 					{title:'XXL【建议140-160斤】'},				
 				],
+				addressInfo:[],
 				Itemindex:0,
 				Sizeindex:0,
 				goodsImg: '',
@@ -208,6 +254,7 @@
 				list: [],
 				timeData: {},
 				time: '',
+				note:'',
 				btnList:[{
 					icon:'/static/goodsDetail/store.png',
 					name:'店铺'
@@ -230,18 +277,55 @@
 		onReady() {
 			this.createQrcode()
 		},
+		onShow() {
+			// console.log('fff',this.addressInfo);
+		},
 		onLoad(op) {
+			
 			this.getDetail(op.goodsId)
+			let addressList=uni.getStorageSync('address')
+			console.log('addressList',addressList);
+			if(addressList.length>0){
+				if(addressList[0].isDefaultAddress){
+					this.addressInfo=addressList[0]
+				}
+			}
+			
+			// console.log('this.addressInfo',this.addressInfo);
 
 
 		},
 		methods: {
+			
 			descNumber(){
 				if(this.number<=1)
 				{uni.$showMsg('不能再少了','none',2000)}
 				else{
 					this.number--
 				}
+			},
+			PAY(){
+				uni.$showMsg('暂不支持其他方式支付！','none',2000)
+			},
+			
+			// 密码输入完成的回调
+			finish(e){
+				setTimeout(()=>{
+				this.show=false
+				let order=uni.getStorageSync('orderList')
+				order[order.length-1].type='success'
+				console.log('order',order);
+				// uni.removeStorageSync('orderList')
+				uni.setStorageSync('orderList',order)
+				uni.hideLoading()
+				uni.navigateTo({
+					url:'/views/goods/paySuccess'
+				})
+				},1000)
+				uni.showLoading({
+					title:'支付中...',					
+				})
+				
 			},
 			addNumber(){
 				this.number++
@@ -251,6 +335,53 @@
 				uni.navigateTo({
 					url:"/views/address/address"
 				})
+			},
+			// 立即购买按钮
+			pay(){
+				if(!this.addressInfo.name ||!this.addressInfo.phoneNumber||!this.addressInfo.address){
+					uni.$showMsg('请完善收货地址信息！','none',2000)
+					return
+				}else{
+					const order={
+						"goodsName":this.goodsInfo.goodsName,
+						"goodsPrice":this.goodsInfo.salePrice*this.number,
+						"goodsStore":this.goodsInfo.storeName,
+						"address":this.addressInfo.address+this.addressInfo.addArea,
+						"name":this.addressInfo.name,
+						"size":this.size,
+						"time":new Date().getTime(),
+						"remark":this.note,
+						"phone":this.addressInfo.phoneNumber,				
+					}
+					if(!uni.getStorageSync('orderList')){
+						let list=[]
+						list.push(order)
+						uni.setStorageSync('orderList',list)
+						console.log('ff',uni.getStorageSync('orderList'));
+					}else{
+						let list =uni.getStorageSync('orderList')
+						list.push(order)
+						uni.setStorageSync('orderList',list)
+						console.log('ee',uni.getStorageSync('orderList'));
+					}				
+					console.log(order);
+					setTimeout(()=>{
+					this.show=true
+					
+					uni.hideLoading()
+					},1000)
+					uni.showLoading({
+						title:'支付中...',					
+					})
+				}
+				
+				
+				
+				
+			},
+			close(){
+				this.show=false
+				
 			},
 			
 			//购买或购物车按钮
@@ -263,12 +394,12 @@
 			// 选择尺寸
 			chooseSize(e,i){
 				this.Sizeindex=i
-				console.log('尺寸',e.title);
+				this.size=e.title
 				
 			},
 			// 选择分类
 			chooseItem(e,i){
-				console.log('分类',e);
+				// console.log('分类',e);
 				this.goodsInfo.goodsImg=e
 				this.Itemindex=i
 				
@@ -280,7 +411,7 @@
 			
 			//底部购买栏按钮
 			goWhere(item){
-				console.log(item);
+				// console.log(item);
 				if(item.name=='店铺'){
 					uni.$showMsg('查看店铺功能开发中...','none',2000)
 				}else if(item.name=='客服'){
@@ -306,7 +437,7 @@
 						"goodsId": Number(item)
 					},
 					success: res => {
-						console.log(res.data.goodsDetail);
+						// console.log(res.data.goodsDetail);
 						if (res.data.code == 200) {
 							this.goodsInfo = res.data.goodsDetail
 							this.goodsImg = this.goodsInfo.goodsImg
@@ -317,7 +448,7 @@
 								this.list.push(res.data.goodsDetail.goodsDetail[img].img)
 
 							}
-							console.log(this.list);
+							// console.log(this.list);
 
 						}
 					}

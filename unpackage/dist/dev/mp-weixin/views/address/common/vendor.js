@@ -1,6 +1,6 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["views/address/common/vendor"],{
 
-/***/ 275:
+/***/ 314:
 /*!*****************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/static/xuan-linkAddress/get_linkAddress_p.js ***!
   \*****************************************************************************/
@@ -8,7 +8,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _api = _interopRequireDefault(__webpack_require__(/*! @/views/address/xuan-linkAddress/api.js */ 276));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _api = _interopRequireDefault(__webpack_require__(/*! @/views/address/xuan-linkAddress/api.js */ 315));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 
 {
   /*
@@ -43,7 +43,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 276:
+/***/ 315:
 /*!**********************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/views/address/xuan-linkAddress/api.js ***!
   \**********************************************************************/
@@ -51,7 +51,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _request = _interopRequireDefault(__webpack_require__(/*! @/static/xuan-linkAddress/request.js */ 277));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _request = _interopRequireDefault(__webpack_require__(/*! @/static/xuan-linkAddress/request.js */ 316));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 //创建Request对象
 var request = new _request.default();var _default =
 
@@ -64,7 +64,7 @@ var request = new _request.default();var _default =
 
 /***/ }),
 
-/***/ 277:
+/***/ 316:
 /*!*******************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/static/xuan-linkAddress/request.js ***!
   \*******************************************************************/
@@ -81,7 +81,7 @@ var Request = /*#__PURE__*/function () {function Request() {_classCallCheck(this
                                                                                                                                   */value: function http(
     paramete, data, method) {
       //根地址
-      var BASE_API = "http://admin.farmereasy.com";
+      var BASE_API = "https://admin.farmereasy.com";
       return new Promise(function (resolve, reject) {
         uni.request({
           url: "".concat(BASE_API).concat(paramete),

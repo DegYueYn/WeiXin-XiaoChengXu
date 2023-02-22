@@ -74,6 +74,7 @@
   height: 40rpx;
 }
 .add .Address.data-v-6c7e869a {
+  position: fixed;
   line-height: 80rpx;
   background-color: #FBDA61;
   background-image: linear-gradient(65deg, #FBDA61 0%, #FF5ACD 100%);
@@ -85,5 +86,7 @@
   margin: 0 auto;
   margin-bottom: 20rpx;
   margin-top: 40rpx;
+  left: 20%;
+  right: 20%;
 }
 

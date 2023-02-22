@@ -17,7 +17,8 @@
     {
       "root": "views/goods",
       "pages": [
-        "goodsDetail"
+        "goodsDetail",
+        "paySuccess"
       ]
     },
     {

@@ -7,7 +7,7 @@ export default class Request{
 	*/
 	http(paramete,data,method){
 		//根地址
-		let BASE_API="http://admin.farmereasy.com";
+		let BASE_API="https://admin.farmereasy.com";
 		return new Promise((resolve,reject)=>{
 			uni.request({
 				url:`${BASE_API}${paramete}`,

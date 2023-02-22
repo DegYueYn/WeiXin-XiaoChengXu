@@ -25,7 +25,7 @@
 										>
 											{{items.name}}
 											<view class="pic" v-show="index===base_items.current">
-												<image src="../../static/xuan-linkAddress/yes.png"></image>
+												<image src="/static/yes.png"></image>
 											</view>
 									</view>
 								</scroll-view>

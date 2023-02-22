@@ -1,13 +1,13 @@
 <template>
 	<view class="add">
 		<view class="add-flex-box">
-			<view class="add-for-box" v-for="(item,index) in addressList" :key="index">
+			<view class="add-for-box" v-for="(item,index) in addressList" :key="index" >
 				<!-- 写个方法只取前三个  -->
-				<view class="add-for-box-left">{{sliceWord(item.name)}}</view>
-				<view class="add-for-box-middle">
+				<view class="add-for-box-left" @click="chooseOne(item)">{{sliceWord(item.name)}}</view>
+				<view class="add-for-box-middle" @click="chooseOne(item)">
 					<view class="name_phone">
 						<text class="name">{{item.name}}</text><text class="phone">{{item.phoneNumber}}</text>
-						<view class="default" v-if="item.isDefaultAddress">默认</view>
+						<view class="default" v-if="item.isDefaultAddress && index==0">默认</view>
 					</view>
 					<view class="address">
 						{{item.address + item.addArea}}
@@ -30,17 +30,46 @@
 		data() {
 			return {
 				addressList:[],
+				index:''
+				
 
 			}
 		},
-		onLoad() {
-			this.addressList=uni.getStorageSync('address')
-			console.log(this.addressList,'this.addressList');
+		onLoad(op) {			
+			 this.addressList=uni.getStorageSync('address')
+			 console.log( this.addressList,' this.addressList');
 			
 		},
+		onShow() {
+			
+		},
+		
 		methods: {
 			sliceWord,
-			
+			chooseOne(e){
+				        let pages = getCurrentPages();
+						// console.log('pages1',pages);
+						pages.filter((v,i)=>{
+							if(v.route=='views/goods/goodsDetail'){
+								this.index= i
+							}
+							
+						})
+						
+						pages.splice(-1,0,pages[this.index])
+						// console.log('pages2',pages);
+						console.log("index",this.index);
+						
+						let nowPage = pages[ pages.length - 1];
+						let prevPage = pages[ pages.length - 2 ];
+						// console.log('prevPage',prevPage);
+						prevPage.$vm.addressInfo =e ;
+						 uni.navigateBack({                       
+						 	    delta: 1
+						 	});						
+					}
+					
+			,
 			toAdd(e,item,i){											
 				// console.log(i,'i');
 				if(e=='edit'){
@@ -144,7 +173,7 @@
 		}
 		
 		.Address{
-			// position: fixed;
+			position: fixed;
 			line-height: 80rpx;
 			background-color: #FBDA61;
 			background-image: linear-gradient(65deg, #FBDA61 0%, #FF5ACD 100%);
@@ -156,8 +185,8 @@
 			margin: 0 auto;
 			margin-bottom: 20rpx;
 			margin-top: 40rpx;
-			// left:20% ;
-			// right:20%;
+			left:20% ;
+			right:20%;
 			
 		}
 	}
