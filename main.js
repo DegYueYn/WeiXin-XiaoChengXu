@@ -2,6 +2,7 @@ import App from './App'
 import uView from '@/uni_modules/uview-ui'
 // import axios from 'axios'
 import 'mock/index.js'
+import 'mock/order.js'
 
 Vue.use(uView)
 // Vue.prototype.$axios =axios

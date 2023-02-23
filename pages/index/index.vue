@@ -47,7 +47,7 @@
 			   </view>
 			  <view class=" goodsBox-inner-right" >
 				  <view class="top-box" @click="toGoodsDetail('ad')">
-					  <image src="/static/top.png"></image>
+					  <image src="/static/top.png" mode="aspectFill"></image>
 				  </view>
 				  <view class="goodsBox-inner-right-box" v-for="(item,index) in goodsRightList " :key="index">
 				  					 
@@ -210,8 +210,8 @@
 							}else
 							this.goodsRightList.push(v)						
 							})
-						console.log(this.goodsLeftList);
-						console.log(this.goodsRightList);
+						// console.log(this.goodsLeftList);
+						// console.log(this.goodsRightList);
 					}
 				})
 				

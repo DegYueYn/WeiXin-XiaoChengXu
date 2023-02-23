@@ -13,6 +13,7 @@ var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ 6));
 var _uviewUi = _interopRequireDefault(__webpack_require__(/*! @/uni_modules/uview-ui */ 14));
 
 __webpack_require__(/*! mock/index.js */ 138);
+__webpack_require__(/*! mock/order.js */ 140);
 
 
 

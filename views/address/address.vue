@@ -3,7 +3,7 @@
 		<view class="add-flex-box">
 			<view class="add-for-box" v-for="(item,index) in addressList" :key="index" >
 				<!-- 写个方法只取前三个  -->
-				<view class="add-for-box-left" @click="chooseOne(item)">{{sliceWord(item.name)}}</view>
+				<view class="add-for-box-left" @click="chooseOne(item)">{{sliceWord(item.name,3)}}</view>
 				<view class="add-for-box-middle" @click="chooseOne(item)">
 					<view class="name_phone">
 						<text class="name">{{item.name}}</text><text class="phone">{{item.phoneNumber}}</text>
@@ -48,7 +48,7 @@
 			sliceWord,
 			chooseOne(e){
 				        let pages = getCurrentPages();
-						// console.log('pages1',pages);
+						console.log('pages1',pages);
 						pages.filter((v,i)=>{
 							if(v.route=='views/goods/goodsDetail'){
 								this.index= i
@@ -56,16 +56,16 @@
 							
 						})
 						
-						pages.splice(-1,0,pages[this.index])
+						// pages.splice(-1,0,pages[this.index])
 						// console.log('pages2',pages);
-						console.log("index",this.index);
+					
 						
 						let nowPage = pages[ pages.length - 1];
-						let prevPage = pages[ pages.length - 2 ];
-						// console.log('prevPage',prevPage);
+						let prevPage = pages[this.index];
+						console.log('prevPage',prevPage);
 						prevPage.$vm.addressInfo =e ;
 						 uni.navigateBack({                       
-						 	    delta: 1
+						 	    delta: pages.length-this.index-1
 						 	});						
 					}
 					

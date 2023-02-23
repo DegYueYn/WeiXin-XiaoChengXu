@@ -13,7 +13,7 @@
 						</view>
 						<view :class="{ 'uni-navbar-btn-icon-left': !leftIcon.length > 0 }" class="uni-navbar-btn-text"
 							v-if="leftText.length">
-							<text :style="{ color: themeColor, fontSize: '12px' }">{{ leftText }}</text>
+							<text :style="{ color: themeColor, fontSize: '20px' }">{{ leftText }}</text>
 						</view>
 					</slot>
 				</view>
@@ -335,9 +335,9 @@
 	}
 
 	.uni-navbar--border {
-		border-bottom-width: 1rpx;
-		border-bottom-style: solid;
-		border-bottom-color: #eee;
+		// border-bottom-width: 1rpx;
+		// border-bottom-style: solid;
+		// border-bottom-color: #eee;
 	}
 
 	.uni-ellipsis-1 {

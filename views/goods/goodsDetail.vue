@@ -1,9 +1,18 @@
 <template>
-	<view class="goodsDetail" >
+	<view class="coverImg" v-if="bigImage">	
+	<view class="IMGBOX">
+		<view class="icon" @click="removebigImage">X</view>
+		<view class="img">	
+			<image :src="bigImage" mode="widthFix"></image>
+		</view>
+	</view>
+		
+	</view>
+	<view class="goodsDetail" v-else >
 		<!-- 商品轮播区 -->
 		<view class="goodsDetail-swiper">
 			<u-swiper :list="list" indicatorActiveColor="red" indicatorInactiveColor="#ffffff" indicator="true"
-				autoplay="false" height="750rpx" imgMode="scaleToFill"></u-swiper>
+				@click="tapImg()" autoplay="false" height="750rpx" imgMode="aspectFill"></u-swiper>
 		</view>
 		<!-- 商品价格区 -->
 		<view class="goodsDetail-money">
@@ -53,11 +62,11 @@
 			</view>
 			<view class="goodsDetail-title-share">
 				<view class="goodsDetail-title-share-icon">
-					<image v-if="!change" @click="changeIcon" src="/static/goodsDetail/star.png" mode="scaleToFill">
+					<image v-if="!change" @click="changeIcon" src="/static/goodsDetail/star.png" mode="aspectFill">
 					</image>
-					<image v-else @click="changeIcon" src="/static/goodsDetail/star-success.png" mode="scaleToFill">
+					<image v-else @click="changeIcon" src="/static/goodsDetail/star-success.png" mode="aspectFill">
 					</image>
-					<image @click="showDialog" src="/static/goodsDetail/wechat.png" mode="aspectFit"></image>
+					<image @click="showDialog" src="/static/goodsDetail/wechat.png" mode="aspectFill"></image>
 				</view>
 				<view class="goodsDetail-title-share-text">
 					<text>收藏</text>
@@ -72,11 +81,11 @@
 			</view>
 		</view>
 		<view class="goodsDetail-btn">
-			<view class="goodsDetail-btn-left" v-for="(item,index) in btnList" :key="index">
-				<view class="img">
+			<view class="goodsDetail-btn-left" v-for="(item,index) in btnList" :key="index" >
+				<view class="img" >
 					<image :src="item.icon" mode="scaleToFill" @click="goWhere(item)"></image>
 				</view>
-				<view class="name">{{item.name}}</view>
+				<view class="name" >{{item.name}}</view>
 			</view>
 			<view class="kefu">
 				<button type="default" plain open-type="contact" style=" border: none;">
@@ -102,7 +111,7 @@
 					<u-icon name="close-circle" size="20px" @click="closeselectItem"></u-icon>
 				</view>
 			</view>
-			<view class="addAd" @click="toAddress">
+			<view class="addAd" @click="toAddress" v-if="choose=='buy'">
 				<view class="noaddress" v-if="addressInfo.length==0">+增加收货地址</view>
 				<View class="hasaddress" v-else >
 					<view class="image_address">
@@ -112,6 +121,7 @@
 					</view>
 				</View>
 			</view>
+			
 			<view class="classifyText">分类</view>
 			<view class="classify" >				
 				<view class="classifyFlexbox" v-for="(item,index) in list" :key="index" >
@@ -134,13 +144,14 @@
 				</view>
 				
 			</view>
-			<view class="remark">
+			<view class="remark" v-if="choose=='buy'">
 				<view>备注:</view>
 				<input type="text" v-model="note" placeholder="给卖家留言" />
 			</view>
 			
 			<view class="buyBox">
-				<view class="buyNow" @click="pay">立即支付￥{{Number(goodsInfo.salePrice*number).toFixed(2)}}</view>
+				<view class="buyNow" @click="addCard" v-if="choose=='add'">确定</view>
+				<view class="buyNow" @click="pay" v-else>立即支付￥{{Number(goodsInfo.salePrice*number).toFixed(2)}}</view>
 			</view>
 			
 			
@@ -228,12 +239,11 @@
 
 		data() {
 			return {
+				bigImage:'',
 				pwd:'',
 				size:'S【建议100斤以内】',
-				Keyheight:'',
 				number:1,
-				show:false,
-				
+				show:false,		
 				sizeList:[
 					{title:'S【建议100斤以内】'},
 					{title:'M【建议100-115斤】'},
@@ -244,6 +254,7 @@
 				addressInfo:[],
 				Itemindex:0,
 				Sizeindex:0,
+				choose:'',//选择加入购物车还是立即购买
 				goodsImg: '',
 				canvasImg: '', //生成的海报图片
 				qrcodeImg: '', //二维码本地图片
@@ -296,7 +307,55 @@
 
 		},
 		methods: {
-			
+			tapImg(e){
+				console.log('轮播图',this.list[e]);
+				this.bigImage=this.list[e]
+				
+			},
+			// 加入购物车
+			addCard(){
+				
+				if(!uni.getStorageSync('cardList')){
+					let list =[]
+					const goods={
+						"goodsName":this.goodsInfo.goodsName,
+						"goodsPrice":this.goodsInfo.salePrice,
+						"goodsStore":this.goodsInfo.storeName,
+						"goodsImg":this.goodsInfo.goodsImg,
+						"size":this.size,
+						"remark":this.note,
+						"number":this.number,
+						"rank":this.goodsInfo.rank,
+						"discount":this.goodsInfo.discount
+					} 
+					list.push(goods)
+					uni.setStorageSync('cardList',list)
+					uni.$showMsg('加入购物车成功！','none',2000)
+					this.$refs.selectItem.close()
+					
+				}else{
+					let list = uni.getStorageSync('cardList')
+					const goods={
+						"goodsName":this.goodsInfo.goodsName,
+						"goodsPrice":this.goodsInfo.salePrice,
+						"goodsStore":this.goodsInfo.storeName,
+						"goodsImg":this.goodsInfo.goodsImg,
+						"size":this.size,
+						"remark":this.note,
+						"number":this.number,
+						"rank":this.goodsInfo.rank,
+						"discount":this.goodsInfo.discount
+					}
+					list.push(goods)
+					uni.setStorageSync('cardList',list)
+					uni.$showMsg('加入购物车成功√','none',2000)
+					this.$refs.selectItem.close()
+				}
+				
+				
+				
+				
+			},
 			descNumber(){
 				if(this.number<=1)
 				{uni.$showMsg('不能再少了','none',2000)}
@@ -304,6 +363,7 @@
 					this.number--
 				}
 			},
+			// 支付弹窗的支付方式
 			PAY(){
 				uni.$showMsg('暂不支持其他方式支付！','none',2000)
 			},
@@ -313,14 +373,28 @@
 				setTimeout(()=>{
 				this.show=false
 				let order=uni.getStorageSync('orderList')
-				order[order.length-1].type='success'
-				console.log('order',order);
-				// uni.removeStorageSync('orderList')
-				uni.setStorageSync('orderList',order)
-				uni.hideLoading()
-				uni.navigateTo({
-					url:'/views/goods/paySuccess'
+				console.log('order[order.length-1]',order[order.length-1]);
+				uni.request({
+					url:"/api/order",
+					data:{
+						"order":order[order.length-1]
+					},
+					success:res=>{
+						let orderData=[]
+						orderData=res.data
+						console.log('orderData',orderData);
+						order[order.length-1].type='success'
+						console.log('order',order);
+						uni.setStorageSync('orderList',order)
+						uni.hideLoading()
+						uni.navigateTo({
+							url:'/views/goods/paySuccess?orderData='+JSON.stringify(orderData)
+						})
+					}
 				})
+				
+				
+				
 				},1000)
 				uni.showLoading({
 					title:'支付中...',					
@@ -331,6 +405,7 @@
 				this.number++
 				
 			},
+			// 地址选择
 			toAddress(){
 				uni.navigateTo({
 					url:"/views/address/address"
@@ -357,14 +432,14 @@
 						let list=[]
 						list.push(order)
 						uni.setStorageSync('orderList',list)
-						console.log('ff',uni.getStorageSync('orderList'));
+						
 					}else{
 						let list =uni.getStorageSync('orderList')
 						list.push(order)
 						uni.setStorageSync('orderList',list)
-						console.log('ee',uni.getStorageSync('orderList'));
+						
 					}				
-					console.log(order);
+					
 					setTimeout(()=>{
 					this.show=true
 					
@@ -388,7 +463,11 @@
 			openselectItem(item){
 				if(item=='buy'){
 					this.$refs.selectItem.open()
+					this.choose='buy'
 					
+				}else {
+					this.$refs.selectItem.open()
+						this.choose='add'
 				}
 			},
 			// 选择尺寸
@@ -414,17 +493,17 @@
 				// console.log(item);
 				if(item.name=='店铺'){
 					uni.$showMsg('查看店铺功能开发中...','none',2000)
-				}else if(item.name=='客服'){
-					
-				} else if(item.name=='购物车'){
-					uni.$showMsg('去购物车页面','none',2000)
+				}else if(item.name=='购物车'){
+					uni.switchTab({
+						url:'/pages/car/car'
+					})
 				}
 			},
 
 			
 				//点击微信分享出现的dialog
 			showDialog() {
-				this.$refs.share.open()
+				this.$refs.share.open() 
 			},
 			hideDialog() {
 				this.$refs.share.close()
@@ -440,6 +519,7 @@
 						// console.log(res.data.goodsDetail);
 						if (res.data.code == 200) {
 							this.goodsInfo = res.data.goodsDetail
+							console.log(this.goodsInfo,'this.goodsInfo');
 							this.goodsImg = this.goodsInfo.goodsImg
 							// console.log('goodsImg', this.goodsImg);
 							this.time = this.goodsInfo.expirationTime * 1000 - Number(new Date()
@@ -453,6 +533,9 @@
 						}
 					}
 				})
+			},
+			removebigImage(){
+			this.bigImage=''	
 			},
 			changeIcon() {
 				this.change = !this.change

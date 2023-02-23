@@ -1,0 +1,226 @@
+
+.Content{
+	box-sizing: border-box;
+	height:100%;
+	background-color:#efefef;	
+	.FlexBox{
+		display: flex;
+		flex-direction: column;
+		width: 96%;
+
+		margin: 0 auto;
+		// margin-top: 20rpx;
+		margin-bottom: 20rpx;
+		.over{
+			width: 100%;
+			margin-top: 20rpx;
+			font-size: 26rpx;
+			
+			text-align: center;
+		}
+		.empty{
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			margin: 0 auto;
+			margin-top: -20rpx;
+			image{
+				width: 400rpx;
+				height: 400rpx;				
+			}
+			view{
+				font-size: 26rpx;
+				// letter-spacing: 1rpx;
+				// color: darkgray;
+			}
+		}
+		.ForBox{
+			margin-top: 20rpx;	
+			background-color: white;
+			border-radius: 20rpx;
+			.goodsStore{
+				font-size: 26rpx;
+				font-weight: 600;
+				line-height: 100rpx;
+				padding-left: 20rpx;
+								display: flex;
+								align-items: center;
+				image{
+					
+					width: 50rpx;
+					height: 50rpx;
+					margin-right: 20rpx;
+					// margin-top: 10rpx;
+					
+				}
+				text{
+					text-align: center;
+					margin-left: 10rpx;
+					color: darkgray;
+				}
+				
+			}
+			.goodsInfo{
+				display: flex;
+				align-items: center;
+				height: 200rpx;
+				margin-top: 20rpx;
+				margin-bottom: 40rpx;
+				.goodsInfo_radio{
+					display: flex;					
+					width: 80rpx;							
+					margin: 0 auto;
+					margin-left: 10rpx;
+					justify-content: center;
+					
+					
+					
+				}
+				.goodsInfo_img{
+					display: flex;
+					align-items: center;
+					image{
+						border-radius: 20rpx;
+						width: 200rpx;
+						height: 200rpx;
+					}
+					
+				}
+				.goodsInfo_goodstitle{
+					margin-left: 30rpx;
+					display: flex;
+					flex-direction: column;
+					height:200rpx ;
+				.goodsInfo_goodstitle_goodsName{
+					overflow: hidden;
+					text-overflow:unset;
+					white-space: nowrap;
+					width:410rpx;
+					font-weight: 600;
+					font-size: 24rpx;
+					 
+				}
+				.goodsInfo_goodstitle_discount{
+					font-size: 23rpx;
+					color: #ff4c20;
+					margin-top: 20rpx;
+					font-weight: 600;
+					width: 100rpx;
+					text-align: center;
+					border-radius: 4rpx;
+					background-color:#ffedff ;
+					letter-spacing: 1rpx;
+					
+				}
+				.goodsInfo_goodstitle_size{
+					font-size: 24rpx;
+					margin-top: 10rpx;
+				    margin-right: 20rpx;
+					background-color: #eeeeee;
+					line-height: 40rpx;
+					padding-left: 5rpx;
+					color: darkgray;
+					border-radius: 10rpx;
+					letter-spacing: 1rpx;
+						
+				}
+				.goodsInfo_goodstitle_goodsPrice_number{
+					display: flex;
+					justify-content: space-between;
+					margin-top: 20rpx;
+					align-items: center;
+					margin-right: 20rpx;
+					.goodsInfo_goodstitle_goodsPrice{
+						color: #ff4c20;
+						font-size: 34rpx;
+						font-weight: 600;
+						text{
+							font-size: 24rpx;
+							
+						}
+						
+					}
+					.goodsInfo_goodstitle_number{
+						border: 1rpx solid lightgray;
+						border-radius: 10rpx;
+						width: 50rpx;
+						height: 50rpx;
+						margin-left: 20rpx;
+						text-align: center;
+						font-size: 24rpx;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						
+						
+						
+					}
+				}
+				}
+				
+			}
+			
+		}
+	}
+	.btnBox{
+		z-index: 9999;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		height: 120rpx;
+		background-color: #ffffff;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		.btnBox_right{
+			display: flex;
+			align-items: center;
+			margin-left: 20rpx;
+			.radio{
+				margin-left: 20rpx;
+			}
+			.txt{
+				font-size: 26rpx;
+				color: darkgray;
+			}
+			
+		}
+		.btnBox_left{
+			display: flex;
+			align-items: center;
+			.btnBox_left_money{
+				font-size: 26rpx;
+				.icon{
+					font-size: 24rpx;
+				}
+				.money{
+					font-size: 40rpx;
+					color: #ff4c20;
+					font-weight: 600;
+				}
+				
+			}
+			.btnBox_left_btn{
+				// background-color: red;
+				margin-right:20rpx ;
+				margin-left: 20rpx;
+				width: 150rpx;
+				line-height: 100rpx;
+				border-radius: 30%;
+				.btn{
+					width: 150rpx;
+					border-radius: 100rpx;
+					font-size: 24rpx;
+					color: white;
+					letter-spacing: 2rpx;
+					background-color: #db9411;
+					background-image: linear-gradient(73deg, #db9411 0%, #fa0d00 100%);
+				}
+				
+			}
+		}
+		
+	}
+}

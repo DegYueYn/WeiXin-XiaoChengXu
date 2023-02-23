@@ -32,6 +32,15 @@
 				"navigationStyle": "custom", //导航栏样式
 				"navigationBarTextStyle": "black" //导航栏标题颜色及状态栏前景颜色
 			}
+		},
+		{
+			"path": "pages/car/car",
+			"style": {
+				"navigationBarTitleText": "购物车", //导航栏标题文字内容
+				"backgroundColorTop": "#ffffff", //下拉显示出来的窗口的背景色
+				// "navigationStyle": "custom", //导航栏样式
+				"navigationBarTextStyle": "black" //导航栏标题颜色及状态栏前景颜色
+			}
 		}
 	],
 	"subPackages": [
@@ -128,6 +137,12 @@
 				"text": "淘吧!"
 			},
 
+			{
+				"pagePath": "pages/car/car",
+				"iconPath": "static/car.png",
+				"selectedIconPath": "static/car-on.png",
+				"text": "购物车"
+			},
 			{
 				"pagePath": "pages/my/my",
 				"iconPath": "static/my.png",

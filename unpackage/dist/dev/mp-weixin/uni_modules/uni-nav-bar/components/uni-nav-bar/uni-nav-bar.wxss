@@ -70,11 +70,6 @@
 .uni-navbar--shadow.data-v-6bda1a90 {
   box-shadow: 0 1px 6px #ccc;
 }
-.uni-navbar--border.data-v-6bda1a90 {
-  border-bottom-width: 1rpx;
-  border-bottom-style: solid;
-  border-bottom-color: #eee;
-}
 .uni-ellipsis-1.data-v-6bda1a90 {
   overflow: hidden;
   white-space: nowrap;

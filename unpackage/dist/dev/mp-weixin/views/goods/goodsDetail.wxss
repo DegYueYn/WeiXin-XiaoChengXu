@@ -71,6 +71,40 @@
   margin: 0 auto;
   margin-top: 20rpx;
 }
+.coverImg.data-v-4f9e430f {
+  background-color: black;
+  height: 100%;
+}
+.coverImg .IMGBOX.data-v-4f9e430f {
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.coverImg .IMGBOX .icon.data-v-4f9e430f {
+  background-color: white;
+  width: 50rpx;
+  border-radius: 50%;
+  line-height: 50rpx;
+  text-align: center;
+  margin-top: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 27rpx;
+  margin-bottom: 40rpx;
+  margin-left: 20rpx;
+}
+.coverImg .IMGBOX .img.data-v-4f9e430f {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.coverImg .IMGBOX .img image.data-v-4f9e430f {
+  height: 650rpx;
+  width: 650rpx;
+}
 .goodsDetail.data-v-4f9e430f {
   background-color: #eeeeee;
   position: relative;

@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/other/other",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/car/car"
   ],
   "subPackages": [
     {
@@ -54,6 +55,12 @@
         "iconPath": "static/other.png",
         "selectedIconPath": "static/other-on.png",
         "text": "淘吧!"
+      },
+      {
+        "pagePath": "pages/car/car",
+        "iconPath": "static/car.png",
+        "selectedIconPath": "static/car-on.png",
+        "text": "购物车"
       },
       {
         "pagePath": "pages/my/my",

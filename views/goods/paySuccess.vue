@@ -11,7 +11,10 @@
 			<view class="FlexBox">
 				<view class="ForBox" v-for="(item,index) in List" :key="index">
 					<view class="left">{{item.title}}</view>
-					<view class="right">548389347</view>
+					<view class="right" v-if="item.value=='wx'">微信支付</view>
+					<view class="right" v-else-if="item.value==1">下单成功即将发货</view>
+					<!-- <view class="right" v-else-if="item.title=='下单时间'">{{FormatTime(item.value)}}</view> -->
+					<view class="right" v-else>{{item.value}}</view>
 				</view>
 			</view>
 			<view class="btnBox">
@@ -25,27 +28,45 @@
 </template>
 
 <script>
+	import { FormatTime } from '@/utils/index.js'
 	export default {
 		data() {
 			return {
+				orderData:{},
 				statusHeight: 0,
 				color: 'white',
 				List:[{
-					title:'订单编号:'
+					title:'订单编号:',
+					value:''
 				},{
-					title:'下单时间:'
+					title:'订单状态:',
+					value:''
 				},{
-					title:'支付方式:'
+					title:'支付方式:',
+					value:''
 				},{
-					title:"订单状态:"
+					title:"下单时间:",
+					value:''
 				}]
 
 			}
 		},
-		onLoad() {
+		onLoad(op) {
 			this.getSystemdata()
+			
+			this.orderData=JSON.parse(op.orderData).data
+			
+			let values=Object.values(this.orderData)
+				values[3]=FormatTime(values[3])
+					
+			for(let i=0;i<this.List.length;i++){
+				this.List[i].value=values[i]
+			}
+			
+			
 		},
 		methods: {
+			FormatTime,
 			getSystemdata() {
 				uni.getSystemInfo({
 					success: res => {
@@ -100,6 +121,7 @@
 		.ForBox{
 			padding-bottom: 20rpx;
 			width: 80% ;
+			margin-top: 20rpx;
 			display: flex;
 			justify-content: space-between;
 			font-size: 32rpx;

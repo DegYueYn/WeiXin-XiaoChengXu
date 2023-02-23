@@ -1,6 +1,6 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["views/goods/common/vendor"],{
 
-/***/ 201:
+/***/ 212:
 /*!**********************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/fan-canvas/canvasUtils.js ***!
   \**********************************************************************/
@@ -345,7 +345,7 @@ function drawButton(ctx, color, x, y, width, height, radius, text, fontColor, te
 
 /***/ }),
 
-/***/ 202:
+/***/ 213:
 /*!************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/fan-canvas/plugins/utils.js ***!
   \************************************************************************/
@@ -353,7 +353,7 @@ function drawButton(ctx, color, x, y, width, height, radius, text, fontColor, te
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.qrcodeCanvas = exports.saveImg = void 0;var _qrcode = _interopRequireDefault(__webpack_require__(/*! ./qrcode */ 203));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //用于绘制二维码
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.qrcodeCanvas = exports.saveImg = void 0;var _qrcode = _interopRequireDefault(__webpack_require__(/*! ./qrcode */ 214));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //用于绘制二维码
 
 // 保存图片
 var settingWritePhotosAlbum = false;
@@ -542,7 +542,7 @@ function convert_length(length) {
 
 /***/ }),
 
-/***/ 203:
+/***/ 214:
 /*!*************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/fan-canvas/plugins/qrcode.js ***!
   \*************************************************************************/

@@ -26,6 +26,7 @@
 .FlexBox .ForBox.data-v-f47cceba {
   padding-bottom: 20rpx;
   width: 80%;
+  margin-top: 20rpx;
   display: flex;
   justify-content: space-between;
   font-size: 32rpx;

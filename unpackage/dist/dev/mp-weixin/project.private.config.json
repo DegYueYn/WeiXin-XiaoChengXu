@@ -19,28 +19,7 @@
         },
         {
           "name": "",
-          "pathName": "views/address/add",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "views/address/address",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "views/goods/goodsDetail",
-          "query": "goodsId=4",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "views/goods/paySuccess",
+          "pathName": "pages/car/car",
           "query": "",
           "launchMode": "default",
           "scene": null
