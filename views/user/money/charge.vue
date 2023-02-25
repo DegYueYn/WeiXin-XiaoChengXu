@@ -36,10 +36,10 @@
 		},
 		methods:{
 			add(event){
-				console.log(event.detail);
+				// console.log(event.detail);
 				this.value=Number(event.detail.value)
 				this.money_account_new=this.money_account+Number(event.detail.value);
-				console.log(this.money_account_new);
+				// console.log(this.money_account_new);
 			},
 			sureCharge(){
 				if(this.value>0){

@@ -182,28 +182,143 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
     return {
       iconUrl: uni.getStorageSync('iconUrl'),
       title: '我的',
+      show: true,
       width: 0,
       height: 300,
       money_account: uni.getStorageSync('money_account') || 0,
       card_account: uni.getStorageSync('card_account') || 0,
       nickname: uni.getStorageSync('nickname'),
-      flag: false };
+      flag: false,
+      otherlist: [{
+        icon: '/static/other/adddress.png',
+        title: '我的地址' },
+
+      {
+        icon: '/static/other/shoucang.png',
+        title: '我的收藏' },
+
+      {
+        icon: '/static/other/card.png',
+        title: '领券中心' },
+
+      {
+        icon: '/static/other/express.png',
+        title: '我的快递' },
+
+      {
+        icon: '/static/other/huiyuan.png',
+        title: '会员中心' },
+
+      {
+        icon: '/static/other/kefu.png',
+        title: '官方客服' },
+
+      {
+        icon: '/static/other/pay.png',
+        title: '充话费' },
+
+      {
+        icon: '/static/other/pingjia.png',
+        title: '我的评价' }],
+
+
+
+      orderlist: [{
+        id: 0,
+        title: '全部',
+        icon: '/static/order/all.png' },
+
+      {
+        id: 1,
+        title: '待付款',
+        icon: '/static/order/fukuan.png' },
+
+      {
+        id: 2,
+        title: '待收货',
+        icon: '/static/order/shouhuo.png' },
+
+      {
+        id: 3,
+        title: '退款',
+        icon: '/static/order/tuikuan.png' }] };
+
+
 
   },
   onLoad: function onLoad() {
     this.getSystemdata();
+
   },
   onShow: function onShow() {
+
+    this.getNews();
     this.flag = uni.getStorageSync('flag') || false;
     this.money_account = uni.getStorageSync('money_account');
   },
   methods: {
+    getNews: function getNews() {
+      this.show = false;
+      this.show = true;
+      var orderList = uni.getStorageSync('orderList');
+      var successNum = 0;
+      var failNum = 0;
+      for (var i = 0; i < orderList.length; i++) {
+        if (orderList[i].type == 'success') {
+          successNum++; //待收货
+        } else if (orderList[i].type == 'sure') {
+          // 已收货
+        } else {
+          failNum++; //待付款
+        }
+      }
+      this.orderlist[0].news = orderList.length;
+      this.orderlist[1].news = failNum;
+      this.orderlist[2].news = successNum;
+      // console.log('this.orderlist',this.orderlist);				
+    },
+    // 订单栏详情
+    toOrderDetail: function toOrderDetail(e) {
+      uni.navigateTo({
+        url: '/views/user/order/order?actIndex=' + e.id });
+
+
+
+
+    },
+
     getSystemdata: function getSystemdata() {var _this = this;
       // 状态栏高度
       uni.getSystemInfo({
@@ -211,6 +326,10 @@ var _default =
           _this.width = res.screenWidth;
         } });
 
+    },
+    // 我的服务
+    cliclItem: function cliclItem(e) {
+      uni.$showMsg('功能持续开发中···', 'none', 2000);
     },
 
     getUserInfo: function getUserInfo() {var _this2 = this;

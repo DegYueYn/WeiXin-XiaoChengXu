@@ -350,9 +350,15 @@
   color: #696969;
   margin-top: 20rpx;
   display: flex;
+  height: 40rpx;
   justify-content: space-between;
+  align-items: center;
   margin-left: 20rpx;
   margin-right: 20rpx;
+}
+.goodsDetail .u-popup .payway .paytype.data-v-4f9e430f {
+  display: flex;
+  align-items: center;
 }
 .goodsDetail .u-popup .payway .paytype image.data-v-4f9e430f {
   width: 30rpx;
@@ -362,27 +368,43 @@
   margin: 20rpx;
   background-color: white;
   border-radius: 10rpx;
-  line-height: 100rpx;
-  padding-left: 20rpx;
-  padding-top: 10rpx;
+  height: 120rpx;
+}
+.goodsDetail uni-popup .addAd .noaddress.data-v-4f9e430f {
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 120rpx;
 }
 .goodsDetail uni-popup .addAd .hasaddress .image_address.data-v-4f9e430f {
+  height: 120rpx;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 .goodsDetail uni-popup .addAd .hasaddress .image_address image.data-v-4f9e430f {
+  margin-left: 10rpx;
   width: 50rpx;
   height: 40rpx;
 }
 .goodsDetail uni-popup .addAd .hasaddress .image_address .address.data-v-4f9e430f {
   margin-left: 10rpx;
+  margin-left: 10rpx;
   width: 80%;
+  font-size: 28rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+.goodsDetail uni-popup .addAd .hasaddress .image_address .address text.data-v-4f9e430f {
+  font-weight: 600;
+  font-size: 32rpx;
+}
+.goodsDetail uni-popup .addAd .hasaddress .image_address .address .text.data-v-4f9e430f {
+  font-size: 28rpx;
+  color: darkgray;
+  font-weight: 400;
+  margin-left: 10rpx;
 }
 .goodsDetail uni-popup .addAd .hasaddress .image_address .icon.data-v-4f9e430f {
   width: 20%;

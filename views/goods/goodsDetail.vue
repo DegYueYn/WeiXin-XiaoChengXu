@@ -112,11 +112,14 @@
 				</view>
 			</view>
 			<view class="addAd" @click="toAddress" v-if="choose=='buy'">
-				<view class="noaddress" v-if="addressInfo.length==0">+增加收货地址</view>
+				<view class="noaddress" v-if="addressInfo.length==0">+增加收货地址 〉</view>
 				<View class="hasaddress" v-else >
 					<view class="image_address">
 						<image src="/static/address/address.png" mode="scaleToFill"></image>
-						<view class="address">{{addressInfo.name+'&nbsp &nbsp' + addressInfo.address + addressInfo.addArea}}</view>
+						<view class="address">
+						<text>{{addressInfo.name}}</text>
+						<text class="text">{{addressInfo.phoneNumber}}</text>
+						{{ '&nbsp &nbsp'+addressInfo.address +'&nbsp &nbsp' +addressInfo.addArea}}</view>
 						<view class="icon">切换地址 〉</view>
 					</view>
 				</View>
@@ -163,10 +166,8 @@
 					<view class="icon">
 						<u-icon name="close" color="#7b7379" size="30" @click="close"></u-icon>
 					</view>
-					请输入支付密码
-					
-				</view>
-				
+					请输入支付密码					
+				</view>				
 				<view class="storeName">{{goodsInfo.storeName}}</view>
 				<view class="paymoney"><text>￥</text>{{Number(goodsInfo.salePrice*number).toFixed(2)}}</view>
 				<u-line></u-line>
@@ -174,21 +175,14 @@
 					<view class="paytext">支付方式</view>
 					<view class="paytype" @click="PAY">
 						<image src="/static/goodsDetail/demaland.png" mode="scaleToFill" ></image>
-						零钱通 ›
-						
+						零钱通 ›						
 					</view>
 				</view>
 				<view class="paypwd">
-					
-					<u-code-input  :focus="false"   v-model="pwd" mode="box" :space="16"  @finish="finish" :size="80"  :maxlength="6"  dot>
-						
-						
-					</u-code-input>
-					
-				
+					<u-code-input  :focus="false"   v-model="pwd" mode="box" :space="16"  @finish="finish" :size="80"  :maxlength="6"  dot>											
+					</u-code-input>				
 				</view>
-				<view style="height: 100rpx;"></view>
-				
+				<view style="height: 100rpx;"></view>				
 		</u-popup>
 		<uni-popup ref="share" type="share" safeArea backgroundColor="#fff">
 			<view class="share-box">
@@ -308,13 +302,17 @@
 		},
 		methods: {
 			tapImg(e){
-				console.log('轮播图',this.list[e]);
 				this.bigImage=this.list[e]
 				
 			},
 			// 加入购物车
 			addCard(){
-				
+				if(!uni.getStorageSync('nickname')){
+					uni.switchTab({
+						url:'/pages/my/my'
+					})
+					return
+				}
 				if(!uni.getStorageSync('cardList')){
 					let list =[]
 					const goods={
@@ -348,7 +346,7 @@
 					}
 					list.push(goods)
 					uni.setStorageSync('cardList',list)
-					uni.$showMsg('加入购物车成功√','none',2000)
+					uni.$showMsg('加入购物车成功','none',2000)
 					this.$refs.selectItem.close()
 				}
 				
@@ -373,7 +371,7 @@
 				setTimeout(()=>{
 				this.show=false
 				let order=uni.getStorageSync('orderList')
-				console.log('order[order.length-1]',order[order.length-1]);
+				// console.log('order[order.length-1]',order[order.length-1]);
 				uni.request({
 					url:"/api/order",
 					data:{
@@ -419,11 +417,13 @@
 				}else{
 					const order={
 						"goodsName":this.goodsInfo.goodsName,
-						"goodsPrice":this.goodsInfo.salePrice*this.number,
+						"goodsPrice":this.goodsInfo.salePrice,
 						"goodsStore":this.goodsInfo.storeName,
+						"goodsImg":this.goodsInfo.goodsImg,
 						"address":this.addressInfo.address+this.addressInfo.addArea,
 						"name":this.addressInfo.name,
 						"size":this.size,
+						"number":this.number,
 						"time":new Date().getTime(),
 						"remark":this.note,
 						"phone":this.addressInfo.phoneNumber,				
@@ -456,11 +456,18 @@
 			},
 			close(){
 				this.show=false
+				uni.$showMsg('您已取消了支付','none',2000)
 				
 			},
 			
 			//购买或购物车按钮
 			openselectItem(item){
+				if(!uni.getStorageSync('nickname')){
+					uni.switchTab({
+						url:'/pages/my/my'
+					})
+					return
+				}
 				if(item=='buy'){
 					this.$refs.selectItem.open()
 					this.choose='buy'
@@ -490,6 +497,12 @@
 			
 			//底部购买栏按钮
 			goWhere(item){
+				if(!uni.getStorageSync('nickname')){
+					uni.switchTab({
+						url:'/pages/my/my'
+					})
+					return
+				}
 				// console.log(item);
 				if(item.name=='店铺'){
 					uni.$showMsg('查看店铺功能开发中...','none',2000)
@@ -503,6 +516,12 @@
 			
 				//点击微信分享出现的dialog
 			showDialog() {
+				if(!uni.getStorageSync('nickname')){
+					uni.switchTab({
+						url:'/pages/my/my'
+					})
+					return
+				}
 				this.$refs.share.open() 
 			},
 			hideDialog() {
@@ -538,6 +557,12 @@
 			this.bigImage=''	
 			},
 			changeIcon() {
+				if(!uni.getStorageSync('nickname')){
+					uni.switchTab({
+						url:'/pages/my/my'
+					})
+					return
+				}
 				this.change = !this.change
 				uni.$showMsg(`${this.change?'收藏成功':'已取消收藏'}`, 'none', 2000)
 			},

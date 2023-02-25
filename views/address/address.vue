@@ -52,14 +52,10 @@
 						pages.filter((v,i)=>{
 							if(v.route=='views/goods/goodsDetail'){
 								this.index= i
-							}
-							
-						})
-						
-						// pages.splice(-1,0,pages[this.index])
-						// console.log('pages2',pages);
-					
-						
+							}else if(v.route=='views/carPay/carPay'){
+								this.index=i
+							}						
+						})						
 						let nowPage = pages[ pages.length - 1];
 						let prevPage = pages[this.index];
 						console.log('prevPage',prevPage);

@@ -10,20 +10,20 @@ export default {
 		//请求
 		api.get_linkAddress_api(data).then((res) => {
 			let revert=res.data.data;
-			console.log(revert)
+			// console.log(revert)
 			if(res.data.code==1){
 				if(tag==="province"){	
-					console.log("province")
+					// console.log("province")
 					_this.linkAddress_area[0].info=revert;
 					callback(true);//回掉
 				}
 				if(tag==="city"){
-					console.log("city")
+					// console.log("city")
 					_this.linkAddress_area[1].info=revert;
 					callback(true);//回掉
 				}
 				if(tag==="district"){
-					console.log("district")
+					// console.log("district")
 					_this.linkAddress_area[2].info=revert;
 					callback(true);//回掉
 				}

@@ -1,6 +1,6 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["views/goods/common/vendor"],{
 
-/***/ 212:
+/***/ 222:
 /*!**********************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/fan-canvas/canvasUtils.js ***!
   \**********************************************************************/
@@ -13,7 +13,7 @@
                                                                                                       * 参数：cxt、x坐标、y坐标、宽度、高度、圆角、颜色
                                                                                                       */
 function fillRoundRect(cxt, x, y, width, height, radius, fillColor) {
-  console.log(cxt, 'fillRoundRect');
+  // console.log(cxt,'fillRoundRect')
   //圆的直径必然要小于矩形的宽高
   if (2 * radius > width || 2 * radius > height) {
     return false;
@@ -123,7 +123,7 @@ function drawCircular(ctx, url, x, y, width, height) {
    * a:绘制图片高度
    */
 function drawImgCover(t, e, s, o, i, a) {
-  console.log(e, 'drawImgCover');
+  // console.log(e,'drawImgCover')
   if (e.width / e.height >= i / a) {
     var r = e.height,
     n = Math.ceil(i / a * r);
@@ -220,7 +220,7 @@ function dealWords(options, callback) {
           // 判断最后一个是否字母--判断是否截断了英文
           var jy = /^[a-zA-Z]*$/;
           if (jy.test(nowStr[m - 1])) {
-            console.log(m - 1, nowStr[m - 1], '最后一个是字母');
+            // console.log(m-1,nowStr[m-1],'最后一个是字母')
             for (var n = 1; n < m - 1; n++) {
               if (!jy.test(nowStr[m - 1 - n])) {
                 console.log(m - 1 - n, nowStr[m - 1 - n], num, endPos, '这个位置是空字符');
@@ -269,7 +269,7 @@ function getLineNum(ctx, str, maxWidth) {
           // 判断最后一个是否字母--判断是否截断了英文
           var jy = /^[a-zA-Z]*$/;
           if (jy.test(nowStr[m - 1])) {
-            console.log(m - 1, nowStr[m - 1], '最后一个是字母');
+            // console.log(m-1,nowStr[m-1],'最后一个是字母')
             for (var n = 1; n < m - 1; n++) {
               if (!jy.test(nowStr[m - 1 - n])) {
                 console.log(m - 1 - n, nowStr[m - 1 - n], num, endPos, '这个位置是空字符');
@@ -345,7 +345,7 @@ function drawButton(ctx, color, x, y, width, height, radius, text, fontColor, te
 
 /***/ }),
 
-/***/ 213:
+/***/ 223:
 /*!************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/fan-canvas/plugins/utils.js ***!
   \************************************************************************/
@@ -353,7 +353,7 @@ function drawButton(ctx, color, x, y, width, height, radius, text, fontColor, te
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.qrcodeCanvas = exports.saveImg = void 0;var _qrcode = _interopRequireDefault(__webpack_require__(/*! ./qrcode */ 214));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //用于绘制二维码
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.qrcodeCanvas = exports.saveImg = void 0;var _qrcode = _interopRequireDefault(__webpack_require__(/*! ./qrcode */ 224));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //用于绘制二维码
 
 // 保存图片
 var settingWritePhotosAlbum = false;
@@ -542,7 +542,7 @@ function convert_length(length) {
 
 /***/ }),
 
-/***/ 214:
+/***/ 224:
 /*!*************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/fan-canvas/plugins/qrcode.js ***!
   \*************************************************************************/

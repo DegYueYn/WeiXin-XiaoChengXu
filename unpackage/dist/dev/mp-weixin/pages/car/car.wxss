@@ -1,7 +1,29 @@
 .Content.data-v-51e9b630 {
   box-sizing: border-box;
   height: 100%;
-  background-color: #efefef;
+}
+.Content .noLogin.data-v-51e9b630 {
+  height: 100vh;
+  background-color: #ffedff;
+  text-align: center;
+  margin: 0 auto;
+}
+.Content .noLogin image.data-v-51e9b630 {
+  border-radius: 20rpx;
+  margin-top: 200rpx;
+  width: 400rpx;
+  height: 400rpx;
+}
+.Content .noLogin view.data-v-51e9b630 {
+  width: 300rpx;
+  padding: 10rpx;
+  font-size: 30rpx;
+  background-color: #ff4c20;
+  border-radius: 40rpx;
+  color: white;
+  margin: 0 auto;
+  line-height: 60rpx;
+  margin-top: 100rpx;
 }
 .Content .FlexBox.data-v-51e9b630 {
   display: flex;

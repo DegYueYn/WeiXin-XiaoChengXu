@@ -1,6 +1,6 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["views/address/common/vendor"],{
 
-/***/ 325:
+/***/ 371:
 /*!*****************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/static/xuan-linkAddress/get_linkAddress_p.js ***!
   \*****************************************************************************/
@@ -8,7 +8,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _api = _interopRequireDefault(__webpack_require__(/*! @/views/address/xuan-linkAddress/api.js */ 326));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _api = _interopRequireDefault(__webpack_require__(/*! @/views/address/xuan-linkAddress/api.js */ 372));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 
 {
   /*
@@ -20,20 +20,20 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     //请求
     _api.default.get_linkAddress_api(data).then(function (res) {
       var revert = res.data.data;
-      console.log(revert);
+      // console.log(revert)
       if (res.data.code == 1) {
         if (tag === "province") {
-          console.log("province");
+          // console.log("province")
           _this.linkAddress_area[0].info = revert;
           callback(true); //回掉
         }
         if (tag === "city") {
-          console.log("city");
+          // console.log("city")
           _this.linkAddress_area[1].info = revert;
           callback(true); //回掉
         }
         if (tag === "district") {
-          console.log("district");
+          // console.log("district")
           _this.linkAddress_area[2].info = revert;
           callback(true); //回掉
         }
@@ -43,7 +43,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 326:
+/***/ 372:
 /*!**********************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/views/address/xuan-linkAddress/api.js ***!
   \**********************************************************************/
@@ -51,7 +51,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _request = _interopRequireDefault(__webpack_require__(/*! @/static/xuan-linkAddress/request.js */ 327));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _request = _interopRequireDefault(__webpack_require__(/*! @/static/xuan-linkAddress/request.js */ 373));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 //创建Request对象
 var request = new _request.default();var _default =
 
@@ -64,7 +64,7 @@ var request = new _request.default();var _default =
 
 /***/ }),
 
-/***/ 327:
+/***/ 373:
 /*!*******************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/static/xuan-linkAddress/request.js ***!
   \*******************************************************************/

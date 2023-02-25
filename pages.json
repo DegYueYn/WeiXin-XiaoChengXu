@@ -7,39 +7,35 @@
 				"backgroundColorTop": "#ffffff", //下拉显示出来的窗口的背景色
 				// "enablePullDownRefresh": true,
 				// "onReachBottomDistance": 50,
-				"navigationStyle": "custom",//导航栏样式
-				"navigationBarTextStyle": "black" //导航栏标题颜色及状态栏前景颜色
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "black"
 			}
 		},
 		{
 			"path": "pages/other/other",
 			"style": {
-				"navigationBarTitleText": "", //导航栏标题文字内容
-				"backgroundColorTop": "#ffffff", //下拉显示出来的窗口的背景色
-				// "enablePullDownRefresh": true,
-				// "onReachBottomDistance": 50,
-				// "navigationStyle": "custom",//导航栏样式
-				"navigationBarTextStyle": "black" //导航栏标题颜色及状态栏前景颜色
+				"navigationBarTitleText": "",
+				"backgroundColorTop": "#ffffff",
+				"navigationBarTextStyle": "black"
 			}
 		},
 		{
 			"path": "pages/my/my",
 			"style": {
-				"navigationBarTitleText": "", //导航栏标题文字内容
-				"backgroundColorTop": "#ffffff", //下拉显示出来的窗口的背景色
-				// "enablePullDownRefresh": true,
-				// "onReachBottomDistance": 50,
-				"navigationStyle": "custom", //导航栏样式
-				"navigationBarTextStyle": "black" //导航栏标题颜色及状态栏前景颜色
-			}
+				"navigationBarTitleText": "", 
+				"backgroundColorTop": "#ffffff", 
+				
+				"navigationStyle": "custom", 
+				"navigationBarTextStyle": "black"
+				 }
 		},
 		{
 			"path": "pages/car/car",
 			"style": {
-				"navigationBarTitleText": "购物车", //导航栏标题文字内容
-				"backgroundColorTop": "#ffffff", //下拉显示出来的窗口的背景色
+				"navigationBarTitleText": "购物车",
+				"backgroundColorTop": "#ffffff", 
 				// "navigationStyle": "custom", //导航栏样式
-				"navigationBarTextStyle": "black" //导航栏标题颜色及状态栏前景颜色
+				"navigationBarTextStyle": "black" 
 			}
 		}
 	],
@@ -55,10 +51,17 @@
 					"navigationBarTitleText": "我的卡券"
 				}		
 				},
+				
 				{
 					"path":"setting",
 					"style": {
 						"navigationBarTitleText" : "个人信息"
+					}
+				},
+				{
+					"path":"order/order",
+					"style": {
+						"navigationBarTitleText" : "我的订单"
 					}
 				},
 				{
@@ -93,6 +96,32 @@
 						"navigationStyle": "custom" //导航栏样式
 					}
 					
+				}
+			]
+			
+		},
+		{
+			"root": "views/search",
+			"pages": [
+				{
+					"path": "search",
+					"style": {
+						"navigationBarTitleText": "搜索",
+						"navigationStyle": "custom" //导航栏样式
+						
+					}
+				}
+			]
+			
+		},
+		{
+			"root": "views/carPay",
+			"pages": [
+				{
+					"path": "carPay",
+					"style": {
+						"navigationBarTitleText": "确认订单"
+					}
 				}
 			]
 			
@@ -156,7 +185,7 @@
 		"navigationBarTextStyle": "black",
 		"backgroundTextStyle": "light",
 		"backgroundColorTop": "#FFFFFF",
-		"backgroundColor": "#aaaaff",
+		"backgroundColor": "#ffffff",
 		"backgroundColorBottom": "#FFFFFF"
 	},
 	"uniIdRouter": {}

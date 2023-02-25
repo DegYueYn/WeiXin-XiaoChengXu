@@ -1,0 +1,289 @@
+.Content{
+	.Tab{
+		height: 80rpx;
+		position: sticky;
+		z-index: 9999;
+		top: 0;
+		background-color: white;
+		.Tab-flex{
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			.Tab-for{
+				line-height: 80rpx;
+				.title{
+					font-size: 28rpx;
+				}
+				.active{
+					color: #ee5007;
+					font-size: 30rpx;
+					font-weight: 600;
+				}
+			}
+		}
+	}
+	.orderList{
+		padding-bottom: 20rpx;
+		.orderList-flex{
+			width: 98%;
+			margin: 0 auto;
+			// background-color: red;
+			.orderList-for{
+				 width: 96%;
+				 margin: 0 auto;
+				 margin-bottom: 20rpx;
+				 border-radius: 20rpx;
+				 background-color: #ffffff;
+				.storeName{
+					display: flex;
+					align-items: center;
+					
+					line-height: 80rpx;
+					margin-top: 20rpx;
+					// background-color: #ee5007;
+					image{
+						margin-left: 20rpx;
+						width: 50rpx;
+						height: 50rpx;
+					}
+					.store{
+						text-align: center;
+						font-size: 26rpx;
+						font-weight: 600;
+						margin-left: 10rpx;
+						line-height: 80rpx;
+					}
+					.type{
+						width: 400rpx;
+						text-align: end;
+						margin-left: 40rpx;
+						font-size: 26rpx;
+						color: #ee5007;
+						font-weight: 600;
+						
+						
+					}
+					
+				}
+				.goodsInfo{
+					display: flex;
+					margin-top: 20rpx;
+					margin-left: 20rpx;
+					.img{
+						image{
+							border-radius: 20rpx;
+							width: 180rpx;
+							height: 180rpx;
+						}
+					}
+					.goodsinfo{
+						margin-left: 20rpx;
+						width: 380rpx;
+						.name{
+							
+							font-size: 26rpx;
+							font-weight: 600;
+							text-overflow: ellipsis;
+							overflow: hidden;
+							white-space: nowrap;
+							margin-top: 10rpx;
+							
+						}
+						.size{
+							font-size: 22rpx;
+							font-weight: 600;
+							color: darkgray;
+							margin-top: 20rpx;
+							
+						}
+						.xieyi{
+							margin-top: 10rpx;
+							font-size: 20rpx;
+							width: 170rpx;
+							text-align: center;
+							letter-spacing: 1rpx;
+							color: #ee5007;
+							border: 1rpx solid coral;
+							margin-top: 30rpx;
+							
+						}
+					}
+					.money{
+						margin-right: 10rpx;
+						display: flex;
+						flex-direction: column;
+						// align-items: center;
+						.price{
+							text-align: center;
+							margin-top: 10rpx;
+							font-weight: 600;
+							text{
+								font-size: 24rpx;
+							}
+							
+						}
+						.num{
+							font-size: 22rpx;
+							margin-top: 10rpx;
+							font-weight: 600;
+							color: darkgray;
+							text-align: end;
+						}
+					}
+				}
+                .paymoney{
+					display: flex;
+					justify-content: flex-end;
+				    align-items: center;
+					margin-right: 20rpx;
+					.paymoney_text{
+						color: darkgray;
+						font-size: 26rpx;
+					}
+					.paymoney_money{
+						font-size: 26rpx;
+						margin-left: 20rpx;
+						font-weight: 600;
+						text{
+							font-size: 24rpx;
+						}
+					}
+				}
+				.Btn{
+					height: 120rpx;
+					display: flex;
+					// justify-content: end;
+					align-items: center;
+					margin-left: 180rpx;
+					
+					.Btn1{
+						width: 160rpx;
+						margin-right: 10rpx;
+						font-size: 22rpx;
+						border-radius: 50rpx;
+						border: 1rpx solid darkgray;
+					}
+					.Btn2{
+						font-size: 22rpx;
+						border-radius: 50rpx;
+						width: 160rpx;
+						border: 1rpx solid #ee5007;
+						color: #ee5007;					
+					}
+					
+					
+				}
+				.btn{
+					display: flex;
+					justify-content: end;
+					align-items: center;
+					height: 120rpx;
+					// margin-left: 280rpx;
+					.btn3{
+						font-size: 22rpx;
+						border-radius: 50rpx;
+						width: 200rpx;
+						margin-left: 500rpx;
+						border: 1rpx solid #9da0aa;
+						letter-spacing: 1rpx;
+						font-weight: 600;
+						color: #969e94;	
+					}
+				}
+				.u-popup{
+					width: 100%;
+					.paypwdtext{
+						font-size: 32rpx;
+						width: 90%;
+						margin:0 auto;
+						text-align: center;
+						margin-top: -20rpx;
+						
+					}
+					.storeName{
+						font-weight: 600;
+						font-size: 34rpx;
+						width: 90%;
+						margin:0 auto;
+						display: flex;
+						justify-content: center;
+						text-align: center;
+						margin-top: 40rpx;
+					}
+					.paymoney{
+						font-size: 60rpx;
+						width: 90%;
+						margin:0 auto;
+						font-weight: 600;
+						text-align: center;
+						display: flex;
+						justify-content: center;
+						margin-top: 20rpx;
+						margin-bottom: 20rpx;
+					}
+					.paypwd{
+						display: flex;
+						justify-content: center;
+						padding: 50rpx;
+						u-code-input{
+						width: 90%;
+						margin:0 auto;	
+						margin-bottom: 100rpx;
+						
+						}
+						
+					}
+					
+					.payway{
+						font-size: 28rpx;
+						color: #696969;
+						margin-top: 20rpx;
+						display: flex;
+						height: 40rpx;
+						justify-content: space-between;
+						align-items: center;
+						margin-left: 20rpx;
+						margin-right: 20rpx;
+						.paytext{
+							
+						}
+						.paytype{
+							display: flex;
+							align-items: center;
+							image{
+								width: 30rpx;
+								height: 30rpx;
+							}
+						}
+						
+					}
+					
+					
+				}
+				
+			}
+		}
+		
+	}
+    .no{
+		width: 96%;
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		image{
+			 width: 400rpx;
+			 height: 400rpx;
+		}
+		text{
+			font-size: 26rpx;
+		}
+	}
+
+
+
+
+
+
+}

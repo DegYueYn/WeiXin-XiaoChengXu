@@ -13,7 +13,7 @@
 						</view>
 						<view :class="{ 'uni-navbar-btn-icon-left': !leftIcon.length > 0 }" class="uni-navbar-btn-text"
 							v-if="leftText.length">
-							<text :style="{ color: themeColor, fontSize: '20px' }">{{ leftText }}</text>
+							<text :style="{ color: themeColor, fontSize: '15px' }">{{ leftText }}</text>
 						</view>
 					</slot>
 				</view>

@@ -1,7 +1,9 @@
 .my.data-v-0be17cc6 {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background-color: #f4f5f7;
+  display: flex;
+  flex-direction: column;
 }
 .my .my-user-info.data-v-0be17cc6 {
   background: url("https://inews.gtimg.com/newsapp_bt/0/12001803206/1000.jpg") no-repeat center;
@@ -66,6 +68,106 @@
 }
 .my .function-money .function-money-right .left.data-v-0be17cc6 {
   margin-left: -20rpx;
+}
+.my .orderList.data-v-0be17cc6 {
+  box-sizing: border-box;
+  height: 270rpx;
+  width: 95%;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 120rpx;
+  border-radius: 20rpx;
+}
+.my .orderList .text.data-v-0be17cc6 {
+  margin: 20rpx;
+}
+.my .orderList .FlexBox.data-v-0be17cc6 {
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.my .orderList .FlexBox .ForBox .iconBox .icon.data-v-0be17cc6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.my .orderList .FlexBox .ForBox .iconBox .icon .num.data-v-0be17cc6 {
+  position: absolute;
+  text-align: center;
+  width: 35rpx;
+  line-height: 35rpx;
+  color: white;
+  font-weight: 600;
+  border-radius: 50%;
+  font-size: 22rpx;
+  background-color: #fa3512;
+  top: -5rpx;
+  right: 0rpx;
+}
+.my .orderList .FlexBox .ForBox .iconBox .icon image.data-v-0be17cc6 {
+  width: 70rpx;
+  height: 70rpx;
+}
+.my .orderList .FlexBox .ForBox .iconBox .title.data-v-0be17cc6 {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+}
+.otherList.data-v-0be17cc6 {
+  box-sizing: border-box;
+  height: 450rpx;
+  width: 95%;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+}
+.otherList .text.data-v-0be17cc6 {
+  margin: 20rpx;
+}
+.otherList .FlexBox.data-v-0be17cc6 {
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.otherList .FlexBox .ForBox.data-v-0be17cc6 {
+  margin-top: 20rpx;
+}
+.otherList .FlexBox .ForBox .iconBox .icon.data-v-0be17cc6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 150rpx;
+  height: 100rpx;
+}
+.otherList .FlexBox .ForBox .iconBox .icon .num.data-v-0be17cc6 {
+  position: absolute;
+  text-align: center;
+  width: 35rpx;
+  line-height: 35rpx;
+  color: white;
+  font-weight: 600;
+  border-radius: 50%;
+  font-size: 22rpx;
+  background-color: #fa3512;
+  top: -5rpx;
+  right: 0rpx;
+}
+.otherList .FlexBox .ForBox .iconBox .icon image.data-v-0be17cc6 {
+  width: 50rpx;
+  height: 50rpx;
+}
+.otherList .FlexBox .ForBox .iconBox .title.data-v-0be17cc6 {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  text-align: center;
 }
 .No-login.data-v-0be17cc6 {
   height: 100vh;

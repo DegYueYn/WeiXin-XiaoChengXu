@@ -15071,7 +15071,7 @@ var version = '2.0.34';
 
 // 开发环境才提示，生产环境不会提示
 if (true) {
-  console.log("\n %c uView V".concat(version, " %c https://uviewui.com/ \n\n"), 'color: #ffffff; background: #3c9cff; padding:5px 0; border-radius: 5px;');
+  // console.log(`\n %c uView V${version} %c https://uviewui.com/ \n\n`, 'color: #ffffff; background: #3c9cff; padding:5px 0; border-radius: 5px;');
 }var _default =
 
 {
@@ -18362,7 +18362,7 @@ Mock.mock('/api/getaccount', {
 
 
 Mock.mock('/api/charge', function (optins) {
-  console.log(optins.body.value, 'op');
+  // console.log(optins.body.value, 'op');
   // const body =JSON.parse(optins.body)
   return {
     code: 200,
@@ -18378,7 +18378,7 @@ Mock.mock('/api/charge', function (optins) {
 
 
 Mock.mock('/api/getList', function (optins) {
-  console.log(optins.body, 'optins.body');
+  // console.log(optins.body, 'optins.body');
   if (optins.body.id == 0) {
     return {
       code: 200,
@@ -18413,7 +18413,7 @@ Mock.mock('/api/getList', function (optins) {
       {
         "goodsId": 03,
         "flex": 'left',
-        "goodsName": "竹节和田玉手链纯银女款2023年新款轻奢小众手饰情人节礼物送女友",
+        "goodsName": "竹节和田玉穿戴手链纯银女款2023年新款轻奢小众手饰情人节礼物送女友",
         "goodsImg": "https://gw.alicdn.com/imgextra/i1/3070955695/O1CN01M2jRDm1rwMNyQn7hw_!!3070955695.jpg_Q75.jpg_.webp",
         "saleCount": "600+",
         "salePrice": 158,
@@ -27279,7 +27279,7 @@ Mock.mock('/api/goodsDetail', function (optins) {
 
 var Mock = __webpack_require__(/*! better-mock/dist/mock.mp.js */ 139);
 Mock.mock('/api/order', function (optins) {
-  console.log(JSON.stringify(optins.body), 'op');
+  // console.log(JSON.stringify(optins.body), 'op');
   // const body =JSON.stringify(optins.body)
   function orderCode() {
     var orderCode = '';
@@ -27288,7 +27288,7 @@ Mock.mock('/api/order', function (optins) {
       orderCode += Math.floor(Math.random() * 10);
     }
     orderCode = new Date().getTime() + orderCode; //时间戳，用来生成订单号。
-    console.log(orderCode);
+    // console.log(orderCode)
     return orderCode;
   }
 
@@ -27504,139 +27504,7 @@ var sliceWord = function sliceWord(s, i) {
 /* 264 */,
 /* 265 */,
 /* 266 */,
-/* 267 */
-/*!**********************************************************************************!*\
-  !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-swiper/props.js ***!
-  \**********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 列表数组，元素可为字符串，如为对象可通过keyName指定目标属性名
-    list: {
-      type: Array,
-      default: uni.$u.props.swiper.list },
-
-    // 是否显示面板指示器
-    indicator: {
-      type: Boolean,
-      default: uni.$u.props.swiper.indicator },
-
-    // 指示器非激活颜色
-    indicatorActiveColor: {
-      type: String,
-      default: uni.$u.props.swiper.indicatorActiveColor },
-
-    // 指示器的激活颜色
-    indicatorInactiveColor: {
-      type: String,
-      default: uni.$u.props.swiper.indicatorInactiveColor },
-
-    // 指示器样式，可通过bottom，left，right进行定位
-    indicatorStyle: {
-      type: [String, Object],
-      default: uni.$u.props.swiper.indicatorStyle },
-
-    // 指示器模式，line-线型，dot-点型
-    indicatorMode: {
-      type: String,
-      default: uni.$u.props.swiper.indicatorMode },
-
-    // 是否自动切换
-    autoplay: {
-      type: Boolean,
-      default: uni.$u.props.swiper.autoplay },
-
-    // 当前所在滑块的 index
-    current: {
-      type: [String, Number],
-      default: uni.$u.props.swiper.current },
-
-    // 当前所在滑块的 item-id ，不能与 current 被同时指定
-    currentItemId: {
-      type: String,
-      default: uni.$u.props.swiper.currentItemId },
-
-    // 滑块自动切换时间间隔
-    interval: {
-      type: [String, Number],
-      default: uni.$u.props.swiper.interval },
-
-    // 滑块切换过程所需时间
-    duration: {
-      type: [String, Number],
-      default: uni.$u.props.swiper.duration },
-
-    // 播放到末尾后是否重新回到开头
-    circular: {
-      type: Boolean,
-      default: uni.$u.props.swiper.circular },
-
-    // 前边距，可用于露出前一项的一小部分，nvue和支付宝不支持
-    previousMargin: {
-      type: [String, Number],
-      default: uni.$u.props.swiper.previousMargin },
-
-    // 后边距，可用于露出后一项的一小部分，nvue和支付宝不支持
-    nextMargin: {
-      type: [String, Number],
-      default: uni.$u.props.swiper.nextMargin },
-
-    // 当开启时，会根据滑动速度，连续滑动多屏，支付宝不支持
-    acceleration: {
-      type: Boolean,
-      default: uni.$u.props.swiper.acceleration },
-
-    // 同时显示的滑块数量，nvue、支付宝小程序不支持
-    displayMultipleItems: {
-      type: Number,
-      default: uni.$u.props.swiper.displayMultipleItems },
-
-    // 指定swiper切换缓动动画类型，有效值：default、linear、easeInCubic、easeOutCubic、easeInOutCubic
-    // 只对微信小程序有效
-    easingFunction: {
-      type: String,
-      default: uni.$u.props.swiper.easingFunction },
-
-    // list数组中指定对象的目标属性名
-    keyName: {
-      type: String,
-      default: uni.$u.props.swiper.keyName },
-
-    // 图片的裁剪模式
-    imgMode: {
-      type: String,
-      default: uni.$u.props.swiper.imgMode },
-
-    // 组件高度
-    height: {
-      type: [String, Number],
-      default: uni.$u.props.swiper.height },
-
-    // 背景颜色
-    bgColor: {
-      type: String,
-      default: uni.$u.props.swiper.bgColor },
-
-    // 组件圆角，数值或带单位的字符串
-    radius: {
-      type: [String, Number],
-      default: uni.$u.props.swiper.radius },
-
-    // 是否加载中
-    loading: {
-      type: Boolean,
-      default: uni.$u.props.swiper.loading },
-
-    // 是否显示标题，要求数组对象中有title属性
-    showTitle: {
-      type: Boolean,
-      default: uni.$u.props.swiper.showTitle } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
+/* 267 */,
 /* 268 */,
 /* 269 */,
 /* 270 */,
@@ -27644,110 +27512,8 @@ var sliceWord = function sliceWord(s, i) {
 /* 272 */,
 /* 273 */,
 /* 274 */,
-/* 275 */
-/*!**************************************************************************************!*\
-  !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-count-down/props.js ***!
-  \**************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 倒计时时长，单位ms
-    time: {
-      type: [String, Number],
-      default: uni.$u.props.countDown.time },
-
-    // 时间格式，DD-日，HH-时，mm-分，ss-秒，SSS-毫秒
-    format: {
-      type: String,
-      default: uni.$u.props.countDown.format },
-
-    // 是否自动开始倒计时
-    autoStart: {
-      type: Boolean,
-      default: uni.$u.props.countDown.autoStart },
-
-    // 是否展示毫秒倒计时
-    millisecond: {
-      type: Boolean,
-      default: uni.$u.props.countDown.millisecond } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 276 */
-/*!**************************************************************************************!*\
-  !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-count-down/utils.js ***!
-  \**************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.parseTimeData = parseTimeData;exports.parseFormat = parseFormat;exports.isSameSecond = isSameSecond; // 补0，如1 -> 01
-function padZero(num) {var targetLength = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
-  var str = "".concat(num);
-  while (str.length < targetLength) {
-    str = "0".concat(str);
-  }
-  return str;
-}
-var SECOND = 1000;
-var MINUTE = 60 * SECOND;
-var HOUR = 60 * MINUTE;
-var DAY = 24 * HOUR;
-function parseTimeData(time) {
-  var days = Math.floor(time / DAY);
-  var hours = Math.floor(time % DAY / HOUR);
-  var minutes = Math.floor(time % HOUR / MINUTE);
-  var seconds = Math.floor(time % MINUTE / SECOND);
-  var milliseconds = Math.floor(time % SECOND);
-  return {
-    days: days,
-    hours: hours,
-    minutes: minutes,
-    seconds: seconds,
-    milliseconds: milliseconds };
-
-}
-function parseFormat(format, timeData) {var
-
-  days =
-
-
-
-
-  timeData.days,hours = timeData.hours,minutes = timeData.minutes,seconds = timeData.seconds,milliseconds = timeData.milliseconds;
-  // 如果格式化字符串中不存在DD(天)，则将天的时间转为小时中去
-  if (format.indexOf('DD') === -1) {
-    hours += days * 24;
-  } else {
-    // 对天补0
-    format = format.replace('DD', padZero(days));
-  }
-  // 其他同理于DD的格式化处理方式
-  if (format.indexOf('HH') === -1) {
-    minutes += hours * 60;
-  } else {
-    format = format.replace('HH', padZero(hours));
-  }
-  if (format.indexOf('mm') === -1) {
-    seconds += minutes * 60;
-  } else {
-    format = format.replace('mm', padZero(minutes));
-  }
-  if (format.indexOf('ss') === -1) {
-    milliseconds += seconds * 1000;
-  } else {
-    format = format.replace('ss', padZero(seconds));
-  }
-  return format.replace('SSS', padZero(milliseconds, 3));
-}
-function isSameSecond(time1, time2) {
-  return Math.floor(time1 / 1000) === Math.floor(time2 / 1000);
-}
-
-/***/ }),
+/* 275 */,
+/* 276 */,
 /* 277 */,
 /* 278 */,
 /* 279 */,
@@ -27755,7 +27521,107 @@ function isSameSecond(time1, time2) {
 /* 281 */,
 /* 282 */,
 /* 283 */,
-/* 284 */
+/* 284 */,
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */
+/*!*********************************************************************************!*\
+  !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-popup/props.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 是否展示弹窗
+    show: {
+      type: Boolean,
+      default: uni.$u.props.popup.show },
+
+    // 是否显示遮罩
+    overlay: {
+      type: Boolean,
+      default: uni.$u.props.popup.overlay },
+
+    // 弹出的方向，可选值为 top bottom right left center
+    mode: {
+      type: String,
+      default: uni.$u.props.popup.mode },
+
+    // 动画时长，单位ms
+    duration: {
+      type: [String, Number],
+      default: uni.$u.props.popup.duration },
+
+    // 是否显示关闭图标
+    closeable: {
+      type: Boolean,
+      default: uni.$u.props.popup.closeable },
+
+    // 自定义遮罩的样式
+    overlayStyle: {
+      type: [Object, String],
+      default: uni.$u.props.popup.overlayStyle },
+
+    // 点击遮罩是否关闭弹窗
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: uni.$u.props.popup.closeOnClickOverlay },
+
+    // 层级
+    zIndex: {
+      type: [String, Number],
+      default: uni.$u.props.popup.zIndex },
+
+    // 是否为iPhoneX留出底部安全距离
+    safeAreaInsetBottom: {
+      type: Boolean,
+      default: uni.$u.props.popup.safeAreaInsetBottom },
+
+    // 是否留出顶部安全距离（状态栏高度）
+    safeAreaInsetTop: {
+      type: Boolean,
+      default: uni.$u.props.popup.safeAreaInsetTop },
+
+    // 自定义关闭图标位置，top-left为左上角，top-right为右上角，bottom-left为左下角，bottom-right为右下角
+    closeIconPos: {
+      type: String,
+      default: uni.$u.props.popup.closeIconPos },
+
+    // 是否显示圆角
+    round: {
+      type: [Boolean, String, Number],
+      default: uni.$u.props.popup.round },
+
+    // mode=center，也即中部弹出时，是否使用缩放模式
+    zoom: {
+      type: Boolean,
+      default: uni.$u.props.popup.zoom },
+
+    // 弹窗背景色，设置为transparent可去除白色背景
+    bgColor: {
+      type: String,
+      default: uni.$u.props.popup.bgColor },
+
+    // 遮罩的透明度，0-1之间
+    overlayOpacity: {
+      type: [Number, String],
+      default: uni.$u.props.popup.overlayOpacity } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */,
+/* 298 */
 /*!********************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-icon/icons.js ***!
   \********************************************************************************/
@@ -27978,7 +27844,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   'uicon-en': "\uE692" };exports.default = _default;
 
 /***/ }),
-/* 285 */
+/* 299 */
 /*!********************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-icon/props.js ***!
   \********************************************************************************/
@@ -28075,108 +27941,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 286 */,
-/* 287 */,
-/* 288 */,
-/* 289 */,
-/* 290 */,
-/* 291 */,
-/* 292 */,
-/* 293 */
-/*!*********************************************************************************!*\
-  !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-popup/props.js ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 是否展示弹窗
-    show: {
-      type: Boolean,
-      default: uni.$u.props.popup.show },
-
-    // 是否显示遮罩
-    overlay: {
-      type: Boolean,
-      default: uni.$u.props.popup.overlay },
-
-    // 弹出的方向，可选值为 top bottom right left center
-    mode: {
-      type: String,
-      default: uni.$u.props.popup.mode },
-
-    // 动画时长，单位ms
-    duration: {
-      type: [String, Number],
-      default: uni.$u.props.popup.duration },
-
-    // 是否显示关闭图标
-    closeable: {
-      type: Boolean,
-      default: uni.$u.props.popup.closeable },
-
-    // 自定义遮罩的样式
-    overlayStyle: {
-      type: [Object, String],
-      default: uni.$u.props.popup.overlayStyle },
-
-    // 点击遮罩是否关闭弹窗
-    closeOnClickOverlay: {
-      type: Boolean,
-      default: uni.$u.props.popup.closeOnClickOverlay },
-
-    // 层级
-    zIndex: {
-      type: [String, Number],
-      default: uni.$u.props.popup.zIndex },
-
-    // 是否为iPhoneX留出底部安全距离
-    safeAreaInsetBottom: {
-      type: Boolean,
-      default: uni.$u.props.popup.safeAreaInsetBottom },
-
-    // 是否留出顶部安全距离（状态栏高度）
-    safeAreaInsetTop: {
-      type: Boolean,
-      default: uni.$u.props.popup.safeAreaInsetTop },
-
-    // 自定义关闭图标位置，top-left为左上角，top-right为右上角，bottom-left为左下角，bottom-right为右下角
-    closeIconPos: {
-      type: String,
-      default: uni.$u.props.popup.closeIconPos },
-
-    // 是否显示圆角
-    round: {
-      type: [Boolean, String, Number],
-      default: uni.$u.props.popup.round },
-
-    // mode=center，也即中部弹出时，是否使用缩放模式
-    zoom: {
-      type: Boolean,
-      default: uni.$u.props.popup.zoom },
-
-    // 弹窗背景色，设置为transparent可去除白色背景
-    bgColor: {
-      type: String,
-      default: uni.$u.props.popup.bgColor },
-
-    // 遮罩的透明度，0-1之间
-    overlayOpacity: {
-      type: [Number, String],
-      default: uni.$u.props.popup.overlayOpacity } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 294 */,
-/* 295 */,
-/* 296 */,
-/* 297 */,
-/* 298 */,
-/* 299 */,
 /* 300 */,
-/* 301 */
+/* 301 */,
+/* 302 */,
+/* 303 */,
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */
 /*!********************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-line/props.js ***!
   \********************************************************************************/
@@ -28217,14 +27989,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 302 */,
-/* 303 */,
-/* 304 */,
-/* 305 */,
-/* 306 */,
-/* 307 */,
 /* 308 */,
-/* 309 */
+/* 309 */,
+/* 310 */,
+/* 311 */,
+/* 312 */,
+/* 313 */,
+/* 314 */,
+/* 315 */
 /*!**************************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-code-input/props.js ***!
   \**************************************************************************************/
@@ -28311,16 +28083,16 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 310 */,
-/* 311 */,
-/* 312 */,
-/* 313 */,
-/* 314 */,
-/* 315 */,
 /* 316 */,
-/* 317 */
+/* 317 */,
+/* 318 */,
+/* 319 */,
+/* 320 */,
+/* 321 */,
+/* 322 */,
+/* 323 */
 /*!**********************************************************************************!*\
-  !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-switch/props.js ***!
+  !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-swiper/props.js ***!
   \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -28328,64 +28100,129 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
   props: {
-    // 是否为加载中状态
+    // 列表数组，元素可为字符串，如为对象可通过keyName指定目标属性名
+    list: {
+      type: Array,
+      default: uni.$u.props.swiper.list },
+
+    // 是否显示面板指示器
+    indicator: {
+      type: Boolean,
+      default: uni.$u.props.swiper.indicator },
+
+    // 指示器非激活颜色
+    indicatorActiveColor: {
+      type: String,
+      default: uni.$u.props.swiper.indicatorActiveColor },
+
+    // 指示器的激活颜色
+    indicatorInactiveColor: {
+      type: String,
+      default: uni.$u.props.swiper.indicatorInactiveColor },
+
+    // 指示器样式，可通过bottom，left，right进行定位
+    indicatorStyle: {
+      type: [String, Object],
+      default: uni.$u.props.swiper.indicatorStyle },
+
+    // 指示器模式，line-线型，dot-点型
+    indicatorMode: {
+      type: String,
+      default: uni.$u.props.swiper.indicatorMode },
+
+    // 是否自动切换
+    autoplay: {
+      type: Boolean,
+      default: uni.$u.props.swiper.autoplay },
+
+    // 当前所在滑块的 index
+    current: {
+      type: [String, Number],
+      default: uni.$u.props.swiper.current },
+
+    // 当前所在滑块的 item-id ，不能与 current 被同时指定
+    currentItemId: {
+      type: String,
+      default: uni.$u.props.swiper.currentItemId },
+
+    // 滑块自动切换时间间隔
+    interval: {
+      type: [String, Number],
+      default: uni.$u.props.swiper.interval },
+
+    // 滑块切换过程所需时间
+    duration: {
+      type: [String, Number],
+      default: uni.$u.props.swiper.duration },
+
+    // 播放到末尾后是否重新回到开头
+    circular: {
+      type: Boolean,
+      default: uni.$u.props.swiper.circular },
+
+    // 前边距，可用于露出前一项的一小部分，nvue和支付宝不支持
+    previousMargin: {
+      type: [String, Number],
+      default: uni.$u.props.swiper.previousMargin },
+
+    // 后边距，可用于露出后一项的一小部分，nvue和支付宝不支持
+    nextMargin: {
+      type: [String, Number],
+      default: uni.$u.props.swiper.nextMargin },
+
+    // 当开启时，会根据滑动速度，连续滑动多屏，支付宝不支持
+    acceleration: {
+      type: Boolean,
+      default: uni.$u.props.swiper.acceleration },
+
+    // 同时显示的滑块数量，nvue、支付宝小程序不支持
+    displayMultipleItems: {
+      type: Number,
+      default: uni.$u.props.swiper.displayMultipleItems },
+
+    // 指定swiper切换缓动动画类型，有效值：default、linear、easeInCubic、easeOutCubic、easeInOutCubic
+    // 只对微信小程序有效
+    easingFunction: {
+      type: String,
+      default: uni.$u.props.swiper.easingFunction },
+
+    // list数组中指定对象的目标属性名
+    keyName: {
+      type: String,
+      default: uni.$u.props.swiper.keyName },
+
+    // 图片的裁剪模式
+    imgMode: {
+      type: String,
+      default: uni.$u.props.swiper.imgMode },
+
+    // 组件高度
+    height: {
+      type: [String, Number],
+      default: uni.$u.props.swiper.height },
+
+    // 背景颜色
+    bgColor: {
+      type: String,
+      default: uni.$u.props.swiper.bgColor },
+
+    // 组件圆角，数值或带单位的字符串
+    radius: {
+      type: [String, Number],
+      default: uni.$u.props.swiper.radius },
+
+    // 是否加载中
     loading: {
       type: Boolean,
-      default: uni.$u.props.switch.loading },
+      default: uni.$u.props.swiper.loading },
 
-    // 是否为禁用装填
-    disabled: {
+    // 是否显示标题，要求数组对象中有title属性
+    showTitle: {
       type: Boolean,
-      default: uni.$u.props.switch.disabled },
-
-    // 开关尺寸，单位px
-    size: {
-      type: [String, Number],
-      default: uni.$u.props.switch.size },
-
-    // 打开时的背景颜色
-    activeColor: {
-      type: String,
-      default: uni.$u.props.switch.activeColor },
-
-    // 关闭时的背景颜色
-    inactiveColor: {
-      type: String,
-      default: uni.$u.props.switch.inactiveColor },
-
-    // 通过v-model双向绑定的值
-    value: {
-      type: [Boolean, String, Number],
-      default: uni.$u.props.switch.value },
-
-    // switch打开时的值
-    activeValue: {
-      type: [String, Number, Boolean],
-      default: uni.$u.props.switch.activeValue },
-
-    // switch关闭时的值
-    inactiveValue: {
-      type: [String, Number, Boolean],
-      default: uni.$u.props.switch.inactiveValue },
-
-    // 是否开启异步变更，开启后需要手动控制输入值
-    asyncChange: {
-      type: Boolean,
-      default: uni.$u.props.switch.asyncChange },
-
-    // 圆点与外边框的距离
-    space: {
-      type: [String, Number],
-      default: uni.$u.props.switch.space } } };exports.default = _default;
+      default: uni.$u.props.swiper.showTitle } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 318 */,
-/* 319 */,
-/* 320 */,
-/* 321 */,
-/* 322 */,
-/* 323 */,
 /* 324 */,
 /* 325 */,
 /* 326 */,
@@ -28393,11 +28230,125 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 328 */,
 /* 329 */,
 /* 330 */,
-/* 331 */,
-/* 332 */,
+/* 331 */
+/*!**************************************************************************************!*\
+  !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-count-down/props.js ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 倒计时时长，单位ms
+    time: {
+      type: [String, Number],
+      default: uni.$u.props.countDown.time },
+
+    // 时间格式，DD-日，HH-时，mm-分，ss-秒，SSS-毫秒
+    format: {
+      type: String,
+      default: uni.$u.props.countDown.format },
+
+    // 是否自动开始倒计时
+    autoStart: {
+      type: Boolean,
+      default: uni.$u.props.countDown.autoStart },
+
+    // 是否展示毫秒倒计时
+    millisecond: {
+      type: Boolean,
+      default: uni.$u.props.countDown.millisecond } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 332 */
+/*!**************************************************************************************!*\
+  !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-count-down/utils.js ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.parseTimeData = parseTimeData;exports.parseFormat = parseFormat;exports.isSameSecond = isSameSecond; // 补0，如1 -> 01
+function padZero(num) {var targetLength = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
+  var str = "".concat(num);
+  while (str.length < targetLength) {
+    str = "0".concat(str);
+  }
+  return str;
+}
+var SECOND = 1000;
+var MINUTE = 60 * SECOND;
+var HOUR = 60 * MINUTE;
+var DAY = 24 * HOUR;
+function parseTimeData(time) {
+  var days = Math.floor(time / DAY);
+  var hours = Math.floor(time % DAY / HOUR);
+  var minutes = Math.floor(time % HOUR / MINUTE);
+  var seconds = Math.floor(time % MINUTE / SECOND);
+  var milliseconds = Math.floor(time % SECOND);
+  return {
+    days: days,
+    hours: hours,
+    minutes: minutes,
+    seconds: seconds,
+    milliseconds: milliseconds };
+
+}
+function parseFormat(format, timeData) {var
+
+  days =
+
+
+
+
+  timeData.days,hours = timeData.hours,minutes = timeData.minutes,seconds = timeData.seconds,milliseconds = timeData.milliseconds;
+  // 如果格式化字符串中不存在DD(天)，则将天的时间转为小时中去
+  if (format.indexOf('DD') === -1) {
+    hours += days * 24;
+  } else {
+    // 对天补0
+    format = format.replace('DD', padZero(days));
+  }
+  // 其他同理于DD的格式化处理方式
+  if (format.indexOf('HH') === -1) {
+    minutes += hours * 60;
+  } else {
+    format = format.replace('HH', padZero(hours));
+  }
+  if (format.indexOf('mm') === -1) {
+    seconds += minutes * 60;
+  } else {
+    format = format.replace('mm', padZero(minutes));
+  }
+  if (format.indexOf('ss') === -1) {
+    milliseconds += seconds * 1000;
+  } else {
+    format = format.replace('ss', padZero(seconds));
+  }
+  return format.replace('SSS', padZero(milliseconds, 3));
+}
+function isSameSecond(time1, time2) {
+  return Math.floor(time1 / 1000) === Math.floor(time2 / 1000);
+}
+
+/***/ }),
 /* 333 */,
 /* 334 */,
-/* 335 */
+/* 335 */,
+/* 336 */,
+/* 337 */,
+/* 338 */,
+/* 339 */,
+/* 340 */,
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */
 /*!************************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \************************************************************************************/
@@ -29573,21 +29524,217 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     "unicode_decimal": 58929 }] };exports.default = _default;
 
 /***/ }),
-/* 336 */,
-/* 337 */,
-/* 338 */,
-/* 339 */,
-/* 340 */,
-/* 341 */,
-/* 342 */,
-/* 343 */,
-/* 344 */,
-/* 345 */,
-/* 346 */,
-/* 347 */,
 /* 348 */,
 /* 349 */,
-/* 350 */
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */
+/*!**************************************************************************************!*\
+  !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-number-box/props.js ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 步进器标识符，在change回调返回
+    name: {
+      type: [String, Number],
+      default: uni.$u.props.numberBox.name },
+
+    // 用于双向绑定的值，初始化时设置设为默认min值(最小值)
+    value: {
+      type: [String, Number],
+      default: uni.$u.props.numberBox.value },
+
+    // 最小值
+    min: {
+      type: [String, Number],
+      default: uni.$u.props.numberBox.min },
+
+    // 最大值
+    max: {
+      type: [String, Number],
+      default: uni.$u.props.numberBox.max },
+
+    // 加减的步长，可为小数
+    step: {
+      type: [String, Number],
+      default: uni.$u.props.numberBox.step },
+
+    // 是否只允许输入整数
+    integer: {
+      type: Boolean,
+      default: uni.$u.props.numberBox.integer },
+
+    // 是否禁用，包括输入框，加减按钮
+    disabled: {
+      type: Boolean,
+      default: uni.$u.props.numberBox.disabled },
+
+    // 是否禁用输入框
+    disabledInput: {
+      type: Boolean,
+      default: uni.$u.props.numberBox.disabledInput },
+
+    // 是否开启异步变更，开启后需要手动控制输入值
+    asyncChange: {
+      type: Boolean,
+      default: uni.$u.props.numberBox.asyncChange },
+
+    // 输入框宽度，单位为px
+    inputWidth: {
+      type: [String, Number],
+      default: uni.$u.props.numberBox.inputWidth },
+
+    // 是否显示减少按钮
+    showMinus: {
+      type: Boolean,
+      default: uni.$u.props.numberBox.showMinus },
+
+    // 是否显示增加按钮
+    showPlus: {
+      type: Boolean,
+      default: uni.$u.props.numberBox.showPlus },
+
+    // 显示的小数位数
+    decimalLength: {
+      type: [String, Number, null],
+      default: uni.$u.props.numberBox.decimalLength },
+
+    // 是否开启长按加减手势
+    longPress: {
+      type: Boolean,
+      default: uni.$u.props.numberBox.longPress },
+
+    // 输入框文字和加减按钮图标的颜色
+    color: {
+      type: String,
+      default: uni.$u.props.numberBox.color },
+
+    // 按钮大小，宽高等于此值，单位px，输入框高度和此值保持一致
+    buttonSize: {
+      type: [String, Number],
+      default: uni.$u.props.numberBox.buttonSize },
+
+    // 输入框和按钮的背景颜色
+    bgColor: {
+      type: String,
+      default: uni.$u.props.numberBox.bgColor },
+
+    // 指定光标于键盘的距离，避免键盘遮挡输入框，单位px
+    cursorSpacing: {
+      type: [String, Number],
+      default: uni.$u.props.numberBox.cursorSpacing },
+
+    // 是否禁用增加按钮
+    disablePlus: {
+      type: Boolean,
+      default: uni.$u.props.numberBox.disablePlus },
+
+    // 是否禁用减少按钮
+    disableMinus: {
+      type: Boolean,
+      default: uni.$u.props.numberBox.disableMinus },
+
+    // 加减按钮图标的样式
+    iconStyle: {
+      type: [Object, String],
+      default: uni.$u.props.numberBox.iconStyle } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */
+/*!**********************************************************************************!*\
+  !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-switch/props.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 是否为加载中状态
+    loading: {
+      type: Boolean,
+      default: uni.$u.props.switch.loading },
+
+    // 是否为禁用装填
+    disabled: {
+      type: Boolean,
+      default: uni.$u.props.switch.disabled },
+
+    // 开关尺寸，单位px
+    size: {
+      type: [String, Number],
+      default: uni.$u.props.switch.size },
+
+    // 打开时的背景颜色
+    activeColor: {
+      type: String,
+      default: uni.$u.props.switch.activeColor },
+
+    // 关闭时的背景颜色
+    inactiveColor: {
+      type: String,
+      default: uni.$u.props.switch.inactiveColor },
+
+    // 通过v-model双向绑定的值
+    value: {
+      type: [Boolean, String, Number],
+      default: uni.$u.props.switch.value },
+
+    // switch打开时的值
+    activeValue: {
+      type: [String, Number, Boolean],
+      default: uni.$u.props.switch.activeValue },
+
+    // switch关闭时的值
+    inactiveValue: {
+      type: [String, Number, Boolean],
+      default: uni.$u.props.switch.inactiveValue },
+
+    // 是否开启异步变更，开启后需要手动控制输入值
+    asyncChange: {
+      type: Boolean,
+      default: uni.$u.props.switch.asyncChange },
+
+    // 圆点与外边框的距离
+    space: {
+      type: [String, Number],
+      default: uni.$u.props.switch.space } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */,
+/* 379 */,
+/* 380 */,
+/* 381 */
 /*!********************************************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/uni-transition/components/uni-transition/createAnimation.js ***!
   \********************************************************************************************************/
@@ -29726,130 +29873,12 @@ function createAnimation(option, _this) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 351 */,
-/* 352 */,
-/* 353 */,
-/* 354 */,
-/* 355 */,
-/* 356 */
-/*!****************************************************************************************!*\
-  !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-loading-icon/props.js ***!
-  \****************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 是否显示组件
-    show: {
-      type: Boolean,
-      default: uni.$u.props.loadingIcon.show },
-
-    // 颜色
-    color: {
-      type: String,
-      default: uni.$u.props.loadingIcon.color },
-
-    // 提示文字颜色
-    textColor: {
-      type: String,
-      default: uni.$u.props.loadingIcon.textColor },
-
-    // 文字和图标是否垂直排列
-    vertical: {
-      type: Boolean,
-      default: uni.$u.props.loadingIcon.vertical },
-
-    // 模式选择，circle-圆形，spinner-花朵形，semicircle-半圆形
-    mode: {
-      type: String,
-      default: uni.$u.props.loadingIcon.mode },
-
-    // 图标大小，单位默认px
-    size: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.size },
-
-    // 文字大小
-    textSize: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.textSize },
-
-    // 文字内容
-    text: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.text },
-
-    // 动画模式
-    timingFunction: {
-      type: String,
-      default: uni.$u.props.loadingIcon.timingFunction },
-
-    // 动画执行周期时间
-    duration: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.duration },
-
-    // mode=circle时的暗边颜色
-    inactiveColor: {
-      type: String,
-      default: uni.$u.props.loadingIcon.inactiveColor } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 357 */,
-/* 358 */,
-/* 359 */,
-/* 360 */,
-/* 361 */,
-/* 362 */,
-/* 363 */,
-/* 364 */
-/*!********************************************************************************************!*\
-  !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-swiper-indicator/props.js ***!
-  \********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 轮播的长度
-    length: {
-      type: [String, Number],
-      default: uni.$u.props.swiperIndicator.length },
-
-    // 当前处于活动状态的轮播的索引
-    current: {
-      type: [String, Number],
-      default: uni.$u.props.swiperIndicator.current },
-
-    // 指示器非激活颜色
-    indicatorActiveColor: {
-      type: String,
-      default: uni.$u.props.swiperIndicator.indicatorActiveColor },
-
-    // 指示器的激活颜色
-    indicatorInactiveColor: {
-      type: String,
-      default: uni.$u.props.swiperIndicator.indicatorInactiveColor },
-
-    // 指示器模式，line-线型，dot-点型
-    indicatorMode: {
-      type: String,
-      default: uni.$u.props.swiperIndicator.indicatorMode } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 365 */,
-/* 366 */,
-/* 367 */,
-/* 368 */,
-/* 369 */,
-/* 370 */,
-/* 371 */,
-/* 372 */
+/* 382 */,
+/* 383 */,
+/* 384 */,
+/* 385 */,
+/* 386 */,
+/* 387 */
 /*!***********************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-overlay/props.js ***!
   \***********************************************************************************/
@@ -29881,14 +29910,14 @@ function createAnimation(option, _this) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 373 */,
-/* 374 */,
-/* 375 */,
-/* 376 */,
-/* 377 */,
-/* 378 */,
-/* 379 */,
-/* 380 */
+/* 388 */,
+/* 389 */,
+/* 390 */,
+/* 391 */,
+/* 392 */,
+/* 393 */,
+/* 394 */,
+/* 395 */
 /*!**************************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-transition/props.js ***!
   \**************************************************************************************/
@@ -29920,7 +29949,7 @@ function createAnimation(option, _this) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 381 */
+/* 396 */
 /*!*******************************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-transition/transition.js ***!
   \*******************************************************************************************/
@@ -29931,7 +29960,7 @@ function createAnimation(option, _this) {
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 36));
 
 
-var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 382));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
+var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 397));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
 var nextTick = function nextTick() {return new Promise(function (resolve) {return setTimeout(resolve, 1000 / 50);});}; // nvue动画模块实现细节抽离在外部文件
 
 // 定义类名，通过给元素动态切换类名，赋予元素一定的css动画样式
@@ -30085,7 +30114,7 @@ var getClassNames = function getClassNames(name) {return {
     } } };exports.default = _default;
 
 /***/ }),
-/* 382 */
+/* 397 */
 /*!*********************************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-transition/nvue.ani-map.js ***!
   \*********************************************************************************************/
@@ -30161,14 +30190,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     'leave-to': { opacity: 0, transform: 'scale(0.95)' } } };exports.default = _default;
 
 /***/ }),
-/* 383 */,
-/* 384 */,
-/* 385 */,
-/* 386 */,
-/* 387 */,
-/* 388 */,
-/* 389 */,
-/* 390 */
+/* 398 */,
+/* 399 */,
+/* 400 */,
+/* 401 */,
+/* 402 */,
+/* 403 */,
+/* 404 */,
+/* 405 */
 /*!**************************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-status-bar/props.js ***!
   \**************************************************************************************/
@@ -30184,14 +30213,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 391 */,
-/* 392 */,
-/* 393 */,
-/* 394 */,
-/* 395 */,
-/* 396 */,
-/* 397 */,
-/* 398 */
+/* 406 */,
+/* 407 */,
+/* 408 */,
+/* 409 */,
+/* 410 */,
+/* 411 */,
+/* 412 */,
+/* 413 */
 /*!***************************************************************************************!*\
   !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-safe-bottom/props.js ***!
   \***************************************************************************************/
@@ -30201,6 +30230,124 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
   props: {} };exports.default = _default;
+
+/***/ }),
+/* 414 */,
+/* 415 */,
+/* 416 */,
+/* 417 */,
+/* 418 */,
+/* 419 */,
+/* 420 */,
+/* 421 */
+/*!****************************************************************************************!*\
+  !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-loading-icon/props.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 是否显示组件
+    show: {
+      type: Boolean,
+      default: uni.$u.props.loadingIcon.show },
+
+    // 颜色
+    color: {
+      type: String,
+      default: uni.$u.props.loadingIcon.color },
+
+    // 提示文字颜色
+    textColor: {
+      type: String,
+      default: uni.$u.props.loadingIcon.textColor },
+
+    // 文字和图标是否垂直排列
+    vertical: {
+      type: Boolean,
+      default: uni.$u.props.loadingIcon.vertical },
+
+    // 模式选择，circle-圆形，spinner-花朵形，semicircle-半圆形
+    mode: {
+      type: String,
+      default: uni.$u.props.loadingIcon.mode },
+
+    // 图标大小，单位默认px
+    size: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.size },
+
+    // 文字大小
+    textSize: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.textSize },
+
+    // 文字内容
+    text: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.text },
+
+    // 动画模式
+    timingFunction: {
+      type: String,
+      default: uni.$u.props.loadingIcon.timingFunction },
+
+    // 动画执行周期时间
+    duration: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.duration },
+
+    // mode=circle时的暗边颜色
+    inactiveColor: {
+      type: String,
+      default: uni.$u.props.loadingIcon.inactiveColor } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 422 */,
+/* 423 */,
+/* 424 */,
+/* 425 */,
+/* 426 */,
+/* 427 */,
+/* 428 */,
+/* 429 */
+/*!********************************************************************************************!*\
+  !*** C:/Users/DYY/Desktop/小程序/uni_modules/uview-ui/components/u-swiper-indicator/props.js ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 轮播的长度
+    length: {
+      type: [String, Number],
+      default: uni.$u.props.swiperIndicator.length },
+
+    // 当前处于活动状态的轮播的索引
+    current: {
+      type: [String, Number],
+      default: uni.$u.props.swiperIndicator.current },
+
+    // 指示器非激活颜色
+    indicatorActiveColor: {
+      type: String,
+      default: uni.$u.props.swiperIndicator.indicatorActiveColor },
+
+    // 指示器的激活颜色
+    indicatorInactiveColor: {
+      type: String,
+      default: uni.$u.props.swiperIndicator.indicatorInactiveColor },
+
+    // 指示器模式，line-线型，dot-点型
+    indicatorMode: {
+      type: String,
+      default: uni.$u.props.swiperIndicator.indicatorMode } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })
 ]]);

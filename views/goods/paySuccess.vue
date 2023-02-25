@@ -78,7 +78,9 @@
 			},
 			go(e){
 				if(e=='order'){
-					uni.$showMsg('去订单页','none',2000)
+					uni.switchTab({
+						url:'/pages/my/my'
+					})
 				}else{
 					uni.switchTab({
 						url:'/pages/index/index'

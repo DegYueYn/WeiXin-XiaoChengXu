@@ -2,7 +2,35 @@
 .Content{
 	box-sizing: border-box;
 	height:100%;
-	background-color:#efefef;	
+	.noLogin{
+		height: 100vh;
+		background-color: #ffedff;
+		text-align: center;
+		// border: 1rpx solid lightgray;
+		// padding: 10rpx;
+		margin: 0 auto;
+		
+		// background-color:#db9411;
+		image{
+			border-radius: 20rpx;
+			margin-top: 200rpx;
+			width: 400rpx;
+			height: 400rpx;
+		}
+		view{
+			width: 300rpx;
+			padding: 10rpx;
+			font-size: 30rpx;
+			background-color: #ff4c20;
+			border-radius: 40rpx;
+			color: white;
+			margin: 0 auto;
+			line-height: 60rpx;
+			margin-top: 100rpx;
+		}
+		
+		
+	}	
 	.FlexBox{
 		display: flex;
 		flex-direction: column;

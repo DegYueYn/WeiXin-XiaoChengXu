@@ -8,7 +8,7 @@ Mock.mock('/api/getaccount', {
 })
 
 Mock.mock('/api/charge', (optins) => {
-		console.log(optins.body.value, 'op');
+		// console.log(optins.body.value, 'op');
 		// const body =JSON.parse(optins.body)
 		return {
 			code: 200,
@@ -24,7 +24,7 @@ Mock.mock('/api/charge', (optins) => {
 )
 
 Mock.mock('/api/getList', (optins) => {
-	console.log(optins.body, 'optins.body');
+	// console.log(optins.body, 'optins.body');
 	if (optins.body.id == 0) {
 		return {
 			code: 200,
@@ -59,7 +59,7 @@ Mock.mock('/api/getList', (optins) => {
 				{
 					"goodsId": 03,
 					"flex":'left',
-					"goodsName": "竹节和田玉手链纯银女款2023年新款轻奢小众手饰情人节礼物送女友",
+					"goodsName": "竹节和田玉穿戴手链纯银女款2023年新款轻奢小众手饰情人节礼物送女友",
 					"goodsImg": "https://gw.alicdn.com/imgextra/i1/3070955695/O1CN01M2jRDm1rwMNyQn7hw_!!3070955695.jpg_Q75.jpg_.webp",
 					"saleCount": "600+",
 					"salePrice": 158,

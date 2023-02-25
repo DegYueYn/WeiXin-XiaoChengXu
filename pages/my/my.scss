@@ -1,8 +1,10 @@
 
 .my{
-	height: 100vh;
-	width: 100vw;
+	height: 100%;
+	width: 100%;
 	background-color: rgb(244, 245, 247);
+	display: flex;
+	flex-direction: column;
 .my-user-info{
  background: url('https://inews.gtimg.com/newsapp_bt/0/12001803206/1000.jpg')no-repeat center;
  object-fit:scale-down;
@@ -76,6 +78,122 @@
 		}
 	}
 }	
+.orderList {
+	box-sizing: border-box;
+	height: 270rpx;
+	width: 95%;
+	background-color:white;
+	margin: 0 auto;
+	margin-top: 120rpx;
+	border-radius: 20rpx;
+	.text{
+		margin:20rpx;
+		
+	}	
+	.FlexBox{
+		margin-top: 40rpx;
+		margin-bottom: 20rpx;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		.ForBox{
+			
+			.iconBox{
+				
+				.icon{
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					position: relative;
+					.num{
+					position: absolute;
+					text-align: center;
+					width: 35rpx;
+					line-height: 35rpx;
+					color: white;
+					font-weight: 600;
+					border-radius: 50%;
+					font-size: 22rpx;
+					background-color: #fa3512;
+						top: -5rpx;
+						right: 0rpx;
+					}
+					image{
+						width: 70rpx;
+						height: 70rpx;
+					}
+					
+				}
+				.title{
+					margin-top: 20rpx;
+					font-size: 28rpx;
+					// font-weight: 600;
+					
+				}
+			}
+		}
+	}
+}
+}
+.otherList{
+	box-sizing: border-box;
+	height: 450rpx;
+	width: 95%;
+	background-color:white;
+	margin: 0 auto;
+	margin-top: 20rpx;
+	border-radius: 20rpx;
+	margin-bottom: 20rpx;
+	.text{
+		margin:20rpx;
+		
+	}	
+	.FlexBox{
+		margin-bottom: 20rpx;
+		margin-top: 20rpx;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		.ForBox{
+			margin-top: 20rpx;
+			.iconBox{			
+				.icon{
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					position: relative;
+					width: 150rpx;
+					height: 100rpx;
+					.num{
+					position: absolute;
+					text-align: center;
+					width: 35rpx;
+					line-height: 35rpx;
+					color: white;
+					font-weight: 600;
+					border-radius: 50%;
+					font-size: 22rpx;
+					background-color: #fa3512;
+						top: -5rpx;
+						right: 0rpx;
+					}
+					image{
+						width: 50rpx;
+						height: 50rpx;
+					}
+					
+				}
+				.title{
+					margin-top: 20rpx;
+					font-size: 24rpx;
+					text-align: center;
+					
+				}
+			}
+		}
+	}
+	
 }
 .No-login{
 	height: 100vh;

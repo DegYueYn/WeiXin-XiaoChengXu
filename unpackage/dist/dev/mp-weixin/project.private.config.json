@@ -23,6 +23,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "views/carPay/carPay",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "views/search/search",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

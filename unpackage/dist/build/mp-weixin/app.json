@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/other/other",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/car/car"
   ],
   "subPackages": [
     {
@@ -10,6 +11,7 @@
       "pages": [
         "card",
         "setting",
+        "order/order",
         "money/money",
         "money/charge"
       ]
@@ -19,6 +21,18 @@
       "pages": [
         "goodsDetail",
         "paySuccess"
+      ]
+    },
+    {
+      "root": "views/search",
+      "pages": [
+        "search"
+      ]
+    },
+    {
+      "root": "views/carPay",
+      "pages": [
+        "carPay"
       ]
     },
     {
@@ -34,7 +48,7 @@
     "navigationBarTextStyle": "black",
     "backgroundTextStyle": "light",
     "backgroundColorTop": "#FFFFFF",
-    "backgroundColor": "#aaaaff",
+    "backgroundColor": "#ffffff",
     "backgroundColorBottom": "#FFFFFF"
   },
   "tabBar": {
@@ -54,6 +68,12 @@
         "iconPath": "static/other.png",
         "selectedIconPath": "static/other-on.png",
         "text": "淘吧!"
+      },
+      {
+        "pagePath": "pages/car/car",
+        "iconPath": "static/car.png",
+        "selectedIconPath": "static/car-on.png",
+        "text": "购物车"
       },
       {
         "pagePath": "pages/my/my",

@@ -1,6 +1,6 @@
 const Mock = require('better-mock/dist/mock.mp.js')
 Mock.mock('/api/order', (optins) => {
-		console.log(JSON.stringify(optins.body), 'op');
+		// console.log(JSON.stringify(optins.body), 'op');
 		// const body =JSON.stringify(optins.body)
 		function orderCode() {
 		  var orderCode='';
@@ -9,7 +9,7 @@ Mock.mock('/api/order', (optins) => {
 		    orderCode += Math.floor(Math.random() * 10);
 		  }
 		  orderCode = new Date().getTime() + orderCode;  //时间戳，用来生成订单号。
-		  console.log(orderCode)
+		  // console.log(orderCode)
 		  return orderCode;
 		}
 

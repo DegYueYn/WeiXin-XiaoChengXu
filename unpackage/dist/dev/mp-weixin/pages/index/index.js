@@ -98,7 +98,7 @@ var components
 try {
   components = {
     uniEasyinput: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput */ "uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue */ 241))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput */ "uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue */ 271))
     }
   }
 } catch (e) {
@@ -156,11 +156,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
 //
 //
 //
@@ -333,15 +328,21 @@ var _default =
     getSystemdata: function getSystemdata() {var _this = this;
       uni.getSystemInfo({
         success: function success(res) {
-          console.log(res);
+          // console.log(res);
           _this.width = res.windowWidth;
           _this.statusHeight = res.statusBarHeight;
         } });
 
     },
+    // 去搜索页
+    toSearch: function toSearch() {
+      uni.navigateTo({
+        url: '/views/search/search' });
+
+    },
     //去商品详情页
     toGoodsDetail: function toGoodsDetail(item) {
-      console.log(item);
+      // console.log(item);
       if (item == 'ad') {
         uni.$showMsg('广告位招租中......', 'none', 2000);
       } else {
@@ -360,7 +361,11 @@ var _default =
 
         success: function success(res) {
           if (res.data == undefined) return;
+          var Allgoods = [];
           _this2.goodsList = res.data.goodsList;
+          Allgoods.push(_this2.goodsList);
+          uni.setStorageSync('Allgoods', Allgoods);
+          console.log('Allgoods', Allgoods);
           _this2.goodsList.filter(function (v) {
             if (v.flex == 'left') {
               _this2.goodsLeftList.push(v);
@@ -375,7 +380,7 @@ var _default =
     },
     //搜索框
     onClick: function onClick(item) {
-      console.log(item);
+      // console.log(item);
       if (item == 'suffix') {
         uni.chooseImage({
           count: 1, //默认9

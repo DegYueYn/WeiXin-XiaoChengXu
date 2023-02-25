@@ -5,8 +5,8 @@
 				<p class="title1">品牌特卖 100%正品</p>
 				<p class="title2">品牌授权 58元免邮 退换无忧</p>
 			</view>
-			<view class="search">
-				<uni-easyinput prefixIcon="search" suffixIcon="camera" v-model="value" placeholder="请输入商品"
+			<view class="search" @click="toSearch">
+				<uni-easyinput disabled prefixIcon="search" suffixIcon="camera" v-model="value" placeholder="请输入商品"
 					@iconClick="onClick()"></uni-easyinput>
 			</view>
 			<view class="flex">
@@ -72,12 +72,7 @@
 				  							   {{item.rank}}
 				  						   </view>
 				  					   </view>
-				  </view>
-				  
-				  
-				  
-			     
-			   			
+				  </view>			   			
 			   </view>
 		   </view>
 			
@@ -176,15 +171,21 @@
 			getSystemdata() {
 				uni.getSystemInfo({
 					success: res => {
-						console.log(res);
+						// console.log(res);
 						this.width = res.windowWidth
 						this.statusHeight = res.statusBarHeight
 					}
 				});
 			},
+			// 去搜索页
+			toSearch(){
+				uni.navigateTo({
+					url:'/views/search/search'
+				})
+			},
 			//去商品详情页
 			toGoodsDetail(item){
-				console.log(item);
+				// console.log(item);
 				if(item=='ad'){
 					uni.$showMsg('广告位招租中......','none',2000)
 				}else {
@@ -203,7 +204,11 @@
 					},
 					success:res=>{
 						if(res.data==undefined) return
+						let Allgoods=[]
 						this.goodsList=res.data.goodsList
+				        Allgoods.push(this.goodsList)
+						uni.setStorageSync('Allgoods',Allgoods)
+						console.log('Allgoods',Allgoods);
 						this.goodsList.filter(v=>{
 							if(v.flex=='left'){
 								this.goodsLeftList.push(v)
@@ -218,7 +223,7 @@
 			},
 			//搜索框
 			onClick(item) {
-				console.log(item);
+				// console.log(item);
 				if (item == 'suffix') {
 					uni.chooseImage({
 						count: 1, //默认9

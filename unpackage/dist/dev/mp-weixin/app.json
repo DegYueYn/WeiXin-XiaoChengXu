@@ -11,6 +11,7 @@
       "pages": [
         "card",
         "setting",
+        "order/order",
         "money/money",
         "money/charge"
       ]
@@ -20,6 +21,18 @@
       "pages": [
         "goodsDetail",
         "paySuccess"
+      ]
+    },
+    {
+      "root": "views/search",
+      "pages": [
+        "search"
+      ]
+    },
+    {
+      "root": "views/carPay",
+      "pages": [
+        "carPay"
       ]
     },
     {
@@ -35,7 +48,7 @@
     "navigationBarTextStyle": "black",
     "backgroundTextStyle": "light",
     "backgroundColorTop": "#FFFFFF",
-    "backgroundColor": "#aaaaff",
+    "backgroundColor": "#ffffff",
     "backgroundColorBottom": "#FFFFFF"
   },
   "tabBar": {
